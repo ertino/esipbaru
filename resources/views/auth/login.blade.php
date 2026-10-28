@@ -1,144 +1,228 @@
-<x-guest-layout>
+@php
+    /*
+     |--------------------------------------------------------------------------
+     | Brand assets
+     |--------------------------------------------------------------------------
+     |
+     | The rest of the application references these files as asset('images/...'),
+     | but the public/images directory is not part of this repository. Fall back
+     | to the text logo when the file is missing so the page never shows a
+     | broken image.
+     |
+     */
+    $brandLogo = file_exists(public_path('images/NAKES.png')) ? asset('images/NAKES.png') : null;
+    $announcement = file_exists(public_path('images/anounce.jpeg')) ? asset('images/anounce.jpeg') : null;
+@endphp
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Left Logo -->
-                <div class="flex-shrink-0 flex items-center space-x-2">
-                    <a href="/" class="flex items-center space-x-2">
-                        <img class="h-10" src="{{ asset('images/ptsplogo.png') }}" alt="Logo 1">
-                        <img class="h-10" src="{{ asset('images/logo-clp.png') }}" alt="Logo 2">
-                    </a>
-                </div>
-                <!-- Navigation Menu -->
-                <div class="hidden sm:flex sm:space-x-8">
-                    <x-nav-link href="#" :active="request()->is('/')">
-                        Beranda
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->is('about')">
-                        Tentang Kami
-                    </x-nav-link>
-                    <x-nav-link href="#" id="pengumuman-link">
-                        Pengumuman
-                    </x-nav-link>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <x-auth-card>
-        <!-- Add a top-right corner link for "PENGUMUMAN" -->
+    <link rel="icon" href="{{ asset('images/nakesico.png') }}" type="image/png">
 
-        <x-slot name="logo">
-            <a href="/">
-                <img src="{{asset('images/NAKES.png')}}" width="300px" alt="">
-            </a>
-        </x-slot>
+    <title>{{ __('Login') }} | APLIKASI SURAT IZIN PRAKTIK TENAGA MEDIS &amp; KESEHATAN DIGITAL</title>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+    <!-- Google Font: Source Sans 3 (AdminLTE 4 default) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..700;1,300..700&display=swap">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    @if (file_exists(public_path('hot')) || file_exists(public_path('build/manifest.json')))
+        {{--
+            Vite bundle: resources/css/app.css pulls Bootstrap 5, Bootstrap Icons
+            and AdminLTE 4; resources/js/app.js exposes window.bootstrap.
+        --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+        {{--
+            Fallback so the page is still styled before `npm run dev` or
+            `npm run build` has been executed (AdminLTE 4 already bundles
+            Bootstrap 5 in dist/css/adminlte.min.css).
+        --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/css/adminlte.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/js/adminlte.min.js"></script>
+    @endif
+</head>
+<body class="login-page bg-body-secondary">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
 
-            <!-- Username -->
-            <div>
-                <x-label for="username" :value="__('Username')" />
-
-                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- CAPTCHA -->
-            <div class="mt-4">
-                <x-label for="captcha" :value="__('Captcha')" />
-                <div class="flex items-center">
-                    <input id="captcha" type="text" class="block w-full mt-1 border rounded-md p-2" name="captcha" required>
-                    <img src="{{ captcha_src() }}" class="ml-2" onclick="this.src='{{ captcha_src() }}?'+Math.random()" alt="captcha">
-                </div>
-                @if ($errors->has('captcha'))
-                    <span class="text-red-500 text-sm">{{ $errors->first('captcha') }}</span>
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="login-logo">
+            <a href="{{ url('/') }}">
+                @if ($brandLogo)
+                    <img src="{{ $brandLogo }}" class="img-fluid" style="max-height: 72px;" alt="{{ __('Aplikasi URAT NADI') }}">
+                @else
+                    <i class="bi bi-heart-pulse-fill text-primary"></i>
+                    <b>URAT</b>&nbsp;NADI
                 @endif
-            </div>
+            </a>
+        </div>
+        <!-- /.login-logo -->
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-            <div class="block mt-4">
-                <a href="{{route('lupa.password')}}">Lupa Password</a>
-            </div>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">{{ __('Masuk untuk memulai sesi Anda') }}</p>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-                <a class="ml-3" href="{{route('daftar.nakes')}}">
-                    DAFTAR
-                </a>
-            </div>
-        </form>
-    </x-auth-card>
+                <!-- Session Status -->
+                @if (session('status'))
+                    <div class="alert alert-success py-2" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
-    <!-- Modal Structure -->
-    <div id="pengumuman-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-gray-900 bg-opacity-75">
-        <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-2xl">
-            <h2 class="text-xl font-semibold mb-4">Pengumuman</h2>
-            <p class="text-gray-600">
-                Mohon Untuk Perhatikan Pengumuman Berikut Sebelum Anda Login Ke Aplikasi URAT NADI.
-            </p>
-            <div class="overflow-y-auto" style="max-height: 400px;">
-                <img src="{{asset('images/anounce.jpeg')}}" class="w-full" alt="Pengumuman">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <!-- Username -->
+                    <div class="input-group mb-3">
+                        <input id="username"
+                               type="text"
+                               name="username"
+                               value="{{ old('username') }}"
+                               class="form-control @error('username') is-invalid @enderror"
+                               placeholder="{{ __('Username') }}"
+                               required
+                               autofocus
+                               autocomplete="username">
+                        <div class="input-group-text">
+                            <span class="bi bi-person"></span>
+                        </div>
+                        @error('username')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-group mb-3">
+                        <input id="password"
+                               type="password"
+                               name="password"
+                               class="form-control @error('password') is-invalid @enderror"
+                               placeholder="{{ __('Password') }}"
+                               required
+                               autocomplete="current-password">
+                        <div class="input-group-text">
+                            <span class="bi bi-lock-fill"></span>
+                        </div>
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+
+                    <!-- CAPTCHA -->
+                    <div class="input-group mb-3">
+                        <input id="captcha"
+                               type="text"
+                               name="captcha"
+                               class="form-control @error('captcha') is-invalid @enderror"
+                               placeholder="{{ __('Captcha') }}"
+                               required
+                               autocomplete="off">
+                        <div class="input-group-text p-0 overflow-hidden">
+                            <img src="{{ captcha_src() }}"
+                                 alt="{{ __('Captcha') }}"
+                                 title="{{ __('Klik untuk mengganti kode') }}"
+                                 style="height: 38px; cursor: pointer;"
+                                 onclick="this.src='{{ captcha_src() }}?' + Math.random();">
+                        </div>
+                        @error('captcha')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <!--begin::Row-->
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       name="remember"
+                                       value="1"
+                                       id="remember_me"
+                                       {{ old('remember') ? 'checked' : '' }}>
+                                <label class="form-check-label" for="remember_me">{{ __('Remember me') }}</label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-5">
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-box-arrow-in-right me-1"></i> {{ __('Log in') }}
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!--end::Row-->
+                </form>
+
+                <div class="social-auth-links text-center mt-3 mb-3 d-grid gap-2">
+                    <button type="button"
+                            class="btn btn-outline-secondary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#pengumumanModal">
+                        <i class="bi bi-megaphone me-1"></i> {{ __('Pengumuman') }}
+                    </button>
+                </div>
+                <!-- /.social-auth-links -->
+
+                <p class="mb-1">
+                    <a href="{{ route('lupa.password') }}">{{ __('Lupa Password') }}</a>
+                </p>
+                <p class="mb-0">
+                    <a href="{{ route('daftar.nakes') }}" class="text-center">{{ __('Daftar Nakes Baru') }}</a>
+                </p>
             </div>
-            <div class="flex justify-end mt-6">
-                <button id="close-modal" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
-                    Saya Mengerti
-                </button>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+
+
+    <!-- Pengumuman Modal (Bootstrap 5) -->
+    <div class="modal fade"
+         id="pengumumanModal"
+         tabindex="-1"
+         aria-labelledby="pengumumanModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pengumumanModalLabel">{{ __('Pengumuman') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Tutup') }}"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-3">
+                        Mohon untuk memperhatikan pengumuman berikut sebelum Anda login ke aplikasi URAT NADI.
+                    </p>
+                    @if ($announcement)
+                        <img src="{{ $announcement }}" class="img-fluid w-100" alt="{{ __('Pengumuman') }}">
+                    @endif
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        {{ __('Saya Mengerti') }}
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-</x-guest-layout>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show the announcement automatically on page load, as the legacy
+            // page did, and keep it reachable through the button above.
+            var pengumumanModal = document.getElementById('pengumumanModal');
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const pengumumanLink = document.getElementById('pengumuman-link');
-        const modal = document.getElementById('pengumuman-modal');
-        const closeModal = document.getElementById('close-modal');
-
-        // Automatically show the modal on page load
-        modal.classList.remove('hidden');
-
-        // Hide the modal when the "Close" button is clicked
-        closeModal.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-
-        // Optional: Close the modal when clicking outside the modal content
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.classList.add('hidden');
+            if (pengumumanModal && window.bootstrap) {
+                window.bootstrap.Modal.getOrCreateInstance(pengumumanModal).show();
             }
         });
-
-        pengumumanLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent the default link behavior
-            modal.classList.remove('hidden'); // Show the modal
-        });
-    });
-</script>
+    </script>
+</body>
+</html>
 
