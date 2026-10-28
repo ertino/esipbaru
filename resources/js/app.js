@@ -1,19 +1,15 @@
-/**
- * Application JavaScript (Vite entry).
- *
- * Replaces the Laravel Mix/CommonJS bundle from ijinnakes
- * (`require('./bootstrap'); require('alpinejs');`). Bootstrap 5 and AdminLTE 4
- * are imported here instead of being pulled from a CDN, and Alpine is started
- * the same way the old `require('alpinejs')` call did.
- */
-
-import './bootstrap';
-
 import * as bootstrap from 'bootstrap';
 import 'admin-lte';
-import Alpine from 'alpinejs';
+import { OverlayScrollbars } from 'overlayscrollbars';
 
-window.bootstrap = bootstrap;
-window.Alpine = Alpine;
+window.bootstrap = bootstrap; // handy for inline modals/tooltips in Blade
 
-Alpine.start();
+// Sidebar scrollbar (the official demo pages do this inline)
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar-wrapper');
+    if (sidebar) {
+        OverlayScrollbars(sidebar, {
+            scrollbars: { theme: 'os-theme-light', autoHide: 'leave', clickScroll: true },
+        });
+    }
+});
