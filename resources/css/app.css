@@ -7,10 +7,11 @@
  | The target UI is AdminLTE 4 on Bootstrap 5, so this entry point pulls the
  | framework CSS straight from the packages already declared in package.json.
  |
- | The AdminLTE pages themselves keep loading their own assets from
- | public/minlte, public/lte4 and public/material, exactly as the legacy app
- | did, so this bundle only styles the Breeze-style layouts
- | (layouts/app.blade.php and layouts/guest.blade.php).
+ | The legacy AdminLTE 3 pages keep loading their own assets from public/minlte,
+ | public/lte4 and public/material, exactly as before, so this bundle only styles
+ | the Vite driven layouts: the Breeze-style ones (layouts/app.blade.php and
+ | layouts/guest.blade.php) plus the layouts/adminlte4/* family, which renders
+ | admin-lte through @vite() whenever public/hot or build/manifest.json exists.
  |
  */
 
