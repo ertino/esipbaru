@@ -1,0 +1,19 @@
+/*
+ |--------------------------------------------------------------------------
+ | Application stylesheet (Vite entry)
+ |--------------------------------------------------------------------------
+ |
+ | Migrated from ijinnakes, which compiled Tailwind v2 through Laravel Mix.
+ | The target UI is AdminLTE 4 on Bootstrap 5, so this entry point pulls the
+ | framework CSS straight from the packages already declared in package.json.
+ |
+ | The AdminLTE pages themselves keep loading their own assets from
+ | public/minlte, public/lte4 and public/material, exactly as the legacy app
+ | did, so this bundle only styles the Breeze-style layouts
+ | (layouts/app.blade.php and layouts/guest.blade.php).
+ |
+ */
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'admin-lte/dist/css/adminlte.css';
