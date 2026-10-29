@@ -45,12 +45,7 @@ Route::get('/daftargagal', [GuestController::class, 'daftargagal'])->name('dafta
 Route::get('/maintenance', [GuestController::class, 'maintenance'])->name('maintenance');
 
 /// TAMU
-Route::get('/asistensi', [GuestController::class, 'asistensi'])->name('asistensi');
-Route::get('/getevent', [GuestController::class, 'getevent'])->name('get.event');
-Route::get('/geteventadmin', [GuestController::class, 'geteventadmin'])->name('get.event.admin');
-Route::get('/detailevent', [GuestController::class, 'detailevent'])->name('detail.event');
-Route::post('/submitasistensi', [GuestController::class, 'permohonansimpan'])->name('submit.asistensi');
-Route::post('/submitreview', [GuestController::class, 'reviewsimpan'])->name('submit.review');
+
 Route::get('/checksip/{filename}', [GuestController::class, 'checksip'])->name('check.qr.sip');
 Route::get('/masterprofesi', [GuestController::class, 'masterprofesi'])->name('get.data.profesi');
 Route::get('/testconvertjpg', [GuestController::class, 'testconvertjpg'])->name('test.convert.jpg');
