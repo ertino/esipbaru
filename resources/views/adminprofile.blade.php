@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-secondary float-right" id="close-modal">Close</button>
+                            <button type="button" class="btn btn-secondary float-end" id="close-modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -87,12 +87,12 @@
                         <div class="card-header">
                             <div class="card-title">
                                 <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Personal Info</a>
+                                    <li class="nav-item"><a class="nav-link" href="#settings" data-bs-toggle="tab">Personal Info</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-primary float-right" id="btnUbahPass">Ubah Password</button>
+                                <button type="button" class="btn btn-primary float-end" id="btnUbahPass">Ubah Password</button>
                             </div>
                         </div>
                         <div class="card-body">

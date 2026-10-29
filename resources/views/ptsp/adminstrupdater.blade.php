@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -386,7 +386,7 @@
                   if (pendaftaran.current_status == 0) {
                       button_aksi = `
                           <div class="btn-group">
-                            <button class="btn btn-xs btn-success updatestrnya" data-toggle="tooltip" data-placement="top" title="Update STR"
+                            <button class="btn btn-sm btn-success updatestrnya" data-bs-toggle="tooltip" data-bs-placement="top" title="Update STR"
                                   id="${pendaftaran.id}" data-file="${pendaftaran.origin_file}" data-url="${pendaftaran.url_qr}"
                                   data-nama="${pendaftaran.nama}" data-str="${pendaftaran.no_reg}" data-email="${pendaftaran.email}"
                                   data-statdoc="${pendaftaran.doc_status}" data-foto="${pendaftaran.img_src}" data-salinan="${pendaftaran.salinan}"
@@ -398,7 +398,7 @@
                   } else {
                       button_aksi = `
                           <div class="btn-group">
-                              <button class="btn btn-xs btn-success updatestrnya" data-toggle="tooltip" data-placement="top" title="Update STR"
+                              <button class="btn btn-sm btn-success updatestrnya" data-bs-toggle="tooltip" data-bs-placement="top" title="Update STR"
                                   id="${pendaftaran.id}" data-file="${pendaftaran.origin_file}" data-url="${pendaftaran.url_qr}"
                                   data-nama="${pendaftaran.nama}" data-str="${pendaftaran.no_reg}" data-email="${pendaftaran.email}"
                                   data-statdoc="${pendaftaran.doc_status}" data-foto="${pendaftaran.img_src}" data-salinan="${pendaftaran.salinan}"

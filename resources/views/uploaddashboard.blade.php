@@ -1,4 +1,4 @@
-@extends('layouts.templet.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <div class="container-fluid py-4">

@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -24,7 +24,7 @@
                             <h5>Manage User Faskes</h5> 
                         </div>
                         <div class="card-tools">
-                        <button type="button" class="btn btn-secondary btn-sm float-right" id="close-userfaskes-modal">Close</button>
+                        <button type="button" class="btn btn-secondary btn-sm float-end" id="close-userfaskes-modal">Close</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -238,7 +238,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary float-right" id="close-faskes-modal">Close</button>
+                        <button type="button" class="btn btn-secondary float-end" id="close-faskes-modal">Close</button>
                     </div>
                 </div>
             </div>

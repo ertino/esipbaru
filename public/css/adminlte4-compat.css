@@ -1,0 +1,262 @@
+/*
+ |--------------------------------------------------------------------------
+ | AdminLTE 4 compatibility layer
+ |--------------------------------------------------------------------------
+ |
+ | Two groups of rules live here:
+ |
+ |  1. The custom helpers that used to sit inline in
+ |     resources/views/layouts/minlte/back_core.blade.php and are still
+ |     referenced by the application views (map legends, QR scanner, ...).
+ |
+ |  2. The handful of Bootstrap 4 class names that were not rewritten in the
+ |     Blade markup because the change is purely presentational
+ |     (.form-group, .btn-xs, .input-group-append).
+ |
+ */
+
+/* ---------------------------------------------------------------------------
+   1. Legacy application helpers
+   --------------------------------------------------------------------------- */
+
+.color-palette {
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    padding-right: .75rem;
+}
+
+.color-palette.disabled {
+    text-align: center;
+    padding-right: 0;
+    display: block;
+}
+
+.color-palette-set {
+    margin-bottom: 15px;
+}
+
+.color-palette span {
+    display: none;
+    font-size: 12px;
+}
+
+.color-palette:hover span {
+    display: block;
+}
+
+.color-palette.disabled span {
+    display: block;
+    text-align: left;
+    padding-left: .75rem;
+}
+
+.color-palette-box h4 {
+    position: absolute;
+    left: 1.25rem;
+    margin-top: .75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    display: block;
+    z-index: 7;
+}
+
+.blogade {
+    flex-shrink: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow-y: auto;
+    max-height: 450px;
+    width: 30rem;
+}
+
+.kekanan {
+    display: flex;
+    overflow-x: auto;
+}
+
+#blockside {
+    max-height: 600px;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /* position the autocomplete items to be the same width as the container */
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+.hiddenopt {
+    display: none;
+}
+
+.highlight-date {
+    background-color: yellow;
+}
+
+.bootstrap-datetimepicker-widget td.day.visitasi,
+.bootstrap-datetimepicker-widget table td.day.enabled.custom-date-class {
+    background-color: yellow;
+    color: #000000;
+}
+
+.visitasi {
+    background-color: yellow;
+}
+
+.highlight-today .datetimepicker-day .datetimepicker-today {
+    background-color: yellow;
+}
+
+.custom-rounded {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.circular-map-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.tooltip.color-change {
+    animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #FF5733;
+    }
+
+    25% {
+        background-color: #33FF57;
+    }
+
+    50% {
+        background-color: #5733FF;
+    }
+
+    75% {
+        background-color: #FF5733;
+    }
+
+    100% {
+        background-color: #33FF57;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   2. Bootstrap 4 leftovers
+   --------------------------------------------------------------------------- */
+
+/* Bootstrap 5 dropped .form-group; the views still use it as a row wrapper. */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Bootstrap 4 shipped .btn-xs, Bootstrap 5 starts at .btn-sm. */
+.btn-xs {
+    padding: .125rem .3rem;
+    font-size: .75rem;
+    line-height: 1.2;
+    border-radius: .2rem;
+}
+
+/*
+ * Bootstrap 5 expects the button / .input-group-text to be a direct child of
+ * .input-group. The views keep the Bootstrap 4 wrapper element, so make that
+ * wrapper transparent to the flex layout and restore the outer radius.
+ */
+.input-group-append,
+.input-group-prepend {
+    display: flex;
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text {
+    border-radius: 0;
+}
+
+.input-group > .input-group-append:last-child > .btn,
+.input-group > .input-group-append:last-child > .input-group-text {
+    border-top-right-radius: var(--bs-border-radius);
+    border-bottom-right-radius: var(--bs-border-radius);
+}
+
+.input-group > .input-group-prepend:first-child > .btn,
+.input-group > .input-group-prepend:first-child > .input-group-text {
+    border-top-left-radius: var(--bs-border-radius);
+    border-bottom-left-radius: var(--bs-border-radius);
+}
+
+/*
+ * The application still renders a few Bootstrap 4 checkboxes / switches. Give
+ * them the Bootstrap 5 look even if a template was not rewritten.
+ */
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.custom-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0;
+}
+
+.custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.custom-switch {
+    padding-left: 2.25rem;
+}
+
+/* Bootstrap 4 used .close for the modal dismiss button. */
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.close:hover {
+    opacity: .75;
+}

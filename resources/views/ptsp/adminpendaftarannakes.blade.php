@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
   <!-- Content Header (Page header) -->
@@ -25,7 +25,7 @@
                 <h2>Petunjuk Penggunaan</h2>
               </div>
               <div class="card-tools">
-                <button type="button" class="btn btn-secondary btn-sm float-right"
+                <button type="button" class="btn btn-secondary btn-sm float-end"
                   id="close-petunjukmanual-modal">Close</button>
               </div>
             </div>
@@ -35,12 +35,12 @@
                 <div class="card card-danger">
                   <div class="card-header">
                     <h4 class="card-title w-100">
-                      <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                      <a class="d-block w-100" data-bs-toggle="collapse" href="#collapseOne">
                         Khusus Untuk Pendaftaran STR Dokter Ber-QRCODE
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                  <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
                     <div class="card-body">
                       <div class="card mb-2 bg-gradient-dark">
                         <img class="card-img-top" src="{{asset('images/petunjukdokter.jpg')}}" alt="Dist Photo 1">
@@ -58,12 +58,12 @@
                 <div class="card card-primary">
                   <div class="card-header">
                     <h4 class="card-title w-100">
-                      <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                      <a class="d-block w-100" data-bs-toggle="collapse" href="#collapseTwo">
                         STR Non Dokter Ber-QRCODE
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                  <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                     <div class="card-body">
                       <p>Pastikan STR yang diupload memiliki <strong> QRCODE </strong> dan <strong> Berposisi Portrait
                         </strong>. Setelah Proses Upload Berhasil, Pastikan <strong> Salinan, Tanggal Penetapan STR, dan
@@ -76,12 +76,12 @@
                 <div class="card card-secondary">
                   <div class="card-header">
                     <h4 class="card-title w-100">
-                      <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
+                      <a class="d-block w-100" data-bs-toggle="collapse" href="#collapseThree">
                         STR tidak ber-QRCODE
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseThree" class="collapse" data-parent="#accordion">
+                  <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
                     <div class="card-body">
                       <p>Pastikan STR yang diupload Berposisi Portrait </strong>. Pastikan <strong> Kualitas </strong>
                         Terbaik untuk PDF yang akan diupload.</p>
@@ -102,7 +102,7 @@
                 Silahkan Scan QRCODE STR (DOKTER) Terlebih Dahulu
               </div>
               <div class="card-tools">
-                <button type="button" class="btn btn-secondary btn-sm float-right"
+                <button type="button" class="btn btn-secondary btn-sm float-end"
                   id="close-scanfirstptsp-modal">Lewati</button>
               </div>
             </div>
@@ -380,9 +380,9 @@
                           <div class="col-md-4 col-xs-12">
                             <div class="form-group">
                               <label for="exampleFormControlSelect1" class="ms-0">STR Hingga *</label>
-                              <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" name="seumurhidup" id="seumurhidup">
-                                <label class="custom-control-label" for="seumurhidup">Seumur Hidup</label>
+                              <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input" name="seumurhidup" id="seumurhidup">
+                                <label class="form-check-label" for="seumurhidup">Seumur Hidup</label>
                               </div>
                               <input type="date" id="stSTRHinggaSIPmanual" name="stSTRHinggaSIPmanual"
                                 class="form-control" min="{{date('Y-m-d')}}" required>

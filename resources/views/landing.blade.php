@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_daftar')
+@extends('layouts.adminlte4.back_daftar')
 @section('content')
 
 <!-- Content Header (Page header) -->
@@ -19,9 +19,9 @@
             
         </div>
     </ul>
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Informasi</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Lowongan</a>
@@ -53,11 +53,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
+                        <li data-bs-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+                        <li data-bs-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                        <li data-bs-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
                         </ol>
                         <div class="carousel-inner">
                         <div class="carousel-item">
@@ -70,17 +70,17 @@
                         <img class="d-block w-100" src="{{asset('images/c1.png')}}" alt="Third slide">
                         </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                         <span class="carousel-control-custom-icon" aria-hidden="true">
                         <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="sr-only">Previous</span>
+                        <span class="visually-hidden">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
                         <span class="carousel-control-custom-icon" aria-hidden="true">
                         <i class="fas fa-chevron-right"></i>
                         </span>
-                        <span class="sr-only">Next</span>
+                        <span class="visually-hidden">Next</span>
                         </a>
                         </div>
                 </div>
@@ -192,7 +192,7 @@
                         <div class="card-header">
                         <h3 class="card-title">Nakes Terdaftar</h3>
                         <div class="card-tools">
-                        <span class="badge badge-danger">1k Nakes</span>
+                        <span class="badge text-bg-danger">1k Nakes</span>
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                         </button>
@@ -260,7 +260,7 @@
             <div class="col-12">
             <h4>
             <i class="fas fa-globe"></i> AdminLTE, Inc.
-            <small class="float-right">Date: 2/10/2014</small>
+            <small class="float-end">Date: 2/10/2014</small>
             </h4>
             </div>
 
@@ -392,10 +392,10 @@
             <div class="row no-print">
             <div class="col-12">
             <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+            <button type="button" class="btn btn-success float-end"><i class="far fa-credit-card"></i> Submit
             Payment
             </button>
-            <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+            <button type="button" class="btn btn-primary float-end" style="margin-right: 5px;">
             <i class="fas fa-download"></i> Generate PDF
             </button>
             </div>

@@ -1,50 +1,17 @@
-<!--
-=========================================================
-* Material Dashboard 2 - v3.0.0
-=========================================================
+{{--
+    Public assistance request form (AdminLTE 4).
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
+    Was a standalone Material Dashboard page that shipped its own copy of
+    Bootstrap 4 through public/templet. It now runs inside the shared
+    AdminLTE 4 guest layout, so jQuery, FullCalendar and the rating widget
+    are loaded by the layout instead of by the template bundle.
+--}}
+@extends('layouts.adminlte4.back_daftar')
 
-=========================================================
+@section('title', 'Halaman Permohonan Untuk Diskominfo')
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <!-- Meta, title, CSS, favicons, etc. -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{ asset('dashbor/images/favicon.ico') }}" type="image/ico" />
-
-      <title>Halaman Permohonan Untuk Diskominfo</title>
-
-      <!---- starts here ---->
-      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Nucleo Icons -->
-      <link href="{{ asset('templet/css/nucleo-icons.css') }}" rel="stylesheet" />
-      <link href="{{ asset('templet/css/nucleo-svg.css') }}" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-      <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Material Icons -->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <!-- CSS Files -->
-      <link id="pagestyle" href="{{ asset('templet/css/material-dashboard.css?v=3.0.0') }}" rel="stylesheet" />
-
-      <link href="{{ asset('js/fullcalendar5/lib/main.css') }}" rel='stylesheet' />
-
-      
-  </head>
-
-  <body class="g-sidenav-show  bg-gray-200">
-    
-    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+@section('content')
+<div class="container-fluid py-4">
       <!-- Navbar -->
       
       <!-- End Navbar -->
@@ -72,7 +39,7 @@
                                 <h6 class="mb-1">
                                     Eddo Ertino
                                 </h6>
-                                <p class="mb-0 font-weight-normal text-sm">
+                                <p class="mb-0 fw-normal text-sm">
                                     Programmer
                                 </p>
                             </div>
@@ -102,7 +69,7 @@
                                 <h6 class="mb-1">
                                     ASOKA
                                 </h6>
-                                <p class="mb-0 font-weight-normal text-sm">
+                                <p class="mb-0 fw-normal text-sm">
                                     Aplikasi
                                 </p>
                             </div>
@@ -360,31 +327,12 @@
         </div>
       </footer>
     </div>
-    </main>
-    <!--   Core JS Files   -->
-    <script src="{{ asset('templet/js/core/popper.min.js') }}"></script>
-    <script src="{{ asset('templet/js/core/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('templet/js/plugins/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('templet/js/plugins/smooth-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('templet/js/plugins/chartjs.min.js') }}"></script>
-    <script src="{{ asset('dashbor/vendors/jquery/dist/jquery.min.js') }}"></script>
-    <script>
-      var win = navigator.platform.indexOf('Win') > -1;
-      if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-          damping: '0.5'
-        }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-      }
-    </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="{{ asset('templet/js/material-dashboard.min.js?v=3.0.0 ') }}"></script>
-    <script src="{{ asset('js/fullcalendar5/lib/main.js') }}"></script>
+</div>
+@endsection
 
-    <script src="{{ asset('js/ratings/dist/rating.js') }}"></script>
-    
+@section('script')
+<script src="{{ asset('js/fullcalendar5/lib/main.js') }}"></script>
+<script src="{{ asset('js/ratings/dist/rating.js') }}"></script>
     <script>
     function checkAll(val, jenis){
         var selOPD = $('#selOPD').val();
@@ -568,6 +516,4 @@
       });
 
     </script>
-  </body>
-
-</html>
+@endsection

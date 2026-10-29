@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -253,13 +253,13 @@
                 var tte_stat = pengajuan.status_tte != 'Belum TTE' ? pengajuan.status_tte : pengajuan.status_tte;
 
                 if (pengajuan.isApproved == '3') {
-                    keterangan = '<br /><span class="badge badge-info">Pengajuan TTE</span>';
+                    keterangan = '<br /><span class="badge text-bg-info">Pengajuan TTE</span>';
                 } else if (pengajuan.isApproved == '4') {
-                    keterangan = '<br /><span class="badge badge-success">TTE Selesai</span>';
+                    keterangan = '<br /><span class="badge text-bg-success">TTE Selesai</span>';
                 } else if (pengajuan.isApproved == '9') {
-                    keterangan = '<br /><span class="badge badge-danger">Ditolak</span>';
+                    keterangan = '<br /><span class="badge text-bg-danger">Ditolak</span>';
                 } else if (pengajuan.isApproved == 'CF') {
-                    keterangan = '<br /><span class="badge badge-danger">Dicabut</span>';
+                    keterangan = '<br /><span class="badge text-bg-danger">Dicabut</span>';
                 }
 
                 if (pengajuan.template_id == '2') {

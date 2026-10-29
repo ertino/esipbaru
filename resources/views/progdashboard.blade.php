@@ -1,4 +1,4 @@
-@extends('layouts.templet.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <div class="container-fluid py-4">
@@ -11,7 +11,7 @@
               <h6>Total Aplikasi dan Integrasi</h6>
               <p class="text-sm mb-0">
                 <i class="fa fa-check text-info" aria-hidden="true"></i>
-                <span class="font-weight-bold ms-1">{{$user_id}} done</span> this month
+                <span class="fw-bold ms-1">{{$user_id}} done</span> this month
               </p>
             </div>
             <div class="col-lg-6 col-5 my-auto text-end">
@@ -45,7 +45,7 @@
               <tbody>
               @foreach($listApp as $row)
                 <tr>
-                  <td class="align-middle text-center text-sm"><span class="text-xs font-weight-bold">{{$loop->iteration}}</span></td>
+                  <td class="align-middle text-center text-sm"><span class="text-xs fw-bold">{{$loop->iteration}}</span></td>
                   <td>
                     <div class="d-flex px-2 py-1">
                       <div>
@@ -68,7 +68,7 @@
                     </div>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> {{$row->description}} </span>
+                    <span class="text-xs fw-bold"> {{$row->description}} </span>
                   </td>
                   <td>
                     <div class="avatar-group mt-2">
@@ -91,7 +91,7 @@
                     <div class="progress-wrapper w-75 mx-auto">
                       <div class="progress-info">
                         <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">60%</span>
+                          <span class="text-xs fw-bold">60%</span>
                         </div>
                       </div>
                       <div class="progress">
@@ -173,8 +173,8 @@
                       </td>
                     </div>
                     <div class="col-10 col-md-10 col-xs-10">
-                      <h6 class="text-dark text-sm font-weight-bold mb-0">{{$row->activity}}</h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">{{$row->timestamp}}</p>
+                      <h6 class="text-dark text-sm fw-bold mb-0">{{$row->activity}}</h6>
+                      <p class="text-secondary fw-bold text-xs mt-1 mb-0">{{$row->timestamp}}</p>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_daftar')
+@extends('layouts.adminlte4.back_daftar')
 @section('content')
 <body class="sidebar-mini" style="height: auto;">
 
@@ -36,7 +36,7 @@
                     <br />
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-sign-out-alt mr-2"></i> Kembali
+                        <a class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-sign-out-alt me-2"></i> Kembali
                         </a>
                     </form>
                 </div>

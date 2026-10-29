@@ -1,4 +1,4 @@
-@extends('layouts.ePAD.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <!-- page content -->
@@ -15,12 +15,12 @@
   </div>
 
   <div class="row tile_count">
-        <div class="col-md-6 col-sm-12 col-xs-12 tile_stats_count" data-toggle="tooltip" data-placement="bottom" title data-original-title="RETRIBUSI">
+        <div class="col-md-6 col-sm-12 col-xs-12 tile_stats_count" data-bs-toggle="tooltip" data-bs-placement="bottom" title data-original-title="RETRIBUSI">
             <span class="count_top" ><i class="fa fa-bank"></i> TOTAL PAJAK</span>
             <div class="count rt2" style="font-size: 20px;">Rp. {{$totalPajak}}</div>
 
         </div>
-        <div class="col-md-6 col-sm-12 col-xs-12 tile_stats_count" data-toggle="tooltip" data-placement="bottom" title data-original-title="RETRIBUSI NONTUNAI">
+        <div class="col-md-6 col-sm-12 col-xs-12 tile_stats_count" data-bs-toggle="tooltip" data-bs-placement="bottom" title data-original-title="RETRIBUSI NONTUNAI">
             <span class="count_top" ><i class="fa fa-credit-card"></i> TOTAL RETRIBUSI</span>
             <div class="count rt4" style="font-size: 20px;">Rp. {{$totalRetribusi}}</div>
 
@@ -44,7 +44,7 @@
             <div class="w_center w_55">
               <div class="progress">
                 <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$row->persentase}};">
-                  <span class="sr-only">{{$row->persentase}} Complete</span>
+                  <span class="visually-hidden">{{$row->persentase}} Complete</span>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@
             <div class="w_center w_55">
               <div class="progress">
                 <div class="progress-bar bg-red" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$rowr->persentase}};">
-                  <span class="sr-only">{{$rowr->persentase}} Complete</span>
+                  <span class="visually-hidden">{{$rowr->persentase}} Complete</span>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 1416.8125px;">
@@ -22,7 +22,7 @@
                         <h3 class="card-title">
                             Dokumen Pengajuan
                         </h3>
-                        <div class="nav nav-pills ml-auto p-2">
+                        <div class="nav nav-pills ms-auto p-2">
                             <input type="checkbox" onchange="hideme()">Ya
                         </div>
                         <script>
@@ -53,25 +53,25 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="customCheckbox1" disabled="">
-                                                <label for="customCheckbox1" class="custom-control-label">Bug</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="customCheckbox1" disabled="">
+                                                <label for="customCheckbox1" class="form-check-label">Bug</label>
                                             </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="customCheckbox2" disabled="">
-                                                <label for="customCheckbox2" class="custom-control-label">Feature</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="customCheckbox2" disabled="">
+                                                <label for="customCheckbox2" class="form-check-label">Feature</label>
                                             </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled="">
-                                                <label for="customCheckbox3" class="custom-control-label">Enhancement</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="customCheckbox3" disabled="">
+                                                <label for="customCheckbox3" class="form-check-label">Enhancement</label>
                                             </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="customCheckbox4" disabled="">
-                                                <label for="customCheckbox4" class="custom-control-label">Documentation</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="customCheckbox4" disabled="">
+                                                <label for="customCheckbox4" class="form-check-label">Documentation</label>
                                             </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="customCheckbox5" disabled="">
-                                                <label for="customCheckbox5" class="custom-control-label">Examples</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="customCheckbox5" disabled="">
+                                                <label for="customCheckbox5" class="form-check-label">Examples</label>
                                             </div>
                                         </div>
                                     </div>
@@ -158,20 +158,20 @@
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
-                                <img class="profile-user-img img-fluid img-circle" src="{{ asset('imguser/').'/'.$fotopengaju }}"
+                                <img class="profile-user-img img-fluid rounded-circle" src="{{ asset('imguser/').'/'.$fotopengaju }}"
                                     alt="User profile picture">
                             </div>
                             <h3 class="profile-username text-center">Nina Mcintire</h3>
                             <p class="text-muted text-center">Software Engineer</p>
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Followers</b> <a class="float-right">1,322</a>
+                                    <b>Followers</b> <a class="float-end">1,322</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Following</b> <a class="float-right">543</a>
+                                    <b>Following</b> <a class="float-end">543</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Friends</b> <a class="float-right">13,287</a>
+                                    <b>Friends</b> <a class="float-end">13,287</a>
                                 </li>
                             </ul>
                             <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
@@ -186,15 +186,15 @@
                         </div>
 
                         <div class="card-body">
-                            <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                            <strong><i class="fas fa-book me-1"></i> Education</strong>
                             <p class="text-muted">
                                 B.S. in Computer Science from the University of Tennessee at Knoxville
                             </p>
                             <hr>
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Location</strong>
                             <p class="text-muted">Malibu, California</p>
                             <hr>
-                            <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+                            <strong><i class="fas fa-pencil-alt me-1"></i> Skills</strong>
                             <p class="text-muted">
                                 <span class="tag tag-danger">UI Design</span>
                                 <span class="tag tag-success">Coding</span>
@@ -203,7 +203,7 @@
                                 <span class="tag tag-primary">Node.js</span>
                             </p>
                             <hr>
-                            <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+                            <strong><i class="far fa-file-alt me-1"></i> Notes</strong>
                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum
                                 enim neque.</p>
                         </div>
@@ -219,10 +219,10 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item" style="display:none"><a class="nav-link active" href="#activity"
-                                        data-toggle="tab">Dokumen</a></li>
-                                <li class="nav-item"><a class="nav-link bukapeta" data-id="{{$id_pengajuan}}" data-lat="{{$detail_pengajuan->latitude}}" data-long="{{$detail_pengajuan->longitude}}" href="#timeline" data-toggle="tab">Lokasi</a>
+                                        data-bs-toggle="tab">Dokumen</a></li>
+                                <li class="nav-item"><a class="nav-link bukapeta" data-id="{{$id_pengajuan}}" data-lat="{{$detail_pengajuan->latitude}}" data-long="{{$detail_pengajuan->longitude}}" href="#timeline" data-bs-toggle="tab">Lokasi</a>
                                 </li>
-                                <!--<li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a>
+                                <!--<li class="nav-item"><a class="nav-link" href="#settings" data-bs-toggle="tab">Settings</a>
                                 </li> -->
                             </ul>
                         </div>
@@ -253,9 +253,9 @@
                                                 <div class="mask">
                                                     <p>STP</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_stp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_stp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -287,9 +287,9 @@
                                                 <div class="mask">
                                                     <p>Surat Keterangan Sehat</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_sks[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_sks[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -321,9 +321,9 @@
                                                 <div class="mask">
                                                     <p>Surat Pernyataan Tempat Praktik</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_sptp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_sptp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -357,9 +357,9 @@
                                                 <div class="mask">
                                                     <p>Ijazah</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_ijazah[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_ijazah[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -389,9 +389,9 @@
                                                 <div class="mask">
                                                     <p>Surat Keterangan Pimpinan</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_skp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_skp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -423,9 +423,9 @@
                                                 <div class="mask">
                                                     <p>Pas Foto</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -461,9 +461,9 @@
                                                 <div class="mask">
                                                     <p>Rekomendasi Kepala Dinas Kesehatan</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_rekomdk[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_rekomdk[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -495,9 +495,9 @@
                                                 <div class="mask">
                                                     <p>Rekomendasi Organisasi Profesi</p>
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('download.the.file', $doc_rekomp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                        <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                        <p><a href="{{ route('download.the.file', $doc_rekomp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                        <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                         </p>
                                                     </div>
                                                 </div>

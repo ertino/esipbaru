@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -253,24 +253,24 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="alert alert-danger alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
                   <h5><i class="icon fas fa-ban"></i> Alert!</h5>
                   Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my
                   entire
                   soul, like these sweet mornings of spring which I enjoy with my whole heart.
                 </div>
                 <div class="alert alert-info alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
                   <h5><i class="icon fas fa-info"></i> Alert!</h5>
                   Info alert preview. This alert is dismissable.
                 </div>
                 <div class="alert alert-warning alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
                   <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
                   Warning alert preview. This alert is dismissable.
                 </div>
                 <div class="alert alert-success alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
                   <h5><i class="icon fas fa-check"></i> Alert!</h5>
                   Success alert preview. This alert is dismissable.
                 </div>
@@ -330,12 +330,12 @@
             <div class="card">
               <div class="card-header d-flex p-0">
                 <h3 class="card-title p-3">Tabs</h3>
-                <ul class="nav nav-pills ml-auto p-2">
-                  <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Tab 1</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Tab 2</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Tab 3</a></li>
+                <ul class="nav nav-pills ms-auto p-2">
+                  <li class="nav-item"><a class="nav-link active" href="#tab_1" data-bs-toggle="tab">Tab 1</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab_2" data-bs-toggle="tab">Tab 2</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab_3" data-bs-toggle="tab">Tab 3</a></li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
                       Dropdown <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu">
@@ -405,28 +405,28 @@
 
                 <div class="progress">
                   <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                    <span class="sr-only">40% Complete (success)</span>
+                    <span class="visually-hidden">40% Complete (success)</span>
                   </div>
                 </div>
                 <p><code>.progress-sm</code></p>
 
                 <div class="progress progress-sm active">
                   <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                    <span class="sr-only">20% Complete</span>
+                    <span class="visually-hidden">20% Complete</span>
                   </div>
                 </div>
                 <p><code>.progress-xs</code></p>
 
                 <div class="progress progress-xs">
                   <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                    <span class="sr-only">60% Complete (warning)</span>
+                    <span class="visually-hidden">60% Complete (warning)</span>
                   </div>
                 </div>
                 <p><code>.progress-xxs</code></p>
 
                 <div class="progress progress-xxs">
                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                    <span class="sr-only">60% Complete (warning)</span>
+                    <span class="visually-hidden">60% Complete (warning)</span>
                   </div>
                 </div>
               </div>
@@ -444,22 +444,22 @@
               <div class="card-body">
                 <div class="progress mb-3">
                   <div class="progress-bar bg-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                    <span class="sr-only">40% Complete (success)</span>
+                    <span class="visually-hidden">40% Complete (success)</span>
                   </div>
                 </div>
                 <div class="progress mb-3">
                   <div class="progress-bar bg-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                    <span class="sr-only">20% Complete</span>
+                    <span class="visually-hidden">20% Complete</span>
                   </div>
                 </div>
                 <div class="progress mb-3">
                   <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                    <span class="sr-only">60% Complete (warning)</span>
+                    <span class="visually-hidden">60% Complete (warning)</span>
                   </div>
                 </div>
                 <div class="progress mb-3">
                   <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                    <span class="sr-only">80% Complete</span>
+                    <span class="visually-hidden">80% Complete</span>
                   </div>
                 </div>
               </div>
@@ -484,22 +484,22 @@
 
                 <div class="progress vertical active">
                   <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="height: 40%">
-                    <span class="sr-only">40%</span>
+                    <span class="visually-hidden">40%</span>
                   </div>
                 </div>
                 <div class="progress vertical progress-sm">
                   <div class="progress-bar bg-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="height: 100%">
-                    <span class="sr-only">100%</span>
+                    <span class="visually-hidden">100%</span>
                   </div>
                 </div>
                 <div class="progress vertical progress-xs">
                   <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 60%">
-                    <span class="sr-only">60%</span>
+                    <span class="visually-hidden">60%</span>
                   </div>
                 </div>
                 <div class="progress vertical progress-xxs">
                   <div class="progress-bar bg-info progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 60%">
-                    <span class="sr-only">60%</span>
+                    <span class="visually-hidden">60%</span>
                   </div>
                 </div>
               </div>
@@ -519,22 +519,22 @@
 
                 <div class="progress vertical">
                   <div class="progress-bar bg-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="height: 40%">
-                    <span class="sr-only">40%</span>
+                    <span class="visually-hidden">40%</span>
                   </div>
                 </div>
                 <div class="progress vertical">
                   <div class="progress-bar bg-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="height: 20%">
-                    <span class="sr-only">20%</span>
+                    <span class="visually-hidden">20%</span>
                   </div>
                 </div>
                 <div class="progress vertical">
                   <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 60%">
-                    <span class="sr-only">60%</span>
+                    <span class="visually-hidden">60%</span>
                   </div>
                 </div>
                 <div class="progress vertical">
                   <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 80%">
-                    <span class="sr-only">80%</span>
+                    <span class="visually-hidden">80%</span>
                   </div>
                 </div>
               </div>
@@ -563,7 +563,7 @@
                   <div class="card card-primary">
                     <div class="card-header">
                       <h4 class="card-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne">
                           Collapsible Group Item #1
                         </a>
                       </h4>
@@ -587,7 +587,7 @@
                   <div class="card card-danger">
                     <div class="card-header">
                       <h4 class="card-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseTwo">
                           Collapsible Group Danger
                         </a>
                       </h4>
@@ -611,7 +611,7 @@
                   <div class="card card-success">
                     <div class="card-header">
                       <h4 class="card-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseThree">
                           Collapsible Group Success
                         </a>
                       </h4>
@@ -646,11 +646,11 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                   <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-slide-to="2"></li>
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item">
@@ -663,13 +663,13 @@
                       <img class="d-block w-100" src="https://placehold.it/900x500/f39c12/ffffff&amp;text=I+Love+Bootstrap" alt="Third slide">
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="visually-hidden">Previous</span>
                   </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="visually-hidden">Next</span>
                   </a>
                 </div>
               </div>

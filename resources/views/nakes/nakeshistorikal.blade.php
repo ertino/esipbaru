@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -25,10 +25,10 @@
                             <div class="card">
                                 <div class="card-header d-flex p-0">
                                     <h3 class="card-title p-3">Histori Pengajuan</h3>
-                                    <ul class="nav nav-pills ml-auto p-2">
-                                        <li class="nav-item"><a class="nav-link active" href="#sal_1" data-toggle="tab">Sal 1</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#sal_2" data-toggle="tab">Sal 2</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#sal_3" data-toggle="tab">Sal 3</a></li>
+                                    <ul class="nav nav-pills ms-auto p-2">
+                                        <li class="nav-item"><a class="nav-link active" href="#sal_1" data-bs-toggle="tab">Sal 1</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#sal_2" data-bs-toggle="tab">Sal 2</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#sal_3" data-bs-toggle="tab">Sal 3</a></li>
                                     </ul>
                                 </div><!-- /.card-header -->
                                 <div class="card-body">

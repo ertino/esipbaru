@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -56,7 +56,7 @@
               </div>
               <div class="card-footer">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-secondary btn-sm float-right tutupintipdraftcabut" id="close-lihatdraft-modal">Tutup</button>
+                  <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftcabut" id="close-lihatdraft-modal">Tutup</button>
                 </div>
               </div>
               <div class="overlay" id="sedangrevertdraftcabut" style="display:none">
@@ -102,13 +102,13 @@
                             <td>{{$row->alamat_pengajuan}}</td>
                             <td>
                             @if ($row->isApproved == 'C')
-                              <span class="badge badge-warning">Pengajuan Pencabutan</span>
+                              <span class="badge text-bg-warning">Pengajuan Pencabutan</span>
                             @elseif ($row->isApproved == 4)
                               @if($row->alasan_ditolak != null || $row->alasan_ditolak != '')
-                              <span class="badge badge-warning">DITOLAK</span>
-                              <span class="badge badge-warning">{{$row->alasan_ditolak}}</span>
+                              <span class="badge text-bg-warning">DITOLAK</span>
+                              <span class="badge text-bg-warning">{{$row->alasan_ditolak}}</span>
                               @else
-                              <span class="badge badge-success">Dokumen Sudah Disetujui</span>
+                              <span class="badge text-bg-success">Dokumen Sudah Disetujui</span>
                               @endif
                             @endif
                             </td>
@@ -175,16 +175,16 @@
                             <td>{{$row->alamat_pengajuan}}</td>
                             <td>
                             @if ($row->isApproved == 'C')
-                              <span class="badge badge-warning">Pengajuan Pencabutan</span>
+                              <span class="badge text-bg-warning">Pengajuan Pencabutan</span>
                             @elseif ($row->isApproved == 4)
                               @if($row->alasan_ditolak != null || $row->alasan_ditolak != '')
-                              <span class="badge badge-warning">DITOLAK</span>
-                              <span class="badge badge-warning">{{$row->alasan_ditolak}}</span>
+                              <span class="badge text-bg-warning">DITOLAK</span>
+                              <span class="badge text-bg-warning">{{$row->alasan_ditolak}}</span>
                               @else
-                              <span class="badge badge-success">Dokumen Sudah Disetujui</span>
+                              <span class="badge text-bg-success">Dokumen Sudah Disetujui</span>
                               @endif
                             @elseif ($row->isApproved == 'CF')
-                              <span class="badge badge-success">Dokumen Sudah Disetujui</span>
+                              <span class="badge text-bg-success">Dokumen Sudah Disetujui</span>
                             @endif
                             </td>
                             <td>{{$row->updated_at}}</td>

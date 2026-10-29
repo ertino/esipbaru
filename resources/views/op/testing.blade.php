@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -26,7 +26,7 @@
                     <div class="card-body p-0">
                         <div class="bs-stepper linear">
                             <div class="bs-stepper-header" role="tablist">
-                                <div class="step" data-target="#lokasi-part">
+                                <div class="step" data-bs-target="#lokasi-part">
                                     <button type="button" class="step-trigger" role="tab" aria-controls="lokasi-part" id="lokasi-part-trigger" aria-selected="false" disabled="disabled">
                                         <span class="bs-stepper-circle">1</span>
                                         <span class="bs-stepper-label">Lokasi</span>
@@ -34,13 +34,13 @@
                                 </div>
                                 <div class="line">
                                 </div>
-                                <div class="step active" data-target="#information-part">
+                                <div class="step active" data-bs-target="#information-part">
                                     <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger" aria-selected="true">
                                         <span class="bs-stepper-circle">2</span>
                                         <span class="bs-stepper-label">Dokumen</span>
                                     </button>
                                 </div>
-                                <div class="step" data-target="#jadwal-part">
+                                <div class="step" data-bs-target="#jadwal-part">
                                     <button type="button" class="step-trigger" role="tab" aria-controls="jadwal-part" id="jadwal-part-trigger" aria-selected="true">
                                         <span class="bs-stepper-circle">3</span>
                                         <span class="bs-stepper-label">Jadwal Praktik</span>

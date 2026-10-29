@@ -1,21 +1,21 @@
 @php
     /*
      |--------------------------------------------------------------------------
-     | Document head (AdminLTE 4 + Vite)
+     | Document head (AdminLTE 4)
      |--------------------------------------------------------------------------
      |
-     | Same asset strategy as resources/views/auth/login.blade.php: the Vite
-     | bundle is used whenever a dev server (public/hot) or a build manifest is
-     | available, otherwise the page falls back to the AdminLTE 4 CDN so it is
-     | never rendered unstyled.
+     | Every asset is served from public/vendor, so a fresh clone renders the
+     | same way on every machine without running `npm install` / `npm run build`.
+     | When a vendored file is missing the matching CDN build is used instead,
+     | which keeps the layout usable while a deployment catches up.
      |
-     | resources/css/app.css pulls Bootstrap 5, Bootstrap Icons and AdminLTE 4,
-     | while resources/js/app.js exposes window.bootstrap and registers the
-     | AdminLTE widgets (sidebar toggle, treeview, ...).
+     | AdminLTE 4's adminlte.min.css already contains Bootstrap 5, so
+     | bootstrap.min.css is intentionally not loaded a second time.
      |
      */
-    $hasVite = file_exists(public_path('hot')) || file_exists(public_path('build/manifest.json'));
-    $brandIcon = file_exists(public_path('images/nakesico.png')) ? asset('images/nakesico.png') : null;
+    $local = function (string $path) {
+        return file_exists(public_path($path)) ? asset($path) : null;
+    };
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="light">
@@ -24,8 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if ($brandIcon)
-        <link rel="icon" href="{{ $brandIcon }}" type="image/png">
+    @if ($local('images/nakesico.png'))
+        <link rel="icon" href="{{ $local('images/nakesico.png') }}" type="image/png">
     @endif
 
     <title>@yield('title', 'APLIKASI SURAT IZIN PRAKTIK TENAGA MEDIS & KESEHATAN DIGITAL')</title>
@@ -33,19 +33,39 @@
     <!-- Google Font: Source Sans 3 (AdminLTE 4 default) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..700;1,300..700&display=swap">
 
-    <!-- DataTables + Buttons, used by the jQuery driven tables of the dashboards -->
+    <!-- AdminLTE 4 (bundles Bootstrap 5) + Bootstrap Icons -->
+    <link rel="stylesheet" href="{{ $local('vendor/adminlte4/css/adminlte.min.css') ?? 'https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/css/adminlte.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/bootstrap-icons/bootstrap-icons.min.css') ?? 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css' }}">
+
+    <!-- Icon fonts still referenced by the migrated views -->
+    <link rel="stylesheet" href="{{ $local('vendor/fontawesome-free/css/all.min.css') ?? 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{{ $local('vendor/overlayScrollbars/OverlayScrollbars.min.css') ?? 'https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/fancybox/jquery.fancybox.min.css') ?? 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/daterangepicker/daterangepicker.css') ?? 'https://cdn.jsdelivr.net/npm/daterangepicker@3.1.0/daterangepicker.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.css') ?? 'https://cdn.jsdelivr.net/npm/tempusdominus-bootstrap-4@5.39.0/css/tempusdominus-bootstrap-4.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/chart.js/Chart.min.css') ?? 'https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/sweetalert2/sweetalert2.min.css') ?? 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/toastr/toastr.min.css') ?? 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/select2/select2.min.css') ?? 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css' }}">
+    <link rel="stylesheet" href="{{ $local('vendor/select2/select2-bootstrap4.min.css') ?? 'https://cdn.jsdelivr.net/npm/select2-bootstrap4-theme@1.0.0/dist/select2-bootstrap4.min.css' }}">
+
+    <!-- DataTables + Buttons (CSV/Excel/PDF export) -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
 
-    @if ($hasVite)
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        {{-- Fallback so the page is still styled before `npm run dev` or `npm run build` has been executed. --}}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/css/adminlte.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/js/adminlte.min.js"></script>
-    @endif
+    <!-- Stepper -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+
+    <!-- Leaflet (map pages) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="">
+
+    <!-- AdminLTE 4 compatibility layer (legacy helpers + Bootstrap 4 class names) -->
+    <link rel="stylesheet" href="{{ asset('css/adminlte4-compat.css') }}">
 
     @yield('css')
 </head>

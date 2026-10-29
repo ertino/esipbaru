@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -75,7 +75,7 @@
                             </form>
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-secondary btn-sm float-right tutupintipdraft" id="close-konfirmqr-modal">Tutup</button>
+                            <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraft" id="close-konfirmqr-modal">Tutup</button>
                         </div>
                         <div class="overlay" id="editqrnya" style="display:none">
                             <i class="fas fa-3x fa-sync-alt fa-spin"></i>

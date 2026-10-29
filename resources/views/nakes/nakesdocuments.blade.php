@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -121,7 +121,7 @@
                         <!-- Modal Header -->
                             <div class="modal-header">
                                 <h4 class="modal-title" id="judultambahnya">Tambah Dokumen</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
                         <!-- Modal body -->
                             <div class="modal-body">
@@ -261,7 +261,7 @@
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -320,10 +320,10 @@
 
                                                 @endif
                                                 <div class="tools tools-bottom">
-                                                    <p><a href="{{ route('get.origin.str', $doc_str1[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                    <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str1[0]->namafile}}">Lihat</button>
+                                                    <p><a href="{{ route('get.origin.str', $doc_str1[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                    <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str1[0]->namafile}}">Lihat</button>
                                                     @if($doc_str1[0]->is_compromised == '1')
-                                                        <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_1">Edit</a>
+                                                        <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_1">Edit</a>
                                                     @endif
                                                     </p>
                                                 </div>
@@ -372,10 +372,10 @@
 
                                                 @endif
                                                 <div class="tools tools-bottom">
-                                                    <p><a href="{{ route('get.origin.str', $doc_str2[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                    <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str"  data-namafile="{{$doc_str2[0]->namafile}}">Lihat</button>
+                                                    <p><a href="{{ route('get.origin.str', $doc_str2[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                    <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str"  data-namafile="{{$doc_str2[0]->namafile}}">Lihat</button>
                                                     @if($doc_str2[0]->is_compromised == '1')
-                                                        <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_2">Edit</a>
+                                                        <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_2">Edit</a>
                                                     @endif
                                                     </p>
                                                 </div>
@@ -425,10 +425,10 @@
 
                                                     @endif
                                                     <div class="tools tools-bottom">
-                                                        <p><a href="{{ route('get.origin.str', $doc_str3[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                        <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str3[0]->namafile}}">Lihat</button>
+                                                        <p><a href="{{ route('get.origin.str', $doc_str3[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                        <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str3[0]->namafile}}">Lihat</button>
                                                         @if($doc_str3[0]->is_compromised == '1')
-                                                            <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_3">Edit</a>
+                                                            <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_3">Edit</a>
                                                         @endif
                                                         </p>
                                                     </div>
@@ -442,7 +442,7 @@
                                     <div class="col-sm-4 col-xs-12">
                                         <div class="thumbnail">
                                             <center><div class="position-relative">
-                                            <i class="fa fa-plus" id="update_jenis1" style="font-size:150px" data-jenis="STR1" data-toggle="modal" data-judul="STR1" data-target="#tambahModal"></i>
+                                            <i class="fa fa-plus" id="update_jenis1" style="font-size:150px" data-jenis="STR1" data-bs-toggle="modal" data-judul="STR1" data-bs-target="#tambahModal"></i>
                                             </div></center>
 
                                             <div class="caption card-footer text-center">
@@ -488,10 +488,10 @@
                                         <div class="mask">
                                             <p></p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('get.origin.str', $doc_str1[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str1[0]->namafile}}">Lihat</button>
+                                                <p><a href="{{ route('get.origin.str', $doc_str1[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str1[0]->namafile}}">Lihat</button>
                                                 @if($doc_str1[0]->is_compromised == '1')
-                                                    <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_1">Edit</a>
+                                                    <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_1">Edit</a>
                                                 @endif
                                                 </p>
                                             </div>
@@ -507,7 +507,7 @@
                                         @if($detail_pengaju->template_id == '2')<a href='{{route("nakes.dokter.uploadstr", "$user_id")}}_2'>
                                         @else <a href='{{route("nakes.nondokter.uploadstr", "$user_id")}}_2'>
                                         @endif
-                                            <i class="fa fa-plus" id="tambah_jenis1" style="font-size:150px" data-jenis="STR2" data-toggle="modal" data-judul="STR2" data-target="#tambahModal"></i>
+                                            <i class="fa fa-plus" id="tambah_jenis1" style="font-size:150px" data-jenis="STR2" data-bs-toggle="modal" data-judul="STR2" data-bs-target="#tambahModal"></i>
                                         </a>
                                         </div></center>
 
@@ -532,10 +532,10 @@
                                         <div class="mask">
                                             <p></p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('get.origin.str', $doc_str2[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str"  data-namafile="{{$doc_str2[0]->namafile}}">Lihat</button>
+                                                <p><a href="{{ route('get.origin.str', $doc_str2[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str"  data-namafile="{{$doc_str2[0]->namafile}}">Lihat</button>
                                                 @if($doc_str2[0]->is_compromised == '1')
-                                                    <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_2">Edit</a>
+                                                    <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_2">Edit</a>
                                                 @endif
                                                 </p>
                                             </div>
@@ -577,10 +577,10 @@
                                             <div class="mask">
                                                 <p></p>
                                                 <div class="tools tools-bottom">
-                                                    <p><a href="{{ route('get.origin.str', $doc_str3[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                    <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str3[0]->namafile}}">Lihat</button>
+                                                    <p><a href="{{ route('get.origin.str', $doc_str3[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                    <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_str3[0]->namafile}}">Lihat</button>
                                                     @if($doc_str3[0]->is_compromised == '1')
-                                                        <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_3">Edit</a>
+                                                        <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_STR_3">Edit</a>
                                                     @endif
                                                     </p>
                                                 </div>
@@ -636,10 +636,10 @@
                                             <div class="mask">
                                                 <p></p>
                                                 <div class="tools tools-bottom">
-                                                    <p><a href="{{ route('get.origin.str', $doc_sub[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                    <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_sub[0]->namafile}}">Lihat</button>
+                                                    <p><a href="{{ route('get.origin.str', $doc_sub[0]->namafile.'.pdf') }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                    <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="str" data-namafile="{{$doc_sub[0]->namafile}}">Lihat</button>
                                                     @if($doc_str1[0]->is_compromised == '1')
-                                                        <a class="btn btn-xs btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_stsub">Edit</a>
+                                                        <a class="btn btn-sm btn-primary editSTR" href="{{route('edit.dokumen.nakes' , $user_id)}}_stsub">Edit</a>
                                                     @endif
                                                     </p>
                                                 </div>
@@ -658,7 +658,7 @@
                                     <div class="thumbnail">
                                         <center><div class="position-relative">
                                        
-                                        <i class="fa fa-plus" id="tambah_jenis4" style="font-size:150px" data-jenis="ktps" data-toggle="modal" data-judul="ktps" data-target="#tambahKTPModal"></i>
+                                        <i class="fa fa-plus" id="tambah_jenis4" style="font-size:150px" data-jenis="ktps" data-bs-toggle="modal" data-judul="ktps" data-bs-target="#tambahKTPModal"></i>
                                         </div></center>
 
                                         <div class="caption card-footer text-center">
@@ -683,10 +683,10 @@
                                         <div class="mask">
                                             <p>KTP</p>
                                             <div class="tools tools-bottom">
-                                                <!--<p><a href="{{ route('download.the.ktp', $doc_ktp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>-->
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-jenis="ktp" data-namafile="{{$doc_ktp[0]->namafile}}" data-user="{{$user_id}}" data-id="{{$doc_ktp[0]->id}}">Lihat</button>
+                                                <!--<p><a href="{{ route('download.the.ktp', $doc_ktp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>-->
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-jenis="ktp" data-namafile="{{$doc_ktp[0]->namafile}}" data-user="{{$user_id}}" data-id="{{$doc_ktp[0]->id}}">Lihat</button>
                                                 @if($doc_ktp[0]->is_compromised == '1')
-                                                <button class="btn btn-xs btn-primary editmaindokumen" data-mode="e" data-id="{{$doc_ktp[0]->id}}" data-jenis="2" data-jenisdok="KTP" data-user="{{$user_id}}">Edit</button>
+                                                <button class="btn btn-sm btn-primary editmaindokumen" data-mode="e" data-id="{{$doc_ktp[0]->id}}" data-jenis="2" data-jenisdok="KTP" data-user="{{$user_id}}">Edit</button>
                                                 @endif
                                                 </p>
                                             </div>
@@ -699,7 +699,7 @@
                                 @if (count($doc_ijazah) == 0)
                                     <div class="thumbnail">
                                         <center><div class="position-relative">
-                                        <i class="fa fa-plus" id="tambah_jenis4" style="font-size:150px" data-jenis="IJAZAH" data-toggle="modal" data-judul="Ijazah" data-univ="{{$datapendaftaran->universitas}}" data-target="#tambahModal"></i>
+                                        <i class="fa fa-plus" id="tambah_jenis4" style="font-size:150px" data-jenis="IJAZAH" data-bs-toggle="modal" data-judul="Ijazah" data-univ="{{$datapendaftaran->universitas}}" data-bs-target="#tambahModal"></i>
                                         </div></center>
 
                                         <div class="caption card-footer text-center">
@@ -723,10 +723,10 @@
                                         <div class="mask">
                                             <p>Ijazah</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $doc_ijazah[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$doc_ijazah[0]->namafile}}">Lihat</button>
-                                                <button class="btn btn-xs btn-primary editmaindokumen" data-mode="e" data-id="{{$doc_ijazah[0]->id}}" data-jenis="2" data-jenisdok="IJAZAH" data-user="{{$user_id}}">Edit</button>
-                                                <button class="btn btn-xs btn-secondary tambahIjazah" data-jenis="ijazah" data-namafile="">Tambah</button>
+                                                <p><a href="{{ route('download.the.file', $doc_ijazah[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$doc_ijazah[0]->namafile}}">Lihat</button>
+                                                <button class="btn btn-sm btn-primary editmaindokumen" data-mode="e" data-id="{{$doc_ijazah[0]->id}}" data-jenis="2" data-jenisdok="IJAZAH" data-user="{{$user_id}}">Edit</button>
+                                                <button class="btn btn-sm btn-secondary tambahIjazah" data-jenis="ijazah" data-namafile="">Tambah</button>
                                                 </p>
                                             </div>
                                         </div>
@@ -740,7 +740,7 @@
                                 @if (count($doc_sptp) == 0)
                                     <div class="thumbnail">
                                         <center><div class="position-relative">
-                                        <i class="fa fa-plus" id="tambah_jenis3" style="font-size:150px" data-jenis="SPTP" data-toggle="modal" data-judul="Surat Pernyataaan Tempat Praktik" data-target="#tambahModal"></i>
+                                        <i class="fa fa-plus" id="tambah_jenis3" style="font-size:150px" data-jenis="SPTP" data-bs-toggle="modal" data-judul="Surat Pernyataaan Tempat Praktik" data-bs-target="#tambahModal"></i>
                                         </div></center>
 
                                         <div class="caption card-footer text-center">
@@ -760,9 +760,9 @@
                                         <div class="mask">
                                             <p>Surat Pernyataan Tempat Praktik</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $doc_sptp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                <p><a href="{{ route('download.the.file', $doc_sptp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                 </p>
                                             </div>
                                         </div>
@@ -796,8 +796,8 @@
                                         <div class="mask">
                                             <p>Surat Pemenuhan Kompetensi</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $doc_skskp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <a href="{{ route ('nakes.update.skskp', $user_id)}}" class="btn btn-xs btn-success">Update</a>
+                                                <p><a href="{{ route('download.the.file', $doc_skskp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <a href="{{ route ('nakes.update.skskp', $user_id)}}" class="btn btn-sm btn-success">Update</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -814,7 +814,7 @@
                                 @if (count($doc_skp) == 0)
                                     <div class="thumbnail">
                                         <center><div class="position-relative">
-                                        <i class="fa fa-plus" id="tambah_jenis5" style="font-size:150px" data-jenis="SKP" data-toggle="modal" data-judul="Surat Keterangan Pimpinan" data-target="#tambahModal"></i>
+                                        <i class="fa fa-plus" id="tambah_jenis5" style="font-size:150px" data-jenis="SKP" data-bs-toggle="modal" data-judul="Surat Keterangan Pimpinan" data-bs-target="#tambahModal"></i>
                                         </div></center>
 
                                         <div class="caption card-footer text-center">
@@ -832,9 +832,9 @@
                                         <div class="mask">
                                             <p>Surat Keterangan Pimpinan</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $doc_skp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                <p><a href="{{ route('download.the.file', $doc_skp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                 </p>
                                             </div>
                                         </div>
@@ -846,7 +846,7 @@
                                 @if (count($doc_sks) == 0)
                                     <div class="thumbnail">
                                         <center><div class="position-relative">
-                                        <i class="fa fa-plus" id="tambah_jenis2" style="font-size:150px" data-jenis="SKS" data-toggle="modal" data-judul="Surat Keterangan Sehat" data-target="#tambahModal"></i>
+                                        <i class="fa fa-plus" id="tambah_jenis2" style="font-size:150px" data-jenis="SKS" data-bs-toggle="modal" data-judul="Surat Keterangan Sehat" data-bs-target="#tambahModal"></i>
                                         </div></center>
 
                                         <div class="caption card-footer text-center">
@@ -866,9 +866,9 @@
                                         <div class="mask">
                                             <p>Surat Keterangan Sehat</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $doc_sks[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                <p><a href="{{ route('download.the.file', $doc_sks[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                 </p>
                                             </div>
                                         </div>
@@ -880,7 +880,7 @@
                                 @if (count($doc_rekomp) == 0)
                                     <div class="thumbnail">
                                         <center><div class="position-relative">
-                                        <i class="fa fa-plus" id="tambah_jenis8" style="font-size:150px" data-jenis="REKOMP" data-toggle="modal" data-judul="Rekomendasi Organisasi Profesi" data-target="#tambahModal"></i>
+                                        <i class="fa fa-plus" id="tambah_jenis8" style="font-size:150px" data-jenis="REKOMP" data-bs-toggle="modal" data-judul="Rekomendasi Organisasi Profesi" data-bs-target="#tambahModal"></i>
                                         </div></center>
 
                                         <div class="caption card-footer text-center">
@@ -900,9 +900,9 @@
                                         <div class="mask">
                                             <p>Rekomendasi Organisasi Profesi</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $doc_rekomp[0]->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Lihat</button>
-                                                <button class="btn btn-xs btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-toggle="modal" data-target="#tambahModal">Edit</button>
+                                                <p><a href="{{ route('download.the.file', $doc_rekomp[0]->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDetail" data-mode="v" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Lihat</button>
+                                                <button class="btn btn-sm btn-primary editDetail" data-mode="e" data-id="" data-jenis="2" data-bs-toggle="modal" data-bs-target="#tambahModal">Edit</button>
                                                 </p>
                                             </div>
                                         </div>
@@ -936,9 +936,9 @@
                                         <div class="mask">
                                             <p>{{$com1->nama_doc}}</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $com1->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$com1->namafile}}">Lihat</button>
-                                                <a class="btn btn-xs btn-primary editDetail" href="{{route('edit.dokumen.nakes' , $user_id)}}_{{$com1->jenis_doc}}_{{$com1->salinan}}">Edit</a>
+                                                <p><a href="{{ route('download.the.file', $com1->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$com1->namafile}}">Lihat</button>
+                                                <a class="btn btn-sm btn-primary editDetail" href="{{route('edit.dokumen.nakes' , $user_id)}}_{{$com1->jenis_doc}}_{{$com1->salinan}}">Edit</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -975,9 +975,9 @@
                                         <div class="mask">
                                             <p>{{$com2->nama_doc}}</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $com2->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$com2->namafile}}">Lihat</button>
-                                                <a class="btn btn-xs btn-primary editDetail" href="{{route('edit.dokumen.nakes' , $user_id)}}_{{$com2->jenis_doc}}_{{$com2->salinan}}">Edit</a>
+                                                <p><a href="{{ route('download.the.file', $com2->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$com2->namafile}}">Lihat</button>
+                                                <a class="btn btn-sm btn-primary editDetail" href="{{route('edit.dokumen.nakes' , $user_id)}}_{{$com2->jenis_doc}}_{{$com2->salinan}}">Edit</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -1014,9 +1014,9 @@
                                         <div class="mask">
                                             <p>{{$com3->nama_doc}}</p>
                                             <div class="tools tools-bottom">
-                                                <p><a href="{{ route('download.the.file', $com3->namafile) }}" target="_blank" class="btn btn-xs btn-info" role="button">Download</a>
-                                                <button class="btn btn-xs btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$com3->namafile}}">Lihat</button>
-                                                <a class="btn btn-xs btn-primary editDetail" href="{{route('edit.dokumen.nakes' , $user_id)}}_{{$com3->jenis_doc}}_{{$com3->salinan}}">Edit</a>
+                                                <p><a href="{{ route('download.the.file', $com3->namafile) }}" target="_blank" class="btn btn-sm btn-info" role="button">Download</a>
+                                                <button class="btn btn-sm btn-success viewDocNakes" data-mode="v" data-id="" data-jenis="ijazah" data-namafile="{{$com3->namafile}}">Lihat</button>
+                                                <a class="btn btn-sm btn-primary editDetail" href="{{route('edit.dokumen.nakes' , $user_id)}}_{{$com3->jenis_doc}}_{{$com3->salinan}}">Edit</a>
                                                 </p>
                                             </div>
                                         </div>

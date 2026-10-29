@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -42,7 +42,7 @@
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
                         <i class="fas fa-expand"></i>
                     </button>
-                    <button type="button" class="btn btn-secondary btn-sm float-right tutuprevert">x</button>
+                    <button type="button" class="btn btn-secondary btn-sm float-end tutuprevert">x</button>
                 </div>
               </div>
               <div class="card-body">
@@ -208,9 +208,9 @@
                             <td>
                             <a type="button" class="btn btn-sm btn-primary" href="{{ route('get.detail.pengajuan', $row->id) }}">Detail</a>          
                             @if ($row->isApproved == 3)
-                            <br /><span class="badge badge-info">Pengajuan TTE</span>
+                            <br /><span class="badge text-bg-info">Pengajuan TTE</span>
                             @elseif($row->isApproved == 4)
-                            <br /><span class="badge badge-success">TTE Selesai</span>
+                            <br /><span class="badge text-bg-success">TTE Selesai</span>
                             @endif
                             </td>
                         </tr>
@@ -405,13 +405,13 @@
                 var tte_stat = pengajuan.status_tte != 'Belum TTE' ? pengajuan.status_tte : pengajuan.status_tte;
 
                 if (pengajuan.isApproved == '3') {
-                    keterangan = '<br /><span class="badge badge-info">Pengajuan TTE</span>';
+                    keterangan = '<br /><span class="badge text-bg-info">Pengajuan TTE</span>';
                 } else if (pengajuan.isApproved == '4') {
-                    keterangan = '<button class="btn btn-sm btn-warning reverttte" data-id="'+pengajuan.id+'" data-nama="'+pengajuan.name+'" data-salinan = "'+pengajuan.salinan+'" data-alamat = "'+pengajuan.alamat_pengajuan+'"><i class="fas fa-sync-alt"></i></button><br /><span class="badge badge-success">TTE Selesai</span>';
+                    keterangan = '<button class="btn btn-sm btn-warning reverttte" data-id="'+pengajuan.id+'" data-nama="'+pengajuan.name+'" data-salinan = "'+pengajuan.salinan+'" data-alamat = "'+pengajuan.alamat_pengajuan+'"><i class="fas fa-sync-alt"></i></button><br /><span class="badge text-bg-success">TTE Selesai</span>';
                 } else if (pengajuan.isApproved == '9') {
-                    keterangan = '<br /><span class="badge badge-danger">Ditolak</span>';
+                    keterangan = '<br /><span class="badge text-bg-danger">Ditolak</span>';
                 } else if (pengajuan.isApproved == 'CF') {
-                    keterangan = '<br /><span class="badge badge-danger">Dicabut</span>';
+                    keterangan = '<br /><span class="badge text-bg-danger">Dicabut</span>';
                 }
 
                 if (pengajuan.template_id == '2') {

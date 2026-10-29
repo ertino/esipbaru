@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 1416.8125px;">
@@ -49,7 +49,7 @@
 
                             <div class="bs-stepper linear">
                                 <div class="bs-stepper-header" role="tablist">
-                                    <div class="step" data-target="#lokasiedit-part">
+                                    <div class="step" data-bs-target="#lokasiedit-part">
                                         <button type="button" class="step-trigger" role="tab" aria-controls="lokasiedit-part" id="lokasiedit-part-trigger" aria-selected="true">
                                             <span class="bs-stepper-circle">1</span>
                                             <span class="bs-stepper-label">Lokasi</span>
@@ -57,7 +57,7 @@
                                     </div>
                                     
                                     <div class="line"></div>
-                                    <div class="step" data-target="#jadwaledit-part">
+                                    <div class="step" data-bs-target="#jadwaledit-part">
                                         <button type="button" class="step-trigger" role="tab" aria-controls="jadwaledit-part" id="jadwaledit-part-trigger" aria-selected="true">
                                             <span class="bs-stepper-circle">2</span>
                                             <span class="bs-stepper-label">Jadwal Praktik</span>

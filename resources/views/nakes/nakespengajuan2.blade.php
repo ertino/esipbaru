@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -53,21 +53,21 @@
                         <div class="card-body p-0">
                             <div class="bs-stepper linear">
                                 <div class="bs-stepper-header" role="tablist">
-                                    <div class="step" data-target="#lokasi-part">
+                                    <div class="step" data-bs-target="#lokasi-part">
                                         <button type="button" class="step-trigger" role="tab" aria-controls="lokasi-part" id="lokasi-part-trigger" aria-selected="false" disabled="disabled">
                                             <span class="bs-stepper-circle">1</span>
                                             <span class="bs-stepper-label">Lokasi</span>
                                         </button>
                                     </div>
                                     <div class="line"></div>
-                                    <div class="step active" data-target="#information-part">
+                                    <div class="step active" data-bs-target="#information-part">
                                         <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger" aria-selected="true">
                                             <span class="bs-stepper-circle">2</span>
                                             <span class="bs-stepper-label">Dokumen</span>
                                         </button>
                                     </div>
                                     <div class="line"></div>
-                                    <div class="step" data-target="#jadwal-part">
+                                    <div class="step" data-bs-target="#jadwal-part">
                                         <button type="button" class="step-trigger" role="tab" aria-controls="jadwal-part" id="jadwal-part-trigger" aria-selected="true">
                                             <span class="bs-stepper-circle">3</span>
                                             <span class="bs-stepper-label">Jadwal Praktik</span>
@@ -85,7 +85,7 @@
                                                         </h3>
                                                         <div class="card-tools">
                                                             <div class="btn-group show">
-                                                                <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">Tambah Pengajuan &nbsp; &nbsp<span class="sr-only">Toggle Dropdown</span></button>
+                                                                <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-icon" data-bs-toggle="dropdown" aria-expanded="false">Tambah Pengajuan &nbsp; &nbsp<span class="visually-hidden">Toggle Dropdown</span></button>
                                                                 <div class="dropdown-menu" role="menu" style="">
                                                                     <a class="dropdown-item" style="color:black;" id="addajumandiri" data-stp="{{count($doc_str)}}" data-sks="{{count($doc_sks)}}" data-sptp="{{count($doc_sptp)}}" data-ijazah="{{count($doc_ijazah)}}" data-skp="{{count($doc_skp)}}" data-rekomp="{{count($doc_rekomp)}}" data-ktp = "{{count($doc_ktp)}}" >Mandiri</a>
                                                                     <a class="dropdown-item" style="color:black;" id="addajufaskes" data-stp="{{count($doc_str)}}" data-sks="{{count($doc_sks)}}" data-sptp="{{count($doc_sptp)}}" data-ijazah="{{count($doc_ijazah)}}" data-skp="{{count($doc_skp)}}" data-rekomp="{{count($doc_rekomp)}}" data-ktp = "{{count($doc_ktp)}}" data-id="{{$user_id}}">Faskes</a>
@@ -310,7 +310,7 @@
                                         <div class="row" style="display:none">
                                             <div class="col-md-4" >
                                                 <div class="form-group" >
-                                                    <label for="exampleFormControlSelect1" class="ms-0">File Serkom / SKP (Satuan Kredit Profesi) <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#contohskpmodal">?</button></label>
+                                                    <label for="exampleFormControlSelect1" class="ms-0">File Serkom / SKP (Satuan Kredit Profesi) <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#contohskpmodal">?</button></label>
                                                     <input type="file" id="tFileSKSKP" name="tFileSKSKP" class="form-control" accept=".pdf">
                                                 </div>
                                             </div>

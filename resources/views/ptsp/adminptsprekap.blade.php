@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -204,7 +204,7 @@
                     @foreach($sipakankadal as $sip)
                       <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td><div class="user-block"><img class="img-circle img-bordered-sm" src="{{ URL::to('/storagefoto') }}/{{$sip->saved_photo}}"></td>
+                        <td><div class="user-block"><img class="rounded-circle img-bordered-sm" src="{{ URL::to('/storagefoto') }}/{{$sip->saved_photo}}"></td>
                         <td>{{$sip->nama_nakes}}</td>
                         <td>{{$sip->salinan}}</td>
                         <td>{{$sip->nama_faskes}} - {{$sip->nama_lokasi}}</td>
@@ -238,7 +238,7 @@
                     @foreach($strakankadal as $str)
                       <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td><div class="user-block"><img class="img-circle img-bordered-sm" src="{{ URL::to('/storagefoto') }}/{{$str->saved_photo}}"></td>
+                        <td><div class="user-block"><img class="rounded-circle img-bordered-sm" src="{{ URL::to('/storagefoto') }}/{{$str->saved_photo}}"></td>
                         <td>{{$str->nama_nakes}}</td>
                         <td>{{$str->tgl_doc}}</td>
                         <td>{{$str->expiring_count}}</td>

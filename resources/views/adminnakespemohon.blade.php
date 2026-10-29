@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -30,7 +30,7 @@
                                             <h2 class="lead"><b>Nicole Pearson</b></h2>
                                             <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee
                                                 Lover </p>
-                                            <ul class="ml-4 mb-0 fa-ul text-muted">
+                                            <ul class="ms-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
                                                     Address: Demo Street 123, Demo City 04312, NJ</li>
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #:
@@ -38,12 +38,12 @@
                                             </ul>
                                         </div>
                                         <div class="col-5 text-center">
-                                            <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                            <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="rounded-circle img-fluid">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="text-right">
+                                    <div class="text-end">
                                         <a href="#" class="btn btn-sm bg-teal">
                                             <i class="fas fa-comments"></i>
                                         </a>

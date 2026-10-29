@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -29,7 +29,7 @@
                 <h3 class="card-title">List Nakes Pada Faskes</h3>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <input type="text" name="table_search" class="form-control float-end" placeholder="Search">
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default">
                         <i class="fas fa-search"></i>
@@ -72,7 +72,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Latest Members</h3>
                     <div class="card-tools">
-                        <span class="badge badge-danger">8 New Members</span>
+                        <span class="badge text-bg-danger">8 New Members</span>
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
                         </button>

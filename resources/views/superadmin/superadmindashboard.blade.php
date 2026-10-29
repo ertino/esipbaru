@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -249,7 +249,7 @@
                      statusakun = '<span class="badge bg-success">Aktif</span>';
                   }
 
-                  let aktifasi = `<button class="btn btn-xs btn-primary reaktifasi" data-toggle="tooltip" data-placement="top" title="Reaktifasi"
+                  let aktifasi = `<button class="btn btn-sm btn-primary reaktifasi" data-bs-toggle="tooltip" data-bs-placement="top" title="Reaktifasi"
                                   id="${pendaftaran.id}" data-file="${pendaftaran.origin_file}" data-url="${pendaftaran.url_qr}"
                                   data-nama="${pendaftaran.nama}" data-str="${pendaftaran.no_reg}" data-email="${pendaftaran.email}"
                                   data-foto="${pendaftaran.img_src}" data-salinan="${pendaftaran.salinan}"
@@ -261,7 +261,7 @@
                   // Determine the button actions based on current_status
                   button_aksi = `
                           <div class="btn-group">
-                              <a class="btn btn-sm btn-success detailingnakes" href="/superdetailnakes/${pendaftaran.id}" data-toggle="tooltip" data-placement="top" title="Detail Nakes">
+                              <a class="btn btn-sm btn-success detailingnakes" href="/superdetailnakes/${pendaftaran.id}" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail Nakes">
                                   DETAIL
                               </button>
                           </div>`;

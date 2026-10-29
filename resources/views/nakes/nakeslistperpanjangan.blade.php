@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -46,7 +46,7 @@
                             <td>{{$row->alamat_pengajuan}}</td>
                             <td>
                             @if ($row->isApproved == 'P')
-                              <span class="badge badge-warning">Belum Diperpanjang</span>
+                              <span class="badge text-bg-warning">Belum Diperpanjang</span>
                             @endif
                             </td>
                             <td>{{$row->created_at}}</td>

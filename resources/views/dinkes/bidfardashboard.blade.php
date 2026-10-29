@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -33,7 +33,7 @@
                 <!-- Modal Header -->
                     <div class="modal-header">
                         <h4 class="modal-title">Pencabutan SIP</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                 <!-- Modal body -->
                     <div class="modal-body">
@@ -47,9 +47,9 @@
                     <div class="modal-footer">
 
                       <div class="btn-group">
-                        <button type="button" class="btn btn-warning btn-sm float-right" id="visitasipencabutan">Visitasi</button>
-                        <button type="button" class="btn btn-success btn-sm float-right" id="setujuisuratpencabutan">Setujui</button>
-                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-warning btn-sm float-end" id="visitasipencabutan">Visitasi</button>
+                        <button type="button" class="btn btn-success btn-sm float-end" id="setujuisuratpencabutan">Setujui</button>
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Tutup</button>
                       </div>
                         
                     </div>
@@ -201,7 +201,7 @@
                   } else {
                       return `
                           <div class="btn-group">
-                            <button class="btn btn-xs btn-info detilpencabutan" data-id="${row.id}" data-file="${row.fileba}" data-nakes="${row.id_nakes}">
+                            <button class="btn btn-sm btn-info detilpencabutan" data-id="${row.id}" data-file="${row.fileba}" data-nakes="${row.id_nakes}">
                                 Proses
                             </button>
                           </div>

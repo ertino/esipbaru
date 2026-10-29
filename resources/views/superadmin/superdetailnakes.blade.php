@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -23,7 +23,7 @@
             <div class="card card-primary card-outline" id="nakesmain" data-id="{{$id_nakes}}">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/user.png') }}" alt="User profile picture">
+                  <img class="profile-user-img img-fluid rounded-circle" src="{{ asset('images/user.png') }}" alt="User profile picture">
                 </div>
 
                 <h3 class="profile-username text-center">Nina Mcintire</h3>
@@ -32,13 +32,13 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Followers</b> <a class="float-right">1,322</a>
+                    <b>Followers</b> <a class="float-end">1,322</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Following</b> <a class="float-right">543</a>
+                    <b>Following</b> <a class="float-end">543</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Friends</b> <a class="float-right">13,287</a>
+                    <b>Friends</b> <a class="float-end">13,287</a>
                   </li>
                 </ul>
 
@@ -57,9 +57,9 @@
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Dokumen</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Pengajuan</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">SIP</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-bs-toggle="tab">Dokumen</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-bs-toggle="tab">Pengajuan</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-bs-toggle="tab">SIP</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">

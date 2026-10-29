@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-secondary float-right" id="close-modal">Close</button>
+                            <button type="button" class="btn btn-secondary float-end" id="close-modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="card-body">
-                            <strong><i class="fas fa-book mr-1"></i> Pendidikan</strong>
+                            <strong><i class="fas fa-book me-1"></i> Pendidikan</strong>
                             <p class="text-muted">
                             @if($infonakes->universitas == '')
 
@@ -98,7 +98,7 @@
                             @endif
                             </p>
                             <hr>
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat KTP</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat KTP</strong>
                             <p class="text-muted">
                             @if($infonakes->alamat_ktp == '')
 
@@ -110,7 +110,7 @@
                             </p>
 
                             @if($infonakes->isdomi == 'D')
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat Domisili</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat Domisili</strong>
                             <p class="text-muted">
                             
                                 {{$infonakes->alamat_domisili}}, {{$infonakes->kec_domisili}}, {{$infonakes->kab_domisili}}
@@ -118,7 +118,7 @@
                             </p>
                             @endif
                             <hr>
-                            <strong><i class="far fa-file-alt mr-1"></i> Email</strong>
+                            <strong><i class="far fa-file-alt me-1"></i> Email</strong>
                             <p class="text-muted">{{$email}}</p>
                         </div>
 
@@ -132,15 +132,15 @@
                             <div class="card-title">
                                 <ul class="nav nav-pills">
                                     <li class="nav-item" style="display:none"><a class="nav-link" href="#activity"
-                                            data-toggle="tab">Personal Info</a></li>
-                                    <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">Jadwal Praktik</a>
+                                            data-bs-toggle="tab">Personal Info</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#timeline" data-bs-toggle="tab">Jadwal Praktik</a>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Personal Info</a>
+                                    <li class="nav-item"><a class="nav-link" href="#settings" data-bs-toggle="tab">Personal Info</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-primary float-right" id="btnUbahPass">Ubah Password</button>
+                                <button type="button" class="btn btn-primary float-end" id="btnUbahPass">Ubah Password</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -149,11 +149,11 @@
 
                                     <div class="post">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg"
+                                            <img class="rounded-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg"
                                                 alt="user image">
                                             <span class="username">
                                                 <a href="#">Jonathan Burke Jr.</a>
-                                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                <a href="#" class="float-end btn-tool"><i class="fas fa-times"></i></a>
                                             </span>
                                             <span class="description">Shared publicly - 7:30 PM today</span>
                                         </div>
@@ -166,13 +166,13 @@
                                             to Charlie Sheen fans.
                                         </p>
                                         <p>
-                                            <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i>
+                                            <a href="#" class="link-black text-sm me-2"><i class="fas fa-share me-1"></i>
                                                 Share</a>
-                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i>
+                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up me-1"></i>
                                                 Like</a>
-                                            <span class="float-right">
+                                            <span class="float-end">
                                                 <a href="#" class="link-black text-sm">
-                                                    <i class="far fa-comments mr-1"></i> Comments (5)
+                                                    <i class="far fa-comments me-1"></i> Comments (5)
                                                 </a>
                                             </span>
                                         </p>
@@ -183,11 +183,11 @@
 
                                     <div class="post clearfix">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg"
+                                            <img class="rounded-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg"
                                                 alt="User Image">
                                             <span class="username">
                                                 <a href="#">Sarah Ross</a>
-                                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                <a href="#" class="float-end btn-tool"><i class="fas fa-times"></i></a>
                                             </span>
                                             <span class="description">Sent you a message - 3 days ago</span>
                                         </div>
@@ -212,11 +212,11 @@
 
                                     <div class="post">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg"
+                                            <img class="rounded-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg"
                                                 alt="User Image">
                                             <span class="username">
                                                 <a href="#">Adam Jones</a>
-                                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                <a href="#" class="float-end btn-tool"><i class="fas fa-times"></i></a>
                                             </span>
                                             <span class="description">Posted 5 photos - 5 days ago</span>
                                         </div>
@@ -247,13 +247,13 @@
                                         </div>
 
                                         <p>
-                                            <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i>
+                                            <a href="#" class="link-black text-sm me-2"><i class="fas fa-share me-1"></i>
                                                 Share</a>
-                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i>
+                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up me-1"></i>
                                                 Like</a>
-                                            <span class="float-right">
+                                            <span class="float-end">
                                                 <a href="#" class="link-black text-sm">
-                                                    <i class="far fa-comments mr-1"></i> Comments (5)
+                                                    <i class="far fa-comments me-1"></i> Comments (5)
                                                 </a>
                                             </span>
                                         </p>

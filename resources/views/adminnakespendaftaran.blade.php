@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -24,7 +24,7 @@
                         Edit Foto :
                     </div>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-secondary btn-sm float-right tutupeditfoto">x</button>
+                        <button type="button" class="btn btn-secondary btn-sm float-end tutupeditfoto">x</button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-secondary float-right" id="close-reset-modal">Close</button>
+                    <button type="button" class="btn btn-secondary float-end" id="close-reset-modal">Close</button>
                 </div>
             </div>
           </div>
@@ -229,7 +229,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-secondary float-right" id="close-editnomor-modal">Close</button>
+                    <button type="button" class="btn btn-secondary float-end" id="close-editnomor-modal">Close</button>
                 </div>
             </div>
           </div>
@@ -281,7 +281,7 @@
                             &nbsp; &nbsp;<a href="{{ route('get.origin.str', $row->origin_file.'.pdf')}}" target="_blank"><i class="fas fa-file"></i></a>
                             @endif
                             @if ($row->status_str == 'TIDAK AKTIF')
-                            &nbsp; &nbsp;<small class="badge badge-danger">TIDAK AKTIF</small>
+                            &nbsp; &nbsp;<small class="badge text-bg-danger">TIDAK AKTIF</small>
                             @endif
                             </td>
                             <td>{{$row->salinan}}</td>
@@ -292,13 +292,13 @@
                             <td>
                             <div class="btn-group">
                             @if ($row->current_status == 0)
-                            <button class="btn btn-xs btn-success activatenakes" id="{{$row->id}}" data-file="{{$row->origin_file}}" data-url="{{$row->url_qr}}" data-nama="{{$row->nama}}" data-str="{{$row->no_reg}}" data-email="{{$row->email}}" data-foto = "{{$row->img_src}}" data-salinan="{{$row->salinan}}" data-kompetensi="{{$row->kompetensi}}" data-profesi="{{$row->profesi}}" data-tglstr = "{{$row->tgl_keluar_str}}" data-univ="{{$row->universitas}}" data-toggle="tooltip" data-placement="top" title="Terima Pendaftar"><i class="fas fa-check"></i></button>
+                            <button class="btn btn-sm btn-success activatenakes" id="{{$row->id}}" data-file="{{$row->origin_file}}" data-url="{{$row->url_qr}}" data-nama="{{$row->nama}}" data-str="{{$row->no_reg}}" data-email="{{$row->email}}" data-foto = "{{$row->img_src}}" data-salinan="{{$row->salinan}}" data-kompetensi="{{$row->kompetensi}}" data-profesi="{{$row->profesi}}" data-tglstr = "{{$row->tgl_keluar_str}}" data-univ="{{$row->universitas}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Terima Pendaftar"><i class="fas fa-check"></i></button>
 
                             @else 
-                            <button class="btn btn-xs btn-info intipnakes" id="{{$row->id}}" data-file="{{$row->origin_file}}" data-url="{{$row->url_qr}}" data-nama="{{$row->nama}}" data-str="{{$row->no_reg}}" data-email="{{$row->email}}" data-foto = "{{$row->img_src}}" data-pass="{{$row->default_pass}}" data-statdoc="{{$row->doc_status}}" data-salinan="{{$row->salinan}}" data-kompetensi="{{$row->kompetensi}}" data-profesi="{{$row->profesi}}" data-tglstr = "{{$row->tgl_keluar_str}}" data-univ="{{$row->universitas}}" data-toggle="tooltip" data-placement="top" title="Lihat Pendaftar"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-info intipnakes" id="{{$row->id}}" data-file="{{$row->origin_file}}" data-url="{{$row->url_qr}}" data-nama="{{$row->nama}}" data-str="{{$row->no_reg}}" data-email="{{$row->email}}" data-foto = "{{$row->img_src}}" data-pass="{{$row->default_pass}}" data-statdoc="{{$row->doc_status}}" data-salinan="{{$row->salinan}}" data-kompetensi="{{$row->kompetensi}}" data-profesi="{{$row->profesi}}" data-tglstr = "{{$row->tgl_keluar_str}}" data-univ="{{$row->universitas}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat Pendaftar"><i class="fas fa-eye"></i></button>
 
                             @endif
-                             <button class="btn btn-xs btn-danger tolaknakes" id="{{$row->id}}" data-file="{{$row->origin_file}}" data-url="{{$row->url_qr}}" data-nama="{{$row->nama}}" data-str="{{$row->no_reg}}" data-email="{{$row->email}}" data-foto = "{{$row->img_src}}" data-pass="{{$row->default_pass}}" data-statdoc="{{$row->doc_status}}" data-salinan="{{$row->salinan}}" data-kompetensi="{{$row->kompetensi}}" data-profesi="{{$row->profesi}}" data-tglstr = "{{$row->tgl_keluar_str}}" data-univ="{{$row->universitas}}" data-updater="{{$user_id}}" data-toggle="tooltip" data-placement="top" title="Tolak Pendaftar"><i class="fas fa-window-close"></i></button>
+                             <button class="btn btn-sm btn-danger tolaknakes" id="{{$row->id}}" data-file="{{$row->origin_file}}" data-url="{{$row->url_qr}}" data-nama="{{$row->nama}}" data-str="{{$row->no_reg}}" data-email="{{$row->email}}" data-foto = "{{$row->img_src}}" data-pass="{{$row->default_pass}}" data-statdoc="{{$row->doc_status}}" data-salinan="{{$row->salinan}}" data-kompetensi="{{$row->kompetensi}}" data-profesi="{{$row->profesi}}" data-tglstr = "{{$row->tgl_keluar_str}}" data-univ="{{$row->universitas}}" data-updater="{{$user_id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Tolak Pendaftar"><i class="fas fa-window-close"></i></button>
                              <div class="btn-group">
                              </td>
                         </tr>
@@ -750,7 +750,7 @@
                      statusakun = '<span class="badge bg-success">Aktif</span>';
                   }
 
-                  let aktifasi = `<button class="btn btn-xs btn-primary reaktifasi" data-toggle="tooltip" data-placement="top" title="Reaktifasi"
+                  let aktifasi = `<button class="btn btn-sm btn-primary reaktifasi" data-bs-toggle="tooltip" data-bs-placement="top" title="Reaktifasi"
                                   id="${pendaftaran.id}" data-file="${pendaftaran.origin_file}" data-url="${pendaftaran.url_qr}"
                                   data-nama="${pendaftaran.nama}" data-str="${pendaftaran.no_reg}" data-email="${pendaftaran.email}"
                                   data-foto="${pendaftaran.img_src}" data-salinan="${pendaftaran.salinan}"
@@ -763,7 +763,7 @@
                   if (pendaftaran.current_status == 0) {
                       button_aksi = `
                           <div class="btn-group">
-                              <button class="btn btn-xs btn-success activatenakes" data-toggle="tooltip" data-placement="top" title="Lihat Pendaftar"
+                              <button class="btn btn-sm btn-success activatenakes" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat Pendaftar"
                                   id="${pendaftaran.id}" data-file="${pendaftaran.origin_file}" data-url="${pendaftaran.url_qr}"
                                   data-nama="${pendaftaran.nama}" data-str="${pendaftaran.no_reg}" data-email="${pendaftaran.email}"
                                   data-foto="${pendaftaran.img_src}" data-salinan="${pendaftaran.salinan}"
@@ -771,12 +771,12 @@
                                   data-tglstr="${pendaftaran.tgl_keluar_str}" data-univ="${pendaftaran.universitas}">
                                   <i class="fas fa-check"></i>
                               </button>
-                              <button class="btn btn-xs btn-warning editdetailnakes" data-toggle="tooltip" data-placement="top" title="Edit Data"
+                              <button class="btn btn-sm btn-warning editdetailnakes" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Data"
                                   id="${pendaftaran.id}" data-email="${pendaftaran.email}" data-notelp="${pendaftaran.notelp}"
                                   data-nama="${pendaftaran.nama}" data-verif="${pendaftaran.isverdinkes}" data-siplama="${pendaftaran.class_op}">
                                   <i class="fas fa-edit"></i>
                               </button>
-                              <button class="btn btn-xs btn-info resetnakespass" data-toggle="tooltip" data-placement="top" title="Reset Password"
+                              <button class="btn btn-sm btn-info resetnakespass" data-bs-toggle="tooltip" data-bs-placement="top" title="Reset Password"
                                   data-id="${pendaftaran.id_user}" data-nama="${pendaftaran.nama}" data-notelp="${pendaftaran.notelp}">
                                   <i class="fas fa-sync-alt"></i>
                               </button>`+aktifasi+`
@@ -784,7 +784,7 @@
                   } else {
                       button_aksi = `
                           <div class="btn-group">
-                              <button class="btn btn-xs btn-success intipnakes" data-toggle="tooltip" data-placement="top" title="Lihat Pendaftar"
+                              <button class="btn btn-sm btn-success intipnakes" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat Pendaftar"
                                   id="${pendaftaran.id}" data-file="${pendaftaran.origin_file}" data-url="${pendaftaran.url_qr}"
                                   data-nama="${pendaftaran.nama}" data-str="${pendaftaran.no_reg}" data-email="${pendaftaran.email}"
                                   data-statdoc="${pendaftaran.doc_status}" data-foto="${pendaftaran.img_src}" data-salinan="${pendaftaran.salinan}"
@@ -792,12 +792,12 @@
                                   data-tglstr="${pendaftaran.tgl_keluar_str}" data-univ="${pendaftaran.universitas}">
                                   <i class="fas fa-eye"></i>
                               </button>
-                              <button class="btn btn-xs btn-warning editdetailnakes" data-toggle="tooltip" data-placement="top" title="Edit Data"
+                              <button class="btn btn-sm btn-warning editdetailnakes" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Data"
                                   id="${pendaftaran.id}" data-email="${pendaftaran.email}" data-notelp="${pendaftaran.notelp}"
                                   data-nama="${pendaftaran.nama}" data-verif="${pendaftaran.isverdinkes}" data-siplama="${pendaftaran.class_op}">
                                   <i class="fas fa-edit"></i>
                               </button>
-                              <button class="btn btn-xs btn-info resetnakespass" data-toggle="tooltip" data-placement="top" title="Reset Password"
+                              <button class="btn btn-sm btn-info resetnakespass" data-bs-toggle="tooltip" data-bs-placement="top" title="Reset Password"
                                   data-id="${pendaftaran.id_user}" data-nama="${pendaftaran.nama}" data-notelp="${pendaftaran.notelp}">
                                   <i class="fas fa-sync-alt"></i>
                               </button>`+aktifasi+`

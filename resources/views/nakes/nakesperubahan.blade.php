@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -56,9 +56,9 @@
                             <td>{{$row->alamat_pengajuan}}</td>
                             <td>
                             @if ($row->isApproved == 'C')
-                              <span class="badge badge-warning">Pengajuan Pencabutan</span>
+                              <span class="badge text-bg-warning">Pengajuan Pencabutan</span>
                             @elseif ($row->isApproved == 4)
-                              <span class="badge badge-success">Dokumen Sudah Disetujui</span>
+                              <span class="badge text-bg-success">Dokumen Sudah Disetujui</span>
                             @endif
                             </td>
                             <td>{{$row->created_at}}</td>
@@ -120,13 +120,13 @@
                             <td>{{$row->alamat_pengajuan}}</td>
                             <td>
                             @if ($row->isApproved == 'C')
-                              <span class="badge badge-warning">Pengajuan Pencabutan</span>
+                              <span class="badge text-bg-warning">Pengajuan Pencabutan</span>
                             @elseif ($row->isApproved == 4)
-                              <span class="badge badge-success">Dokumen Sudah Disetujui</span>
+                              <span class="badge text-bg-success">Dokumen Sudah Disetujui</span>
                             @elseif ($row->isApproved == 2)
-                              <span class="badge badge-info">Direview Dinkes</span>
+                              <span class="badge text-bg-info">Direview Dinkes</span>
                             @elseif ($row->isApproved == 3)
-                              <span class="badge badge-info">Direview DPMPTSP</span>
+                              <span class="badge text-bg-info">Direview DPMPTSP</span>
                             @endif
                             </td>
                             <td>{{$row->created_at}}</td>

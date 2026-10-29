@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_daftar')
+@extends('layouts.adminlte4.back_daftar')
 @section('content')
 <body class="sidebar-mini" style="height: auto;">
 
@@ -8,7 +8,7 @@
         <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title" id="judultambahnya">Hasil Pengecheckan STR</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
         <!-- Modal body -->
             <div class="modal-body">
@@ -21,7 +21,7 @@
                                 </div>
                                 <br />
                                 <div class="alert alert-success alert-dismissible strtidakluarsa">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
                                     <h5><i class="icon fas fa-check"></i> Valid!</h5>
                                     Jika Data Sudah Benar, Silahkan Lengkapi Form Berikut untuk melanjutkan pendaftaran. Pastikan Data Yang Anda Input <b>BENAR</b> dan <b>Dapat Dipertanggungjawabkan</b>
                                 </div>
@@ -262,7 +262,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Batal</button>
             </div>
         </div>
     </div>

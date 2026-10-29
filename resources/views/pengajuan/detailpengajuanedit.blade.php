@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 1416.8125px;">
@@ -337,17 +337,17 @@
                         <div class="card-body box-profile">
                             <div class="text-center">
                                 @if($detail_pengaju->foto_not_avail == '1')
-                                <img class="profile-user-img img-fluid img-circle" src="{{ URL::to('/storagefoto')}}/{{$detail_pengaju->id_user}}.jpg"
+                                <img class="profile-user-img img-fluid rounded-circle" src="{{ URL::to('/storagefoto')}}/{{$detail_pengaju->id_user}}.jpg"
                                     alt="User profile picture">
                                 @else
-                                <img class="profile-user-img img-fluid img-circle" src="{{$detail_pengaju->img_src}}"
+                                <img class="profile-user-img img-fluid rounded-circle" src="{{$detail_pengaju->img_src}}"
                                     alt="User profile picture">
                                 @endif
                             </div>
                             <h3 class="profile-username text-center">{{$detail_pengaju->nama}}</h3>
                             <p class="text-muted text-center">{{$detail_pengaju->kompetensi}}</p>
                             <hr />
-                            <strong><i class="fas fa-book mr-1"></i> Pendidikan</strong>
+                            <strong><i class="fas fa-book me-1"></i> Pendidikan</strong>
                             <p class="text-muted">
                             @if($infonakes->universitas == '')
 
@@ -358,7 +358,7 @@
                             @endif
                             </p>
                             <hr>
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat</strong>
                             <p class="text-muted">
                             @if($infonakes->alamat_ktp == '')
 
@@ -371,7 +371,7 @@
                             </p>
                             <hr>
                             @if($infonakes->isdomi == 'D')
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat Domisili</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat Domisili</strong>
                             <p class="text-muted">
                             
                                 {{$infonakes->alamat_domisili}}, {{$infonakes->kec_domisili}}, {{$infonakes->kab_domisili}}
@@ -379,18 +379,18 @@
                             </p>
                             @endif
                             <hr>
-                            <strong><i class="far fa-file-alt mr-1"></i> Email</strong>
+                            <strong><i class="far fa-file-alt me-1"></i> Email</strong>
                             <p class="text-muted">{{$detail_pengaju->email}}</p>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Pengajuan</b> <a class="float-right">1</a>
+                                    <b>Pengajuan</b> <a class="float-end">1</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Praktik</b> <a class="float-right">2</a>
+                                    <b>Praktik</b> <a class="float-end">2</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Total Praktik</b> <a class="float-right">10</a>
+                                    <b>Total Praktik</b> <a class="float-end">10</a>
                                 </li>
                             </ul>
                             <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>

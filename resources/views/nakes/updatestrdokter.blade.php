@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -29,7 +29,7 @@
                                 <button type="button" class="btn btn-tool" data-card-widget="maximize">
                                     <i class="fas fa-expand"></i>
                                 </button>
-                                <button type="button" class="btn btn-secondary btn-sm float-right tutupdokternv">x</button>
+                                <button type="button" class="btn btn-secondary btn-sm float-end tutupdokternv">x</button>
                             </div>
                         </div>
                         <div class="card-body">

@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -42,7 +42,7 @@
                     <button type="button" class="btn btn-tool" data-card-widget="maximize">
                         <i class="fas fa-expand"></i>
                     </button>
-                    <button type="button" class="btn btn-secondary btn-sm float-right tutuprevert">x</button>
+                    <button type="button" class="btn btn-secondary btn-sm float-end tutuprevert">x</button>
                 </div>
               </div>
               <div class="card-body">
@@ -356,19 +356,19 @@
                 var tte_stat = pengajuan.status_tte != 'Belum TTE' ? pengajuan.status_tte : pengajuan.status_tte;
 
                 if (pengajuan.isApproved == '3') {
-                    keterangan = '<br /><span class="badge badge-info">Direview Verifikator PTSP</span>';
+                    keterangan = '<br /><span class="badge text-bg-info">Direview Verifikator PTSP</span>';
                 } else if(pengajuan.isApproved == '2') {
-                    keterangan = '<br /><span class="badge badge-info">Direview Admin PTSP</span>';
+                    keterangan = '<br /><span class="badge text-bg-info">Direview Admin PTSP</span>';
                 }else if(pengajuan.isApproved == '1') {
-                    keterangan = '<br /><span class="badge badge-info">Disetujui Disetujui Dinkes</span>';
+                    keterangan = '<br /><span class="badge text-bg-info">Disetujui Disetujui Dinkes</span>';
                 }else if(pengajuan.isApproved == '0') {
-                    keterangan = '<br /><span class="badge badge-info">Direview Dinkes</span>';
+                    keterangan = '<br /><span class="badge text-bg-info">Direview Dinkes</span>';
                 }else if (pengajuan.isApproved == '4') {
-                    keterangan = '<span class="badge badge-success">TTE Selesai</span>';
+                    keterangan = '<span class="badge text-bg-success">TTE Selesai</span>';
                 } else if (pengajuan.isApproved == '9') {
-                    keterangan = '<br /><span class="badge badge-danger">Ditolak</span>';
+                    keterangan = '<br /><span class="badge text-bg-danger">Ditolak</span>';
                 } else if (pengajuan.isApproved == 'CF') {
-                    keterangan = '<br /><span class="badge badge-danger">Dicabut</span>';
+                    keterangan = '<br /><span class="badge text-bg-danger">Dicabut</span>';
                 }
 
                 if (pengajuan.template_id == '2') {

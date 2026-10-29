@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 1416.8125px;">
@@ -25,7 +25,7 @@
                                 <h5>Ubah Data Pemohon SIP</h5> 
                             </div>
                             <div class="card-tools">
-                            <button type="button" class="btn btn-secondary btn-sm float-right" id="close-ubahpengaju-modal">Close</button>
+                            <button type="button" class="btn btn-secondary btn-sm float-end" id="close-ubahpengaju-modal">Close</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -239,7 +239,7 @@
                                 <button type="button" class="btn btn-tool" data-card-widget="maximize">
                                     <i class="fas fa-expand"></i>
                                 </button>
-                                <button type="button" class="btn btn-secondary btn-sm float-right tutupintipdraftkadin">x</button>
+                                <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftkadin">x</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -305,7 +305,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-secondary btn-sm float-right tutupintipdraftkadin" id="close-draftkadinkes-modal">Tutup</button>
+                            <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftkadin" id="close-draftkadinkes-modal">Tutup</button>
                         </div>
                         <div class="overlay" id="sedangttekadin" style="display:none">
                             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
@@ -723,14 +723,14 @@
                             <hr />
                             <a class="btn btn-light btn-block" id="editpengaju">Edit &nbsp; &nbsp;<i class="fas fa-edit"></i></a>
                             <br />
-                            <strong><i class="fas fa-file mr-1"></i> Nama e-SIP</strong>
+                            <strong><i class="fas fa-file me-1"></i> Nama e-SIP</strong>
                             <p class="text-muted" id="namasippengaju">
                             @foreach ($doc_ktp as $ketktp) 
                                 {{$ketktp->nama_doc}}
                             @endforeach
                             </p>
                             <hr />
-                            <strong><i class="fas fa-book mr-1"></i> Pendidikan</strong>
+                            <strong><i class="fas fa-book me-1"></i> Pendidikan</strong>
                             <p class="text-muted" id="univpengaju">
                             @if($infonakes->universitas == '')
 
@@ -741,7 +741,7 @@
                             @endif
                             </p>
                             <hr>
-                            <strong><i class="fas fa-map-marker-alt mr-1" ></i> Alamat</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1" ></i> Alamat</strong>
                             <p class="text-muted" id="alamatpengaju">
                             @if($infonakes->alamat_ktp == '')
 
@@ -754,7 +754,7 @@
                             </p>
                             <hr>
                             @if($infonakes->isdomi == 'D')
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat Domisili</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat Domisili</strong>
                             <p class="text-muted">
                             
                                 {{$infonakes->alamat_domisili}}, {{$infonakes->kec_domisili}}, {{$infonakes->kab_domisili}}
@@ -762,15 +762,15 @@
                             </p>
                             <hr>
                             @endif
-                            <strong><i class="far fa-file-alt mr-1"></i> Email</strong>
+                            <strong><i class="far fa-file-alt me-1"></i> Email</strong>
                             <p class="text-muted">{{$detail_pengaju->email}}</p>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Pengajuan</b> <a class="float-right"></a>
+                                    <b>Pengajuan</b> <a class="float-end"></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Histori Praktik</b> <a class="float-right"></a>
+                                    <b>Histori Praktik</b> <a class="float-end"></a>
                                 </li>
                             </ul>
                             <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>
@@ -779,14 +779,14 @@
                             <h3 class="profile-username text-center">{{$detail_pengaju->nama}}</h3>
                             <p class="text-muted text-center">{{$detail_pengaju->kompetensi}}</p>
                             <hr />
-                            <strong><i class="fas fa-file mr-1"></i> Nama e-SIP</strong>
+                            <strong><i class="fas fa-file me-1"></i> Nama e-SIP</strong>
                             <p class="text-muted">
                             @foreach ($doc_ktp as $ketktp) 
                                 {{$ketktp->nama_doc}}
                             @endforeach
                             </p>
                             <hr />
-                            <strong><i class="fas fa-book mr-1"></i> Pendidikan</strong>
+                            <strong><i class="fas fa-book me-1"></i> Pendidikan</strong>
                             <p class="text-muted">
                             @if($infonakes->universitas == '')
 
@@ -797,7 +797,7 @@
                             @endif
                             </p>
                             <hr>
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat</strong>
                             <p class="text-muted">
                             @if($infonakes->alamat_ktp == '')
 
@@ -810,7 +810,7 @@
                             </p>
                             <hr>
                             @if($infonakes->isdomi == 'D')
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat Domisili</strong>
+                            <strong><i class="fas fa-map-marker-alt me-1"></i> Alamat Domisili</strong>
                             <p class="text-muted">
                             
                                 {{$infonakes->alamat_domisili}}, {{$infonakes->kec_domisili}}, {{$infonakes->kab_domisili}}
@@ -818,15 +818,15 @@
                             </p>
                             <hr>
                             @endif
-                            <strong><i class="far fa-file-alt mr-1"></i> Email</strong>
+                            <strong><i class="far fa-file-alt me-1"></i> Email</strong>
                             <p class="text-muted">{{$detail_pengaju->email}}</p>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Pengajuan</b> <a class="float-right"></a>
+                                    <b>Pengajuan</b> <a class="float-end"></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Histori Praktik</b> <a class="float-right"></a>
+                                    <b>Histori Praktik</b> <a class="float-end"></a>
                                 </li>
                             </ul>
                             <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>
@@ -1026,8 +1026,8 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active" href="#histori" data-toggle="tab">Histori</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#sejawat" data-toggle="tab">Sejawat</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#histori" data-bs-toggle="tab">Histori</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#sejawat" data-bs-toggle="tab">Sejawat</a></li>
                             </ul>
                         </div>
                         <div class="card-body">

@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -23,7 +23,7 @@
 
                         <div class="widget-user-header bg-warning">
                             <div class="widget-user-image">
-                                <img class="profile-user-img img-fluid img-circle" src="{{ URL::to('/storagefotot')}}/{{$detail_pengaju->saved_photo}}"
+                                <img class="profile-user-img img-fluid rounded-circle" src="{{ URL::to('/storagefotot')}}/{{$detail_pengaju->saved_photo}}"
                                     alt="User profile picture">
                             </div>
 
@@ -36,28 +36,28 @@
                                 <li class="nav-item">
                                     <a href="{{ route('nakes.documents') }}" class="btn btn-block btn-flat btn-outline-primary">
                                         Dokumen 
-                                        @if ($dokumenissue > 0)<span class="float-right badge bg-danger">{{$dokumenissue}}</span>
+                                        @if ($dokumenissue > 0)<span class="float-end badge bg-danger">{{$dokumenissue}}</span>
                                         @endif
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <button class="btn btn-block btn-flat btn-outline-primary" id="ajuanku" data-id="{{$user_id}}" data-dokter="{{$isdokter}}">
                                         Pengajuan 
-                                        @if ($pengajuanditolak > 0)<span class="float-right badge bg-danger">{{$pengajuanditolak}}</span>
+                                        @if ($pengajuanditolak > 0)<span class="float-end badge bg-danger">{{$pengajuanditolak}}</span>
                                         @endif
                                     </button>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('nakes.perpanjangan', $user_id) }}" class="btn btn-block btn-flat btn-outline-primary" id="perpanjanganpermohonan">
                                         Perpanjangan 
-                                        @if ($perpanjanganditolak > 0)<span class="float-right badge bg-danger">{{$perpanjanganditolak}}</span>
+                                        @if ($perpanjanganditolak > 0)<span class="float-end badge bg-danger">{{$perpanjanganditolak}}</span>
                                         @endif
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('nakes.perubahan', $user_id) }}" class="btn btn-block btn-flat btn-outline-info" id="rubahpermohonan">
                                         Perubahan 
-                                        @if ($perubahanditolak > 0)<span class="float-right badge bg-danger">{{$perubahanditolak}}</span>
+                                        @if ($perubahanditolak > 0)<span class="float-end badge bg-danger">{{$perubahanditolak}}</span>
                                         @endif
                                     </a>
                                 </li>
@@ -75,7 +75,7 @@
                                             }
                                         @endphp
                                         @if ($count > 0)
-                                            <span class="float-right badge bg-danger"> {{ $count }} </span><!-- Display the count in the badge -->
+                                            <span class="float-end badge bg-danger"> {{ $count }} </span><!-- Display the count in the badge -->
                                         @endif
                                     </a>
                                 </li>
@@ -87,7 +87,7 @@
                                 <li class="nav-item" @if ($issiplama == 0) style="display:none" @endif>
                                     <button class="btn btn-block btn-flat btn-outline-primary" id="sipmanual" data-id="{{$user_id}}" data-dokter="{{$isdokter}}">
                                         Upload SIP Manual 
-                                        @if ($sipmanualditolak > 0)<span class="float-right badge bg-danger">{{$sipmanualditolak}}</span>
+                                        @if ($sipmanualditolak > 0)<span class="float-end badge bg-danger">{{$sipmanualditolak}}</span>
                                         @endif
                                     </button>
                                 </li>
@@ -190,7 +190,7 @@
                                         <td>Disetujui DPMPTSP</td>
                                         @elseif ($rowi->isApproved == '4')
                                             @if($rowi->alasan_ditolak != null || $rowi->alasan_ditolak != '')
-                                            <td><span class="badge badge-danger">Pencabutan Ditolak</span></td>
+                                            <td><span class="badge text-bg-danger">Pencabutan Ditolak</span></td>
                                             @else
                                             <td>Disetujui</td>
                                             @endif
@@ -206,7 +206,7 @@
 
                                         @if($rowi->isDiajukan == 1)
                                             @if($rowi->isApproved == 'OP')
-                                            <td><button class='btn btn-sm btn-info uploadrekomop' data-id="{{$rowi->id_pengajuan}}" data-toggle="tooltip" data-placement="right" title="SEGERA UPLOAD SURAT KETERANGAN ORGANISASI PROFESI" id="myTooltipButton{{$rowi->salinan}}">Upload Suket OP</td>
+                                            <td><button class='btn btn-sm btn-info uploadrekomop' data-id="{{$rowi->id_pengajuan}}" data-bs-toggle="tooltip" data-bs-placement="right" title="SEGERA UPLOAD SURAT KETERANGAN ORGANISASI PROFESI" id="myTooltipButton{{$rowi->salinan}}">Upload Suket OP</td>
                                             @elseif ($rowi->isApproved == '9')
                                             <td><a class='btn btn-sm btn-danger' href="{{ route('nakes.pengajuan.edit', Auth::user()->id.'_'.$rowi->salinan.'_'.$rowi->id_pengajuan) }}">Ubah</a>
                                             <button class='btn btn-sm btn-danger batalkanpengajuan' data-id="{{$rowi->id_pengajuan}}" data-updater="{{$user_id}}" data-doc="{{$rowi->id_doc}}">Batal</button>
@@ -361,10 +361,10 @@
 
         // Initialize Bootstrap tooltips for all buttons
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-bs-toggle="tooltip"]').tooltip();
 
             // Add the color-change class to the tooltip element when shown
-            $('[data-toggle="tooltip"]').on('shown.bs.tooltip', function () {
+            $('[data-bs-toggle="tooltip"]').on('shown.bs.tooltip', function () {
                 $('.tooltip').addClass('color-change');
             });
 
@@ -374,7 +374,7 @@
             showTooltip('#myTooltipButton3');
 
             // Hide the tooltip when the button is clicked
-            $('[data-toggle="tooltip"]').on('click', function () {
+            $('[data-bs-toggle="tooltip"]').on('click', function () {
                 hideTooltip(this);
             });
         });

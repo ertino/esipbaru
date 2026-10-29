@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_daftar')
+@extends('layouts.adminlte4.back_daftar')
 @section('content')
 <body class="sidebar-mini" style="height: auto;">
 

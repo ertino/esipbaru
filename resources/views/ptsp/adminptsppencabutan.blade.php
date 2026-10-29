@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -51,8 +51,8 @@
               </div>
               <div class="card-footer">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-secondary btn-sm float-right tutupintipdraftcabut" id="close-lihatdraft-modal">Tutup</button>
-                  <button type="button" class="btn btn-success btn-sm float-right" id="setujuisuratpencabutanlama">Setujui</button>
+                  <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftcabut" id="close-lihatdraft-modal">Tutup</button>
+                  <button type="button" class="btn btn-success btn-sm float-end" id="setujuisuratpencabutanlama">Setujui</button>
                 </div>
               </div>
               <div class="overlay" id="sedangrevertdraftcabut" style="display:none">
@@ -106,8 +106,8 @@
               </div>
               <div class="card-footer">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-secondary btn-sm float-right tutupintipdraftcabut" id="close-lihatdraft-modal">Tutup</button>
-                  <button type="button" class="btn btn-success btn-sm float-right" id="setujuisuratpencabutan">Setujui</button>
+                  <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftcabut" id="close-lihatdraft-modal">Tutup</button>
+                  <button type="button" class="btn btn-success btn-sm float-end" id="setujuisuratpencabutan">Setujui</button>
                 </div>
               </div>
               <div class="overlay" id="sedangrevertdraftcabut" style="display:none">
@@ -804,7 +804,7 @@
                     actionHtml += detailBtn;
                 } else {
                     if (parseInt(row.verifdinkes) === 0) {
-                        actionHtml += '<span class="badge badge-warning">Belum Disetujui Dinkes</span>';
+                        actionHtml += '<span class="badge text-bg-warning">Belum Disetujui Dinkes</span>';
                     } else {
                         if (parseInt(row.siplama) === 0) {
                             actionHtml += detailBtn;
@@ -832,9 +832,9 @@
                 actionHtml += '</div>';
 
                 if (row.isApproved == 3) {
-                    actionHtml += '<br /><span class="badge badge-info">Pengajuan TTE</span>';
+                    actionHtml += '<br /><span class="badge text-bg-info">Pengajuan TTE</span>';
                 } else if (row.isApproved == 4) {
-                    actionHtml += '<br /><span class="badge badge-success">TTE Selesai</span>';
+                    actionHtml += '<br /><span class="badge text-bg-success">TTE Selesai</span>';
                 }
 
                 return actionHtml;
@@ -902,8 +902,8 @@
                     nama_faskes:      row.isFaskes == 1 ? (row.nama_faskes || '-') : '-',
                     alamat_pengajuan: row.alamat_pengajuan || '',
                     jenis:            row.jenis        || '',
-                    status_badge:     row.isApproved == 'C'  ? '<span class="badge badge-warning">Pengajuan Pencabutan</span>'
-                                    : row.isApproved == 'CF' ? '<span class="badge badge-danger">SIP Dicabut</span>'
+                    status_badge:     row.isApproved == 'C'  ? '<span class="badge text-bg-warning">Pengajuan Pencabutan</span>'
+                                    : row.isApproved == 'CF' ? '<span class="badge text-bg-danger">SIP Dicabut</span>'
                                     : '',
                     updated_at:       row.updated_at   || '',
                     alasan:           row.nama_alasan == '0' ? row.alasan : row.nama_alasan,

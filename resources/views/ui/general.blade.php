@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.adminlte4.back_master')
 
 @section('title', 'General Elements')
 

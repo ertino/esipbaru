@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -29,7 +29,7 @@
                     <h4>Petunjuk Penggunaan</h4>
                     </div>
                     <div class="card-tools">
-                    <button type="button" class="btn btn-secondary btn-sm float-right"
+                    <button type="button" class="btn btn-secondary btn-sm float-end"
                         id="close-petunjukskskp-modal">Close</button>
                     </div>
                 </div>
@@ -38,12 +38,12 @@
                         <div class="card card-danger">
                             <div class="card-header">
                             <h4 class="card-title w-100">
-                                <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                                <a class="d-block w-100" data-bs-toggle="collapse" href="#collapseOne">
                                 Khusus Untuk Upload Dokumen SK/SKP Ber-QRCODE
                                 </a>
                             </h4>
                             </div>
-                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
                                 <div class="card-body">
                                 <div class="card mb-2 bg-gradient-dark">
                                     <img class="card-img-top" src="{{asset('images/petunjukskskp.jpg')}}" alt="Dist Photo 1">
@@ -92,10 +92,10 @@
                                             @endif
                                             <ul class="list-group list-group-unbordered mb-3">
                                                 <li class="list-group-item">
-                                                    <b>Nomor Dokumen</b> <a class="float-right">{{$detailskskp->no_doc}}</a>
+                                                    <b>Nomor Dokumen</b> <a class="float-end">{{$detailskskp->no_doc}}</a>
                                                 </li>
                                                 <li class="list-group-item">
-                                                    <b>Tanggal Dokumen</b> <a class="float-right">{{$detailskskp->tgl_doc}}</a>
+                                                    <b>Tanggal Dokumen</b> <a class="float-end">{{$detailskskp->tgl_doc}}</a>
                                                 </li>
                                             </ul>
                                         </div>

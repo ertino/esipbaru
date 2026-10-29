@@ -1,4 +1,4 @@
-@extends('layouts.minlte.back_master')
+@extends('layouts.adminlte4.back_master')
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -43,7 +43,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="alert alert-info alert-dismissible">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                    <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
                                                     <h5><i class="icon fas fa-info"></i> Perhatian!</h5>
                                                     Pastikan PDF yang anda upload sudah sesuai dikarenakan sistem untuk saat ini belum dapat melakukan validasi pada website resmi KKI.
                                                 </div>
