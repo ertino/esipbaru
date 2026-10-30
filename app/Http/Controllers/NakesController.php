@@ -74,7 +74,8 @@ class NakesController extends Controller
         $data['perubahanditolak'] = $this->model->getditolak('perubahan', $id);
         $data['sipmanualditolak'] = $this->model->getditolak('sipmanual', $id);
         $data['dokumenissue'] = $this->model->getditolak('dokumen', $id);
-        $data['cobaselisih'] = $this->model->cobaselisih('10 Agustus 2026');
+        //$data['cobaselisih'] = $this->model->cobaselisih('10 Agustus 2026');
+        $data['cobaselisih'] = 2;
         $data['allsalinan'] = $this->model->getdatastrsalinan($id);
         $data['detail_pengaju'] = $this->model->detailpengaju($id);
         $data['freshpass'] = $isfresh;
