@@ -36,11 +36,13 @@
                             </div>
                             <div class="card-tools">
                                 
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                                 <button type="button" class="btn btn-secondary btn-sm float-end tutupcekskp">x</button>
                             </div>
@@ -84,7 +86,7 @@
                                                     <tr id="larik_1">
                                                         <td width="25%"><input type="checkbox" name="phari_1" id="phari_1" class="ms-0 pilihhari" data="1"> Senin</td>
                                                         <td width="40%"><div id="jam_1" style="display:none"><input type="time" name="start_1" id="start_1" class="ms-0" value="08:00"> - <input type="time" name="end_1" id="end_1" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc1" class="details-control"><div id="1alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc1" class="details-control"><div id="1alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_1" class="ms-0" id="isshift_1" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_1" class="ms-0" id="isuraian_1" style="display:none"></textarea></td>
                                                     </tr>
@@ -93,7 +95,7 @@
                                                     <tr id="larik_2">
                                                         <td width="25%"><input type="checkbox" name="phari_2" id="phari_2" class="ms-0 pilihhari" data="2"> Selasa</td>
                                                         <td width="40%"><div id="jam_2" style="display:none"><input type="time" name="start_2" id="start_2" class="ms-0" value="08:00"> - <input type="time" name="end_2" id="end_2" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc2" class="details-control"><div id="2alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc2" class="details-control"><div id="2alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_2" class="ms-0" id="isshift_2" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_2" class="ms-0" id="isuraian_2" style="display:none"></textarea></td>
                                                     </tr>
@@ -102,7 +104,7 @@
                                                     <tr id="larik_3">
                                                         <td width="25%"><input type="checkbox" name="phari_3" id="phari_3" class="ms-0 pilihhari" data="3"> Rabu</td>
                                                         <td width="40%"><div id="jam_3" style="display:none"><input type="time" name="start_3" id="start_3" class="ms-0" value="08:00"> - <input type="time" name="end_3" id="end_3" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc3" class="details-control"><div id="3alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc3" class="details-control"><div id="3alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_3" class="ms-0" id="isshift_3" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_3" class="ms-0" id="isuraian_3" style="display:none"></textarea></td>
                                                     </tr>
@@ -111,7 +113,7 @@
                                                     <tr id="larik_4">
                                                         <td width="25%"><input type="checkbox" name="phari_4" id="phari_4" class="ms-0 pilihhari" data="4"> Kamis</td>
                                                         <td width="40%"><div id="jam_4" style="display:none"><input type="time" name="start_4" id="start_4" class="ms-0" value="08:00"> - <input type="time" name="end_4" id="end_4" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc4" class="details-control"><div id="4alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc4" class="details-control"><div id="4alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_4" class="ms-0" id="isshift_4" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_4" class="ms-0" id="isuraian_4" style="display:none"></textarea></td>
                                                     </tr>
@@ -120,7 +122,7 @@
                                                     <tr id="larik_5">
                                                         <td width="25%"><input type="checkbox" name="phari_5" id="phari_5" class="ms-0 pilihhari" data="5"> Jumat</td>
                                                         <td width="40%"><div id="jam_5" style="display:none"><input type="time" name="start_5" id="start_5" class="ms-0" value="08:00"> - <input type="time" name="end_5" id="end_5" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc5" class="details-control"><div id="5alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc5" class="details-control"><div id="5alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_5" class="ms-0" id="isshift_5" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_5" class="ms-0" id="isuraian_5" style="display:none"></textarea></td>
                                                     </tr>
@@ -129,7 +131,7 @@
                                                     <tr id="larik_6">
                                                         <td width="25%"><input type="checkbox" name="phari_6" id="phari_6" class="ms-0 pilihhari" data="6"> Sabtu</td>
                                                         <td width="40%"><div id="jam_6" style="display:none"><input type="time" name="start_6" id="start_6" class="ms-0" value="08:00"> - <input type="time" name="end_6" id="end_6" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc6" class="details-control"><div id="6alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc6" class="details-control"><div id="6alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_6" class="ms-0" id="isshift_6" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_6" class="ms-0" id="isuraian_6" style="display:none"></textarea></td>
                                                     </tr>
@@ -138,7 +140,7 @@
                                                     <tr id="larik_7">
                                                         <td width="25%"><input type="checkbox" name="phari_7" id="phari_7" class="ms-0 pilihhari" data="7"> Minggu</td>
                                                         <td width="40%"><div id="jam_7" style="display:none"><input type="time" name="start_7" id="start_7" class="ms-0" value="08:30"> - <input type="time" name="end_7" id="end_7" class="ms-0" value="12:00"></div></td>
-                                                        <td id="detailc7" class="details-control"><div id="7alert" style="display:none"><button type="button" class="btn btn-block btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
+                                                        <td id="detailc7" class="details-control"><div id="7alert" style="display:none"><button type="button" class="btn w-100 btn-outline-light"><i class="fas fa-exclamation-triangle"></i></button></div></td>
                                                         <td width="5%"><input type="checkbox" name="isshift_7" class="ms-0" id="isshift_7" style="display:none"></td>
                                                         <td width="25%"><textarea type="text" name="isuraian_7" class="ms-0" id="isuraian_7" style="display:none"></textarea></td>
                                                     </tr>
@@ -177,11 +179,13 @@
                             </div>
                             <div class="card-tools">
                                 
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                                 <button type="button" class="btn btn-secondary btn-sm float-end tutupcekskp">x</button>
                             </div>
@@ -204,11 +208,13 @@
                                 <a type="button" id="lihatdraftdinkes" class="btn btn-tool" href="" target="_blank">
                                     <i class="fas fa-download"></i>
                                 </a>
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                                 <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftdinkes">x</button>
                             </div>
@@ -273,11 +279,13 @@
                                 <a type="button" id="lihatdraftkadin" class="btn btn-tool" href="" target="_blank">
                                     <i class="fas fa-download"></i>
                                 </a>
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                                 <button type="button" class="btn btn-secondary btn-sm float-end tutupintipdraftkadin">x</button>
                             </div>
@@ -355,11 +363,13 @@
                                 Upload SIP Sebelum Pendaftaran e-SIP
                             </div>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                                 <button type="button" class="btn btn-secondary btn-sm float-end tutupsipsebelumsip">x</button>
                             </div>
@@ -691,13 +701,13 @@
                                 <div class="col-md-6 col-xs-12">
                                     <div class="alert alert-danger alert-dismissible">
                                         Untuk Membatalkan Proses Pengajuan TTE dikarenakan ada kesalahan data, silahkan Klik Tombol Dibawah <hr />
-                                        <button class="btn btn-block bg-gradient-danger" id="bataldraftsip" data-filename="{{$detail_pengajuan->filename_sip}}" data-id="{{$id_pengajuan}}" data-updater="{{$user_id}}" data-perubahan="{{$detail_pengajuan->perubahan}}">Batalkan Draft</button>
+                                        <button class="btn w-100 bg-gradient-danger" id="bataldraftsip" data-filename="{{$detail_pengajuan->filename_sip}}" data-id="{{$id_pengajuan}}" data-updater="{{$user_id}}" data-perubahan="{{$detail_pengajuan->perubahan}}">Batalkan Draft</button>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-xs-12" style="display:none">
                                     <div class="alert alert-warning alert-dismissible">
                                         Untuk Memuat Ulang Draft SIP Setelah Perbaikan data nakes sebelum TTE, silahkan Klik Tombol Dibawah <br /> <hr />
-                                        <button class="btn btn-block bg-gradient-warning" id="refreshdraftsip" data-filename="{{$detail_pengajuan->filename_sip}}" data-id="{{$id_pengajuan}}" data-updater="{{$user_id}}">Refresh Draft</button>
+                                        <button class="btn w-100 bg-gradient-warning" id="refreshdraftsip" data-filename="{{$detail_pengajuan->filename_sip}}" data-id="{{$id_pengajuan}}" data-updater="{{$user_id}}">Refresh Draft</button>
                                     </div>
                                 </div>
                             </div>
@@ -727,11 +737,13 @@
                                 Data Satu Sehat
                             </div>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                             </div>
                         </div>
@@ -754,11 +766,13 @@
                                 Data Kecukupan
                             </div>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                    <i class="fas fa-expand"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                    <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                    <i data-lte-icon="minimize" class="fas fa-compress"></i>
                                 </button>
                             </div>
                         </div>
@@ -774,612 +788,646 @@
             </div>
 
             <div class="row">
-                <div class="card card-primary card-outline" id="blockside">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            Dokumen Pengajuan
-                        </h3>
+                <div class="col-12">
+                    <div class="card card-primary card-outline" id="blockside">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                Dokumen Pengajuan
+                            </h3>
                         
-                        <script>
-                            function hideme(){
-                                $('#jajalan').hide()
-                            }
-                        </script>
+                            <script>
+                                function hideme(){
+                                    $('#jajalan').hide()
+                                }
+                            </script>
 
-                    </div>
-                    <div class="card-body">
-                        <div class="row" style="display:none">
-                            <div class="form-group">
-                                <label for="name" class="label-control col-md-12"></label>
-                                <div class="col-md-12 col-xs-12">
-                                    <input type="checkbox" id="showSTR" checked>&nbsp;STR&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showKTP" checked>&nbsp;KTP&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showREKOMP" checked>&nbsp;Rekom Profesi&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showSKS" checked>&nbsp;SKS&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showSPTP" checked>&nbsp;SPTP&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showIJAZAH" checked>&nbsp;IJAZAH&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showSKP" checked>&nbsp;SKP&nbsp;&nbsp;|
-                                    <input type="checkbox" id="showBAV" checked>&nbsp;BA Visitasi&nbsp;&nbsp;|
-                                </div>
-                            </div>
                         </div>
-                    
-                    
-                        <div class="kekanan" id="kekanan" data-jenisprofesi = "{{$detail_pengajuan->jenis_profesi}}" data-isfaskes="{{$detail_pengajuan->isFaskes}}" data-idpeng = "{{$id_pengajuan}}" data-nakes="{{$id_nakes}}" data-salinan= "{{$salinan}}" data-urlqr = "{{$detail_pengaju->url_qr}}" data-template="{{$detail_pengajuan->template_id}}">
-                            <div class="card card-row card-success blogade" id="cardSIP" @if($detail_pengajuan->perubahan < 1) style="display:none" @endif>
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                     e-SIP sebelumnya
-                                    </h3>
-                                    <div class="card-tools">
-
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                        <div class="card-body">
+                            <div class="row" style="display:none">
+                                <div class="form-group">
+                                    <label for="name" class="label-control col-md-12"></label>
+                                    <div class="col-md-12 col-xs-12">
+                                        <input type="checkbox" id="showSTR" checked>&nbsp;STR&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showKTP" checked>&nbsp;KTP&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showREKOMP" checked>&nbsp;Rekom Profesi&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showSKS" checked>&nbsp;SKS&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showSPTP" checked>&nbsp;SPTP&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showIJAZAH" checked>&nbsp;IJAZAH&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showSKP" checked>&nbsp;SKP&nbsp;&nbsp;|
+                                        <input type="checkbox" id="showBAV" checked>&nbsp;BA Visitasi&nbsp;&nbsp;|
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row" style="display:none">
-                                        <input type="text" id="isPerubahanKe" value="{{$detail_pengajuan->perubahan}}"/>
-                                        <input type="text" id="vIDPengajuan" value="{{$id_pengajuan}}" />
-                                    </div>
-                                    <embed id="esipsebelumnya" src="" width="100%" height="100%"></embed>
                                 </div>
                             </div>
-                        @foreach ($doc_strused as $str)
-                            <div class="card card-row card-success blogade" id="cardSTR">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                    
-                                        STR Salinan {{$str->salinan}}
-                                    
-                                    </h3>
- 
-                                    <div class="card-tools">
+                    
+                    
+                            <div class="kekanan" id="kekanan" data-jenisprofesi = "{{$detail_pengajuan->jenis_profesi}}" data-isfaskes="{{$detail_pengajuan->isFaskes}}" data-idpeng = "{{$id_pengajuan}}" data-nakes="{{$id_nakes}}" data-salinan= "{{$salinan}}" data-urlqr = "{{$detail_pengaju->url_qr}}" data-template="{{$detail_pengajuan->template_id}}">
+                                <div class="card card-row card-success blogade" id="cardSIP" @if($detail_pengajuan->perubahan < 1) style="display:none" @endif>
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                         e-SIP sebelumnya
+                                        </h3>
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row" style="display:none">
+                                            <input type="text" id="isPerubahanKe" value="{{$detail_pengajuan->perubahan}}"/>
+                                            <input type="text" id="vIDPengajuan" value="{{$id_pengajuan}}" />
+                                        </div>
+                                        <embed id="esipsebelumnya" src="" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    @if($str->remark4 == '1')
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="alert alert-warning alert-dismissible">
-                                                    STR Diupload Tanpa Melalui Verifikasi Dari Sistem, Mohon Untuk Di Periksa Terlebih Dahulu!
-                                                </div>
-                                            </div>
+                            @foreach ($doc_strused as $str)
+                                <div class="card card-row card-success blogade" id="cardSTR">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                    
+                                            STR Salinan {{$str->salinan}}
+                                    
+                                        </h3>
+ 
+                                        <div class="card-tools">
+
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
                                         </div>
-                                    @endif
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <div class="input-group mb-3">
-                                                    <input type="text" id="satusehatsearch" name="satusehatsearch" class="form-control" value="{{$str->no_doc}}" readonly>
-                                                    <div class="input-group-append" >
-                                                    <span class="input-group-append">
-                                                        <button type="button" class="btn btn-info btn-flat" id="ceksatusehat">Satu Sehat</button>
-                                                    </span>
+                                    </div>
+                                    <div class="card-body">
+                                        @if($str->remark4 == '1')
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="alert alert-warning alert-dismissible">
+                                                        STR Diupload Tanpa Melalui Verifikasi Dari Sistem, Mohon Untuk Di Periksa Terlebih Dahulu!
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <embed src="{{ URL::to('/storage')}}/{{$str->namafile}}.pdf" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                            @if($str->url_qr != '0')
-                                @if($str->url_qr != 'manual')
-
-                                    <div class="card card-row card-secondary blogade" id="jajalan">
-                                        <div class="card-header">
-                                            <h3 class="card-title">
-                                            
-                                                Validasi STR Salinan {{$str->salinan}}
-                                            
-                                            </h3>
-        
-                                            <div class="card-tools">
-
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                                    <i class="fas fa-expand"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <a class="btn btn-primary btn-sm" href="{{ str_replace('http://', 'https://', $str->url_qr) }}" target="_blank">Lihat</a>
-                                            <br />
-                                            <iframe class="embed-responsive-item" id="framestrvalid" src="" width="100%" height="450px" style="border: none; background-color: #f3f3f3;">
-                                                Loading...
-                                            </iframe>
-                                        </div>
-                                    </div>
-                                @else
-
-                                    <div class="card card-row card-secondary blogade" id="jajalan">
-                                        <div class="card-header">
-                                            <h3 class="card-title">
-                                            
-                                                Validasi STR Salinan {{$str->salinan}}
-                                            
-                                            </h3>
-        
-                                        </div>
-                                        <div class="card-body">
-                                            <h1> Validasi STR Tidak Tersedia (Non-QRCODE)</h1>
-                                        </div>
-                                    </div>
-                                @endif
-
-                            @endif
-
-                        @endforeach
-
-                        @foreach($doc_sub as $sub)
-                            <div class="card card-row card-success blogade" id="cardSUB">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                    
-                                        STR SUB Spesialis
-                                    
-                                    </h3>
- 
-                                    <div class="card-tools">
-
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    @if ($detail_pengajuan->remark == '0' || $detail_pengajuan->remark == null)
-                                    <div class="alert alert-info alert-dismissible">
-                                    <h5><i class="icon fas fa-info"></i> Perhatian!</h5>
-                                        STR SUB SPESIALIS sudah diupload namun belum digunakan untuk pengajuan ini.
-                                    </div>
-                                    @else
-                                    <embed src="{{ URL::to('/storage')}}/{{$sub->namafile}}.pdf" width="100%" height="100%"></embed>
-                                    
-                                    @endif
-                                </div>
-                            </div>
-                        @endforeach
-
-                        @if($detail_pengajuan->isApproved == 'C' || $detail_pengajuan->isApproved == 'CF')
-                            @foreach($doc_c as $dc)
-                            <div class="card card-row card-warning blogade" id="cardREKOMPC">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                    
-                                        Dokumen Pencabutan
-                                    
-                                    </h3>
- 
-                                    <div class="card-tools">
-
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$dc->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                            @endforeach
-                        @endif
-
-                        @foreach($doc_ktp as $ktp)
-                            <div class="card card-row card-info blogade" id="cardKTP">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                    
-                                        Dokumen KTP
-                                    
-                                    </h3>
- 
-                                    <div class="card-tools">
-
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="row">        
+                                        @endif
+                                        <div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="form-group">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" id="niktosearch" name="niktosearch" class="form-control" value="{{$ktp->no_doc}}" readonly>
+                                                        <input type="text" id="satusehatsearch" name="satusehatsearch" class="form-control" value="{{$str->no_doc}}" readonly>
                                                         <div class="input-group-append" >
                                                         <span class="input-group-append">
-                                                            <button type="button" class="btn btn-info btn-flat" id="cekskp">Cek SKP</button>
+                                                            <button type="button" class="btn btn-info btn-flat" id="ceksatusehat">Satu Sehat</button>
                                                         </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-
-                                    <div class="row toevent">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Nama KTP</label>
-                                                <input type="text" class="form-control" value="{{$ktp->nama_doc}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Tanggal Lahir</label>
-                                                <input type="text" class="form-control" value="{{$ktp->tgl_doc}}" readonly>
-                                            </div>
-                                        </div>
+                                        <embed src="{{ URL::to('/storage')}}/{{$str->namafile}}.pdf" width="100%" height="100%"></embed>
                                     </div>
-                                    <div class="row toevent">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Nama KTP</label>
-                                                <textarea class="form-control">{{$ktp->remark1}}, {{$ktp->remark2}}, {{$ktp->remark3}}</textarea>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
                                 </div>
-                            </div>
-                        @endforeach
+                                @if($str->url_qr != '0')
+                                    @if($str->url_qr != 'manual')
 
-                        @foreach($doc_rekomp as $rekomp)
-                            <div class="card card-row card-warning blogade" id="cardREKOMP">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                                        <div class="card card-row card-secondary blogade" id="jajalan">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                            
+                                                    Validasi STR Salinan {{$str->salinan}}
+                                            
+                                                </h3>
+        
+                                                <div class="card-tools">
+
+                                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                        <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                        <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                        <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                        <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <a class="btn btn-primary btn-sm" href="{{ str_replace('http://', 'https://', $str->url_qr) }}" target="_blank">Lihat</a>
+                                                <br />
+                                                <iframe class="embed-responsive-item" id="framestrvalid" src="" width="100%" height="450px" style="border: none; background-color: #f3f3f3;">
+                                                    Loading...
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    @else
+
+                                        <div class="card card-row card-secondary blogade" id="jajalan">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                            
+                                                    Validasi STR Salinan {{$str->salinan}}
+                                            
+                                                </h3>
+        
+                                            </div>
+                                            <div class="card-body">
+                                                <h1> Validasi STR Tidak Tersedia (Non-QRCODE)</h1>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                @endif
+
+                            @endforeach
+
+                            @foreach($doc_sub as $sub)
+                                <div class="card card-row card-success blogade" id="cardSUB">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Dokumen Rekomendasi Profesi
+                                            STR SUB Spesialis
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        @if ($detail_pengajuan->remark == '0' || $detail_pengajuan->remark == null)
+                                        <div class="alert alert-info alert-dismissible">
+                                        <h5><i class="icon fas fa-info"></i> Perhatian!</h5>
+                                            STR SUB SPESIALIS sudah diupload namun belum digunakan untuk pengajuan ini.
+                                        </div>
+                                        @else
+                                        <embed src="{{ URL::to('/storage')}}/{{$sub->namafile}}.pdf" width="100%" height="100%"></embed>
+                                    
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$rekomp->namafile}}" width="100%" height="100%"></embed>
+                            @endforeach
+
+                            @if($detail_pengajuan->isApproved == 'C' || $detail_pengajuan->isApproved == 'CF')
+                                @foreach($doc_c as $dc)
+                                <div class="card card-row card-warning blogade" id="cardREKOMPC">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                    
+                                            Dokumen Pencabutan
+                                    
+                                        </h3>
+ 
+                                        <div class="card-tools">
+
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$dc->namafile}}" width="100%" height="100%"></embed>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                                @endforeach
+                            @endif
+
+                            @foreach($doc_ktp as $ktp)
+                                <div class="card card-row card-info blogade" id="cardKTP">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                    
+                                            Dokumen KTP
+                                    
+                                        </h3>
+ 
+                                        <div class="card-tools">
+
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row">        
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" id="niktosearch" name="niktosearch" class="form-control" value="{{$ktp->no_doc}}" readonly>
+                                                            <div class="input-group-append" >
+                                                            <span class="input-group-append">
+                                                                <button type="button" class="btn btn-info btn-flat" id="cekskp">Cek SKP</button>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="row toevent">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Nama KTP</label>
+                                                    <input type="text" class="form-control" value="{{$ktp->nama_doc}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Tanggal Lahir</label>
+                                                    <input type="text" class="form-control" value="{{$ktp->tgl_doc}}" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row toevent">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Nama KTP</label>
+                                                    <textarea class="form-control">{{$ktp->remark1}}, {{$ktp->remark2}}, {{$ktp->remark3}}</textarea>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            @foreach($doc_rekomp as $rekomp)
+                                <div class="card card-row card-warning blogade" id="cardREKOMP">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                    
+                                            Dokumen Rekomendasi Profesi
+                                    
+                                        </h3>
+ 
+                                        <div class="card-tools">
+
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$rekomp->namafile}}" width="100%" height="100%"></embed>
+                                    </div>
+                                </div>
+                            @endforeach
 
                             
 
-                        @foreach($doc_sptp as $sptp)
-                            <div class="card card-row card-primary blogade" id="cardSPTP">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_sptp as $sptp)
+                                <div class="card card-row card-primary blogade" id="cardSPTP">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Surat Persyaratan Tempat Praktik
+                                            Surat Persyaratan Tempat Praktik
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$sptp->namafile}}" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$sptp->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
 
 
-                        @foreach($doc_sks as $sks)
-                            <div class="card card-row card-info blogade" id="cardSKS">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_sks as $sks)
+                                <div class="card card-row card-info blogade" id="cardSKS">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Surat Keterangan Sehat
+                                            Surat Keterangan Sehat
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$sks->namafile}}" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$sks->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
-                        @foreach($doc_ijazah as $ijazah)
-                            <div class="card card-row card-warning blogade" id="cardIJAZAH">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_ijazah as $ijazah)
+                                <div class="card card-row card-warning blogade" id="cardIJAZAH">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        IJAZAH
+                                            IJAZAH
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row toevent">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Tanggal Ijazah</label>
+                                                    <input type="text" class="form-control" value="{{$ijazah->tgl_doc}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Nomor Ijazah</label>
+                                                    <input type="text" class="form-control" value="{{$ijazah->no_doc}}" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row toevent">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Universitas</label>
+                                                    <input type="text" class="form-control" value="{{$ijazah->remark1}}" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row toevent">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Jurusan</label>
+                                                    <input type="text" class="form-control" value="{{$ijazah->remark3}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="ms-0">Strata</label>
+                                                    <input type="text" class="form-control" value="{{$ijazah->remark2}}" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <div class="row toevent">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Tanggal Ijazah</label>
-                                                <input type="text" class="form-control" value="{{$ijazah->tgl_doc}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Nomor Ijazah</label>
-                                                <input type="text" class="form-control" value="{{$ijazah->no_doc}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row toevent">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Universitas</label>
-                                                <input type="text" class="form-control" value="{{$ijazah->remark1}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row toevent">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Jurusan</label>
-                                                <input type="text" class="form-control" value="{{$ijazah->remark3}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Strata</label>
-                                                <input type="text" class="form-control" value="{{$ijazah->remark2}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
-                        @foreach($doc_skp as $skp)
-                            <div class="card card-row card-info blogade" id="cardSKP">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_skp as $skp)
+                                <div class="card card-row card-info blogade" id="cardSKP">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Surat Keterangan Pimpinan
+                                            Surat Keterangan Pimpinan
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$skp->namafile}}" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$skp->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
-                        @php
-                        $skskp = $doc_skskp->first();
-                        @endphp
+                            @php
+                            $skskp = $doc_skskp->first();
+                            @endphp
 
-                        @if ($skskp)
-                            <div class="card card-row card-info blogade" id="cardSKSKP">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        Dokumen Serkom / SKP
-                                    </h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                            @if ($skskp)
+                                <div class="card card-row card-info blogade" id="cardSKSKP">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            Dokumen Serkom / SKP
+                                        </h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    @if($skskp->remark1 != '31 Desember 2024' && $skskp->remark1 != '')
-                                    <form>
-                                        <div class="row">        
+                                    <div class="card-body">
+                                        @if($skskp->remark1 != '31 Desember 2024' && $skskp->remark1 != '')
+                                        <form>
+                                            <div class="row">        
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <div class="input-group mb-3">
+                                                            <input id="checkskskp" type="text" class="form-control" value="{{$skskp->remark1}}" readonly>
+                                                            <div class="input-group-append" >
+                                                            <span class="input-group-append">
+                                                                <a type="button" href="{{$skskp->remark1}}" class="btn btn-info btn-flat" target="_blank">Cek SKSKP</a>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        @else
+
+                                        <div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="form-group">
                                                     <div class="input-group mb-3">
-                                                        <input id="checkskskp" type="text" class="form-control" value="{{$skskp->remark1}}" readonly>
+                                                        <input type="text" id="kecukupansearch" name="kecukupansearch" class="form-control" value="{{$skskp->namafile}}" readonly>
                                                         <div class="input-group-append" >
                                                         <span class="input-group-append">
-                                                            <a type="button" href="{{$skskp->remark1}}" class="btn btn-info btn-flat" target="_blank">Cek SKSKP</a>
+                                                            <button type="button" class="btn btn-info btn-flat" id="cekkecukupan">Cek Sertifikat</button>
                                                         </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                    @else
 
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <div class="input-group mb-3">
-                                                    <input type="text" id="kecukupansearch" name="kecukupansearch" class="form-control" value="{{$skskp->namafile}}" readonly>
-                                                    <div class="input-group-append" >
-                                                    <span class="input-group-append">
-                                                        <button type="button" class="btn btn-info btn-flat" id="cekkecukupan">Cek Sertifikat</button>
-                                                    </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        @endif
+                                        <embed src="{{ URL::to('/storageup')}}/{{$skskp->namafile}}" width="100%" height="100%"></embed>
+                                    </div>
+                                </div>
+                            @endif
+
+                            @foreach($doc_sktp as $sktp)
+                                <div class="card card-row card-info blogade" id="cardSKTP">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                    
+                                            Dokumen Surat Keterangan Permohonan Tempat Praktik
+                                    
+                                        </h3>
+ 
+                                        <div class="card-tools">
+
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
                                         </div>
                                     </div>
-
-                                    @endif
-                                    <embed src="{{ URL::to('/storageup')}}/{{$skskp->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endif
-
-                        @foreach($doc_sktp as $sktp)
-                            <div class="card card-row card-info blogade" id="cardSKTP">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                    
-                                        Dokumen Surat Keterangan Permohonan Tempat Praktik
-                                    
-                                    </h3>
- 
-                                    <div class="card-tools">
-
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$sktp->namafile}}" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$sktp->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
 
-                        @foreach($doc_rekomdk as $rekomdk)
-                            <div class="card card-row card-success blogade" id="cardREKOMDK">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_rekomdk as $rekomdk)
+                                <div class="card card-row card-success blogade" id="cardREKOMDK">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Surat Rekomendasi Dinas Kesehatan
+                                            Surat Rekomendasi Dinas Kesehatan
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$rekomdk->namafile}}" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$rekomdk->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
-                        @foreach($doc_rekdin as $rekdin)
-                            @if($rekdin->perpanjangan == $detail_pengajuan->perpanjangan)
-                            <div class="card card-row card-success blogade" id="cardREKDIN">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_rekdin as $rekdin)
+                                @if($rekdin->perpanjangan == $detail_pengajuan->perpanjangan)
+                                <div class="card card-row card-success blogade" id="cardREKDIN">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Surat Keterangan Tempat Praktik @if ($detail_pengajuan->perpanjangan > 0) (Perpanjangan {{$detail_pengajuan->perpanjangan}}) @endif
+                                            Surat Keterangan Tempat Praktik @if ($detail_pengajuan->perpanjangan > 0) (Perpanjangan {{$detail_pengajuan->perpanjangan}}) @endif
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
-                                        <a type="button" class="btn btn-tool" href="{{$surat_host}}assets/uploads/maker/approved/{{$rekdin->filename_sk}}.pdf" target="_blank">
-                                            <i class="fas fa-download"></i>
-                                        </a>
+                                        <div class="card-tools">
+                                            <a type="button" class="btn btn-tool" href="{{$surat_host}}assets/uploads/maker/approved/{{$rekdin->filename_sk}}.pdf" target="_blank">
+                                                <i class="fas fa-download"></i>
+                                            </a>
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{$surat_host}}assets/uploads/maker/approved/{{$rekdin->filename_sk}}.pdf" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{$surat_host}}assets/uploads/maker/approved/{{$rekdin->filename_sk}}.pdf" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
 
-                        @foreach($doc_bav as $bav)
-                            <div class="card card-row card-info blogade" id="cardBAV">
-                                <div class="card-header">
-                                    <h3 class="card-title">
+                            @foreach($doc_bav as $bav)
+                                <div class="card card-row card-info blogade" id="cardBAV">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
                                     
-                                        Dokumen Berita Acara Visitasi
+                                            Dokumen Berita Acara Visitasi
                                     
-                                    </h3>
+                                        </h3>
  
-                                    <div class="card-tools">
+                                        <div class="card-tools">
 
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                                <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                                <i data-lte-icon="collapse" class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize" title="Perbesar">
+                                                <i data-lte-icon="maximize" class="fas fa-expand"></i>
+                                                <i data-lte-icon="minimize" class="fas fa-compress"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <embed src="{{ URL::to('/storageup')}}/{{$bav->namafile}}" width="100%" height="100%"></embed>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <embed src="{{ URL::to('/storageup')}}/{{$bav->namafile}}" width="100%" height="100%"></embed>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1399,7 +1447,7 @@
                             <h3 class="profile-username text-center" id="namapengaju"><a href="#kotakprofile" class="toprofilingnakes" data-id="{{$detail_pengajuan->id_user}}">{{$detail_pengaju->nama}}</a></h3>
                             <p class="text-muted text-center" id="kompetensipengaju">{{$detail_pengaju->kompetensi_pengaju}}</p>
                             <hr />
-                            <a class="btn btn-light btn-block" id="editpengaju">Edit &nbsp; &nbsp;<i class="fas fa-edit"></i></a>
+                            <a class="btn btn-light w-100" id="editpengaju">Edit &nbsp; &nbsp;<i class="fas fa-edit"></i></a>
                             <br />
                             <strong><i class="fas fa-file me-1"></i> Nama e-SIP</strong>
                             <p class="text-muted" id="namasippengaju">
@@ -1451,7 +1499,7 @@
                                     <b>Histori Praktik</b> <a class="float-end"></a>
                                 </li>
                             </ul>
-                            <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>
+                            <a href="#" class="btn btn-primary w-100"><b>Profile</b></a>
 
                         @else
                             <h3 class="profile-username text-center">{{$detail_pengaju->nama}}</h3>
@@ -1507,7 +1555,7 @@
                                     <b>Histori Praktik</b> <a class="float-end"></a>
                                 </li>
                             </ul>
-                            <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>
+                            <a href="#" class="btn btn-primary w-100"><b>Profile</b></a>
                         @endif
                         </div>
 
@@ -1892,13 +1940,11 @@
                                                 <option class="cektigasatu" value="31">31 Desember 2024</option>
                                             </select>
                                             @else
-                                            <div class="row">
-                                                <label for="exampleFormControlSelect1" class="ms-0">Berlaku Hingga</label>
-                                                <select class="form-control" id="tfixedtgl" name="tfixedtgl">    
-                                                    <option value="1" selected>Sesuai STR</option>
-                                                    <option value="31" class="cektigasatu">31 Desember 2024</option>
-                                                </select>
-                                            </div>
+                                            <label for="exampleFormControlSelect1" class="ms-0">Berlaku Hingga</label>
+                                            <select class="form-control" id="tfixedtgl" name="tfixedtgl">    
+                                                <option value="1" selected>Sesuai STR</option>
+                                                <option value="31" class="cektigasatu">31 Desember 2024</option>
+                                            </select>
                                             @endif
                                         @else
 

@@ -1,4 +1,85 @@
 @extends('layouts.adminlte4.back_master')
+@section('css')
+    {{-- AdminLTE 4 form wizard, mirrors adminlte.io/themes/v4/forms/wizard.html --}}
+    <style>
+        .wizard-steps {
+            counter-reset: step;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 0 0 1.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wizard-steps li {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: var(--bs-secondary-color);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .wizard-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: 50%;
+            background-color: var(--bs-body-bg);
+            font-size: .875rem;
+            line-height: 1;
+        }
+
+        .wizard-steps li::after {
+            content: "";
+            width: 3rem;
+            height: 1px;
+            margin: 0 .75rem;
+            background-color: var(--bs-border-color);
+        }
+
+        .wizard-steps li:last-child::after {
+            display: none;
+        }
+
+        .wizard-steps li.active,
+        .wizard-steps li.completed {
+            color: var(--bs-primary);
+        }
+
+        .wizard-steps li.active::before {
+            border-color: var(--bs-primary);
+            background-color: var(--bs-primary);
+            color: #fff;
+        }
+
+        .wizard-steps li.completed::before {
+            content: "\F633"; /* bi-check-lg */
+            border-color: var(--bs-primary);
+            color: var(--bs-primary);
+            font-family: "bootstrap-icons";
+        }
+
+        @media (max-width: 575.98px) {
+            .wizard-steps li::after {
+                width: 1rem;
+                margin: 0 .35rem;
+            }
+
+            .wizard-steps li {
+                font-size: .8125rem;
+            }
+        }
+    </style>
+@endsection
 @section('content')
 <div class="content-wrapper" style="min-height: 1416.8125px;">
     <!-- Content Header (Page header) -->
@@ -46,36 +127,24 @@
                         </div>
                     </div>     
                 @else
-                    <div class="card card-default">
+                    <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Langkah Pengajuan</h3>
                         </div>
-                        <div class="card-body p-0">
-                            <div class="bs-stepper linear">
-                                <div class="bs-stepper-header" role="tablist">
-                                    <div class="step" data-bs-target="#lokasi-part">
-                                        <button type="button" class="step-trigger" role="tab" aria-controls="lokasi-part" id="lokasi-part-trigger" aria-selected="false" disabled="disabled">
-                                            <span class="bs-stepper-circle">1</span>
-                                            <span class="bs-stepper-label">Lokasi</span>
-                                        </button>
-                                    </div>
-                                    <div class="line"></div>
-                                    <div class="step active" data-bs-target="#information-part">
-                                        <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger" aria-selected="true">
-                                            <span class="bs-stepper-circle">2</span>
-                                            <span class="bs-stepper-label">Dokumen</span>
-                                        </button>
-                                    </div>
-                                    <div class="line"></div>
-                                    <div class="step" data-bs-target="#jadwal-part">
-                                        <button type="button" class="step-trigger" role="tab" aria-controls="jadwal-part" id="jadwal-part-trigger" aria-selected="true">
-                                            <span class="bs-stepper-circle">3</span>
-                                            <span class="bs-stepper-label">Jadwal Praktik</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="bs-stepper-content">
-                                    <div id="lokasi-part" class="content" role="tabpanel" aria-labelledby="lokasi-part-trigger">
+                        <div class="card-body">
+                            {{-- AdminLTE 4 wizard: Lokasi -> Dokumen -> Jadwal Praktik --}}
+                            <ol class="wizard-steps" id="pengajuanWizardSteps">
+                                <li class="active" data-step="0">Lokasi</li>
+                                <li data-step="1">Dokumen</li>
+                                <li data-step="2">Jadwal Praktik</li>
+                            </ol>
+
+                            {{-- The form has to wrap every step, otherwise the Dokumen
+                                 and Jadwal Praktik inputs are never submitted. --}}
+                            <form enctype="multipart/form-data" id="formPengajuanM" action="{{ route('nakes.submit.pengajuanM') }}" method="post" class="form-horizontal" novalidate>
+                                @csrf
+
+                                <div class="wizard-step" data-step="0">
                                         <div class="row">
                                             <div class="col-md-12 col-xs-12">
                                                 <div class="card">
@@ -104,9 +173,6 @@
                                             </div>
                                         </div>
                                         
-                                        
-                                            <form enctype="multipart/form-data" id="formPengajuanM" action="{{ route('nakes.submit.pengajuanM') }}" method="post" class="form-horizontal">
-                                            @csrf
 
                                             <div class="row" style="display:none">
                                                 <div class="col-md-4" style="display:none">
@@ -172,9 +238,9 @@
                                                 </div>
                                             </div>  
                                        
-                                        <button type="button" class="btn btn-primary" id="stepsatu" style="display:none" onclick="stepper.next()">Lanjut</button>
-                                    </div>
-                                    <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                                    </div>{{-- /.wizard-step (Lokasi) --}}
+
+                                    <div class="wizard-step d-none" data-step="1">
 
                                     <hr />
 
@@ -330,10 +396,9 @@
 
                                         </div>
 
-                                        <button type="button" class="btn btn-primary" type="button" onclick="stepper.previous()">Sebelumnya</button>
-                                        <button type="button" class="btn btn-primary" onclick="stepper.next()">Lanjut</button>
-                                    </div>
-                                    <div id="jadwal-part" class="content" role="tabpanel" aria-labelledby="jadwal-part-trigger">
+                                    </div>{{-- /.wizard-step (Dokumen) --}}
+
+                                    <div class="wizard-step d-none" data-step="2">
 
                                         <div class="row toevent">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -489,14 +554,26 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-primary" onclick="stepper.previous()">Sebelumnya</button>
-                                        <button type="button" id="editJadwalPraktik" style="display:none" class="btn btn-danger">Edit Jadwal</button>
-                                        <button type="submit" id="submitPengajuanM" style="display:none" class="btn btn-success submitPengajuanM">Submit</button>
-                                        </form>
+                                        <div class="d-flex justify-content-end align-items-center gap-2 mt-4">
+                                            <button type="button" id="editJadwalPraktik" style="display:none" class="btn btn-outline-danger">
+                                                <i class="bi bi-pencil-square me-1"></i> Edit Jadwal
+                                            </button>
+                                            <button type="submit" id="submitPengajuanM" style="display:none" class="btn btn-success submitPengajuanM">
+                                                <i class="bi bi-check-lg me-1"></i> Submit
+                                            </button>
+                                        </div>
+                                    </div>{{-- /.wizard-step (Jadwal Praktik) --}}
+
+                                    <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                                        <button type="button" class="btn btn-outline-secondary" id="pengajuanWizardPrev" disabled>
+                                            <i class="bi bi-arrow-left me-1"></i> Sebelumnya
+                                        </button>
+                                        <button type="button" class="btn btn-primary" id="stepsatu" style="display:none">
+                                            Lanjut <i class="bi bi-arrow-right ms-1"></i>
+                                        </button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </form>
+                            </div>{{-- /.card-body --}}
 
                         <div class="card-footer">
 
@@ -521,6 +598,112 @@
 @section('script')
 <script>
     $(document).ready(function() {
+
+        /* ------------------------------------------------------------------
+         | AdminLTE 4 form wizard
+         | Keeps the Lokasi -> Dokumen -> Jadwal Praktik flow and every field
+         | id used by the shared footer (back_footer.blade.php).
+         ------------------------------------------------------------------ */
+        var wizardSteps = Array.prototype.slice.call(document.querySelectorAll('#formPengajuanM .wizard-step'));
+        var wizardIndicators = Array.prototype.slice.call(document.querySelectorAll('#pengajuanWizardSteps li'));
+        var wizardPrev = document.getElementById('pengajuanWizardPrev');
+        var wizardNext = document.getElementById('stepsatu');
+        var wizardIndex = 0;
+
+        function isWizardFieldVisible(field) {
+            return !!(field.offsetWidth || field.offsetHeight || field.getClientRects().length);
+        }
+
+        // Only the fields of the step the user can actually see are validated:
+        // the browser cannot focus a required input inside a hidden panel.
+        function validateWizardStep(step) {
+            var valid = true;
+            var firstInvalid = null;
+
+            step.querySelectorAll('input, select, textarea').forEach(function (field) {
+                if (field.disabled || field.type === 'hidden' || !isWizardFieldVisible(field)) {
+                    return;
+                }
+
+                field.classList.remove('is-invalid');
+
+                if (!field.checkValidity()) {
+                    field.classList.add('is-invalid');
+                    valid = false;
+
+                    if (!firstInvalid) {
+                        firstInvalid = field;
+                    }
+                }
+            });
+
+            if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalid.focus({ preventScroll: true });
+            }
+
+            return valid;
+        }
+
+        function showWizardStep(index) {
+            if (!wizardSteps.length) {
+                return;
+            }
+
+            wizardIndex = Math.max(0, Math.min(index, wizardSteps.length - 1));
+
+            wizardSteps.forEach(function (step, idx) {
+                step.classList.toggle('d-none', idx !== wizardIndex);
+            });
+
+            wizardIndicators.forEach(function (indicator, idx) {
+                indicator.classList.toggle('active', idx === wizardIndex);
+                indicator.classList.toggle('completed', idx < wizardIndex);
+            });
+
+            if (wizardPrev) {
+                wizardPrev.disabled = wizardIndex === 0;
+            }
+
+            // Step Lokasi stays locked until the user picks Mandiri / Faskes;
+            // the footer reveals #stepsatu and the .setelahpilih rows.
+            var lokasiPicked = $('.setelahpilih.row:visible').length > 0;
+            var isLastStep = wizardIndex === wizardSteps.length - 1;
+
+            if (wizardNext) {
+                $(wizardNext).toggle(!isLastStep && (wizardIndex > 0 || lokasiPicked));
+            }
+
+            // Leaflet measured a 0x0 container while this panel was hidden.
+            if (wizardIndex === 0 && typeof window.pengajuanMapInvalidate === 'function') {
+                setTimeout(window.pengajuanMapInvalidate, 150);
+            }
+        }
+
+        function nextWizardStep() {
+            if (!validateWizardStep(wizardSteps[wizardIndex])) {
+                return;
+            }
+
+            showWizardStep(wizardIndex + 1);
+        }
+
+        function previousWizardStep() {
+            showWizardStep(wizardIndex - 1);
+        }
+
+        if (wizardSteps.length && wizardNext && wizardPrev) {
+            wizardNext.addEventListener('click', nextWizardStep);
+            wizardPrev.addEventListener('click', previousWizardStep);
+
+            showWizardStep(0);
+        }
+
+        window.pengajuanWizard = {
+            next: nextWizardStep,
+            previous: previousWizardStep,
+            show: showWizardStep
+        };
 
         function applyScheduleFromAI(summary) {
             const hariMap = {
@@ -602,6 +785,12 @@
 
         $('#formPengajuanM').on('submit', function(e){
             e.preventDefault();
+
+            // Never post a half filled step (the form is novalidate, so the
+            // wizard validates the visible panel itself).
+            if (wizardSteps.length && !validateWizardStep(wizardSteps[wizardIndex])) {
+                return;
+            }
             let link = `{{ route('nakes.submit.pengajuanM') }}`;
             let formData = new FormData($(this)[0])
             
@@ -654,17 +843,17 @@
                     $.fancybox.close();
                     let serverMsg = '';
 
-                    if (xhr.responseJSON && xhr.responseJSON.message) {
-                        serverMsg = xhr.responseJSON.message;
-                    } else if (xhr.responseText) {
-                        serverMsg = xhr.responseText;
+                    if (request.responseJSON && request.responseJSON.message) {
+                        serverMsg = request.responseJSON.message;
+                    } else if (request.responseText) {
+                        serverMsg = request.responseText;
                     }
 
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         html: `
-                            <strong>Error:</strong> ${errorThrown}<br>
+                            <strong>Error:</strong> ${error}<br>
                             <small>${serverMsg}</small>
                         `,
                         confirmButtonText: 'OK'

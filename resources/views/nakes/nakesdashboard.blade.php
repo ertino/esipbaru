@@ -1,350 +1,346 @@
 @extends('layouts.adminlte4.back_master')
+
+@section('title', 'Dashboard Tenaga Kesehatan')
+
 @section('content')
-<div class="content-wrapper" style="min-height: 1416.8125px;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <!--begin::App Content Header-->
+    <div class="app-content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
+            <div class="row">
                 <div class="col-sm-6">
-                    <h1>Selamat Datang Di e-SIP</h1>
+                    <h3 class="mb-0">Selamat Datang Di e-SIP</h3>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
-    </section>
+        </div>
+    </div>
+    <!--end::App Content Header-->
 
-    <!-- Main content -->
-    <section class="content">
+    <!--begin::App Content-->
+    <div class="app-content">
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-md-4">
+                <!--begin::Kolom kiri: profil dan kalender-->
+                <div class="col-lg-4">
 
-                    <div class="card card-widget widget-user-2 shadow-sm">
-
+                    <!--begin::Kartu profil-->
+                    <div class="card card-widget widget-user-2 shadow-sm mb-4">
                         <div class="widget-user-header bg-warning">
                             <div class="widget-user-image">
-                                <img class="profile-user-img img-fluid rounded-circle" src="{{ URL::to('/storagefotot')}}/{{$detail_pengaju->saved_photo}}"
-                                    alt="User profile picture">
+                                <img class="rounded-circle"
+                                     src="{{ URL::to('/storagefotot') }}/{{ $detail_pengaju->saved_photo }}"
+                                     alt="Foto {{ $nama_user }}">
                             </div>
-
-                            <h3 class="widget-user-username">{{ $nama_user }}</h3>
-                            <h5 class="widget-user-desc">{{ $profesi }}</h5>
+                            <div class="overflow-hidden">
+                                <h3 class="widget-user-username text-truncate mb-0">{{ $nama_user }}</h3>
+                                <h5 class="widget-user-desc text-truncate mb-0">{{ $profesi }}</h5>
+                            </div>
                         </div>
+
                         <div class="card-footer p-0">
-                            
-                            <ul class="nav flex-column">
+                            <ul class="nav flex-column gap-2 p-2">
                                 <li class="nav-item">
-                                    <a href="{{ route('nakes.documents') }}" class="btn btn-block btn-flat btn-outline-primary">
-                                        Dokumen 
-                                        @if ($dokumenissue > 0)<span class="float-end badge bg-danger">{{$dokumenissue}}</span>
+                                    <a href="{{ route('nakes.documents') }}"
+                                       class="btn btn-outline-primary w-100 d-flex justify-content-between align-items-center">
+                                        Dokumen
+                                        @if ($dokumenissue > 0)
+                                            <span class="badge text-bg-danger">{{ $dokumenissue }}</span>
                                         @endif
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="btn btn-block btn-flat btn-outline-primary" id="ajuanku" data-id="{{$user_id}}" data-dokter="{{$isdokter}}">
-                                        Pengajuan 
-                                        @if ($pengajuanditolak > 0)<span class="float-end badge bg-danger">{{$pengajuanditolak}}</span>
+                                    <button type="button"
+                                            class="btn btn-outline-primary w-100 d-flex justify-content-between align-items-center"
+                                            id="ajuanku" data-id="{{ $user_id }}" data-dokter="{{ $isdokter }}">
+                                        Pengajuan
+                                        @if ($pengajuanditolak > 0)
+                                            <span class="badge text-bg-danger">{{ $pengajuanditolak }}</span>
                                         @endif
                                     </button>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('nakes.perpanjangan', $user_id) }}" class="btn btn-block btn-flat btn-outline-primary" id="perpanjanganpermohonan">
-                                        Perpanjangan 
-                                        @if ($perpanjanganditolak > 0)<span class="float-end badge bg-danger">{{$perpanjanganditolak}}</span>
+                                    <a href="{{ route('nakes.perpanjangan', $user_id) }}"
+                                       class="btn btn-outline-primary w-100 d-flex justify-content-between align-items-center"
+                                       id="perpanjanganpermohonan">
+                                        Perpanjangan
+                                        @if ($perpanjanganditolak > 0)
+                                            <span class="badge text-bg-danger">{{ $perpanjanganditolak }}</span>
                                         @endif
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('nakes.perubahan', $user_id) }}" class="btn btn-block btn-flat btn-outline-info" id="rubahpermohonan">
-                                        Perubahan 
-                                        @if ($perubahanditolak > 0)<span class="float-end badge bg-danger">{{$perubahanditolak}}</span>
+                                    <a href="{{ route('nakes.perubahan', $user_id) }}"
+                                       class="btn btn-outline-info w-100 d-flex justify-content-between align-items-center"
+                                       id="rubahpermohonan">
+                                        Perubahan
+                                        @if ($perubahanditolak > 0)
+                                            <span class="badge text-bg-danger">{{ $perubahanditolak }}</span>
                                         @endif
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('nakes.pencabutan', $user_id) }}" class="btn btn-block btn-flat btn-outline-danger" id="cabutpermohonan">
-                                        Pencabutan 
+                                    <a href="{{ route('nakes.pencabutan', $user_id) }}"
+                                       class="btn btn-outline-danger w-100 d-flex justify-content-between align-items-center"
+                                       id="cabutpermohonan">
+                                        Pencabutan
                                         @php
                                             $count = 0;
                                             foreach ($allsalinan as $all) {
-                                                if($all->isApproved == '4') {
-                                                    if($all->alasan_ditolak != null || $all->alasan_ditolak != '') {
+                                                if ($all->isApproved == '4') {
+                                                    if ($all->alasan_ditolak != null || $all->alasan_ditolak != '') {
                                                         $count++;
                                                     }
                                                 }
                                             }
                                         @endphp
                                         @if ($count > 0)
-                                            <span class="float-end badge bg-danger"> {{ $count }} </span><!-- Display the count in the badge -->
+                                            <span class="badge text-bg-danger">{{ $count }}</span>
                                         @endif
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('nakes.historikal', $user_id) }}" class="btn btn-block btn-flat btn-outline-secondary" id="cabutpermohonan">
+                                    <a href="{{ route('nakes.historikal', $user_id) }}"
+                                       class="btn btn-outline-secondary w-100 d-flex justify-content-between align-items-center"
+                                       id="historipermohonan">
                                         Histori
                                     </a>
                                 </li>
                                 <li class="nav-item" @if ($issiplama == 0) style="display:none" @endif>
-                                    <button class="btn btn-block btn-flat btn-outline-primary" id="sipmanual" data-id="{{$user_id}}" data-dokter="{{$isdokter}}">
-                                        Upload SIP Manual 
-                                        @if ($sipmanualditolak > 0)<span class="float-end badge bg-danger">{{$sipmanualditolak}}</span>
+                                    <button type="button"
+                                            class="btn btn-outline-primary w-100 d-flex justify-content-between align-items-center"
+                                            id="sipmanual" data-id="{{ $user_id }}" data-dokter="{{ $isdokter }}">
+                                        Upload SIP Manual
+                                        @if ($sipmanualditolak > 0)
+                                            <span class="badge text-bg-danger">{{ $sipmanualditolak }}</span>
                                         @endif
                                     </button>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    <!--end::Kartu profil-->
 
-                    <div class="card bg-gradient-light">
-                        <div class="card-header border-0 ui-sortable-handle">
+                    <!--begin::Kartu kalender-->
+                    <div class="card card-primary card-outline mb-4">
+                        <div class="card-header">
                             <h3 class="card-title">
-                                <i class="far fa-calendar-alt"></i>
-                                Calendar
+                                <i class="far fa-calendar-alt me-2"></i>Calendar
                             </h3>
-
                             <div class="card-tools">
-                                <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Lipat">
+                                    <i data-lte-icon="expand" class="fas fa-plus"></i>
+                                    <i data-lte-icon="collapse" class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove" title="Tutup">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
-
                         </div>
 
-                        <div class="card-body pt-0">
-
-                            <div id="calendar" style="width: 100%">
-                                
-                            </div>
-                            <hr />
-                            <div class="row">
-                                <p> Acara / Visitasi Bulan Ini: </p>
-                                <!--<table class="table table-striped">
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td>Update software</td>
-                                            <td><span class="badge bg-danger">55%</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>Update software</td>
-                                            <td><span class="badge bg-danger">55%</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>-->
-                                
-                                
-                                <!--<div class="alert alert-info alert-dismissible">
-                                    <h5><i class="icon fas fa-info"></i> Alert!</h5>
-                                    Info alert preview. This alert is dismissable.
-                                </div>-->
-                                
-                            </div>
+                        <div class="card-body">
+                            <div id="calendar" class="w-100" data-id="{{ $user_id }}"></div>
+                            <hr>
+                            <p class="mb-0 text-body-secondary">Acara / Visitasi Bulan Ini:</p>
                         </div>
                     </div>
+                    <!--end::Kartu kalender-->
                 </div>
-                <div class="col-md-8 col-xs-12">
-                    <div class="card">
-                        <div class="card-header">
-                            STR Diajukan
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                     
-                                        <th>Salinan</th>
-                                        <th>Lokasi</th>
-                                        <th>Status</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($allsalinan as $rowi)
-                                    <tr>
-                                       
-                                        <td>{{$rowi->salinan}}</td>
-                                        @if($rowi->isDiajukan == 1)
-                                            @if ($rowi->isFaskes == '1')
-                                            <td>{{$rowi->nama_faskes}}</td>
-                                            @else
-                                            <td>{{$rowi->alamat_pengajuan}}</td>
-                                            @endif
-                                        @else
-                                            <td>Belum Diajukan</td>
-                                        @endif
-                                        @if($rowi->isApproved == 'OP')
-                                        <td>Review Org Profesi</td>
-                                        @elseif ($rowi->isApproved == '0')
-                                        <td>Review Dinkes</td>
-                                        @elseif ($rowi->isApproved == 'E')
-                                        <td>Belum Diperpanjang</td>
-                                        @elseif ($rowi->isApproved == '1K')
-                                        <td>Review Kepala Dinkes</td>
-                                        @elseif ($rowi->isApproved == '2')
-                                        <td>Review DPMPTSP</td>
-                                        @elseif ($rowi->isApproved == '3')
-                                        <td>Disetujui DPMPTSP</td>
-                                        @elseif ($rowi->isApproved == '4')
-                                            @if($rowi->alasan_ditolak != null || $rowi->alasan_ditolak != '')
-                                            <td><span class="badge text-bg-danger">Pencabutan Ditolak</span></td>
-                                            @else
-                                            <td>Disetujui</td>
-                                            @endif
-                                        @elseif ($rowi->isApproved == '9')
-                                        <td>Ditolak</td>
-                                        @elseif ($rowi->isApproved == 'C')
-                                        <td>Proses Pencabutan</td>
-                                        @elseif ($rowi->isApproved == 'P2')
-                                        <td>Review DPMPTSP</td>
-                                        @else
-                                        <td>Belum Diajukan</td>
-                                        @endif
+                <!--end::Kolom kiri-->
 
-                                        @if($rowi->isDiajukan == 1)
-                                            @if($rowi->isApproved == 'OP')
-                                            <td><button class='btn btn-sm btn-info uploadrekomop' data-id="{{$rowi->id_pengajuan}}" data-bs-toggle="tooltip" data-bs-placement="right" title="SEGERA UPLOAD SURAT KETERANGAN ORGANISASI PROFESI" id="myTooltipButton{{$rowi->salinan}}">Upload Suket OP</td>
-                                            @elseif ($rowi->isApproved == '9')
-                                            <td><a class='btn btn-sm btn-danger' href="{{ route('nakes.pengajuan.edit', Auth::user()->id.'_'.$rowi->salinan.'_'.$rowi->id_pengajuan) }}">Ubah</a>
-                                            <button class='btn btn-sm btn-danger batalkanpengajuan' data-id="{{$rowi->id_pengajuan}}" data-updater="{{$user_id}}" data-doc="{{$rowi->id_doc}}">Batal</button>
-                                            @else
+                <!--begin::Kolom kanan: pengajuan, QR STR dan informasi-->
+                <div class="col-lg-8">
+
+                    <!--begin::STR Diajukan-->
+                    <div class="card card-primary card-outline mb-4">
+                        <div class="card-header">
+                            <h3 class="card-title">STR Diajukan</h3>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Salinan</th>
+                                            <th scope="col">Lokasi</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col" class="text-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($allsalinan as $rowi)
+                                        <tr>
+                                            <td>{{ $rowi->salinan }}</td>
+
                                             <td>
-                                                @if($rowi->isApproved == '4')
-                                                    @if($rowi->alasan_ditolak == null || $rowi->alasan_ditolak == '')
-                                                    <a class='btn btn-sm btn-success' href="{{ route('nakes.kedetail.pengajuan', Auth::user()->id.'_'.$rowi->salinan) }}">Detail</a>
-                                                    @else
-                                                    <a class='btn btn-sm btn-warning' href="{{ route('nakes.pencabutan', Auth::user()->id) }}">Detail</a>
-                                                    @endif
-                                                @elseif($rowi->isApproved == 'E')
-                                                    <a class='btn btn-sm btn-success' href="{{ route('nakes.perpanjangan', $user_id) }}">Perpanjang</a>
+                                                @if($rowi->isDiajukan == 1)
+                                                    {{ $rowi->isFaskes == '1' ? $rowi->nama_faskes : $rowi->alamat_pengajuan }}
                                                 @else
-                                                <a class='btn btn-sm btn-success' href="{{ route('nakes.kedetail.pengajuan', Auth::user()->id.'_'.$rowi->salinan) }}">Detail</a>
+                                                    <span class="text-body-secondary">Belum Diajukan</span>
                                                 @endif
                                             </td>
-                                            @endif
-                                        @else
-                                            <td>Belum Diajukan</td>
-                                        @endif
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                                    
-                            </table>
-                        </div>
-                                        
-                    </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            Hasil Scan QRCODE STR
-                        </div>
-                        @if($detail_pengaju->origin_file != 'scanned')
-                            @if ($isKadaluarsa->kadaluarsa == '0')
-                            <div class="card-body">
-                                @if((int)$isKadaluarsa->expiring_count <= 20)
-                                    <div class="row">
-                                        <div class="col-md-12 col-xs-12">
-                                            <div class="alert alert-danger alert-dismissible">
-                                                <h5><i class="icon fas fa-exclamation-triangle"></i> STR Anda Kadaluarsa {{$isKadaluarsa->expiring_count}} Hari Lagi.</h5>
-                                                Silahkan Update STR Anda Pada Menu Perpanjangan, Atau Ajukan Perpanjangan Sementara
-                                            </div>
-                                            <a href="{{ route('nakes.perpanjangan.sementara', $user_id) }}" class="btn btn-block btn-flat btn-primary" id="perpanjangansementara">Perpanjangan Sementara</a>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                @endif
-
-                                @if((int)$isKadaluarsa->expiring_count <= 60 && (int)$isKadaluarsa->expiring_count > 20)
-                                    <div class="row">
-                                        <div class="col-md-12 col-xs-12">
-                                            <div class="alert alert-warning alert-dismissible">
-                                                <h5><i class="icon fas fa-exclamation-triangle"></i> STR Anda Kadaluarsa {{$isKadaluarsa->expiring_count}} Hari Lagi.</h5>
-                                                Silahkan Update STR Anda Pada Menu Perpanjangan.
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                                <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" id="provenID" src="{{$qr_url}}"></iframe>
-                                </div> 
-                            </div>
-                            @else
-
-                            <div class="card-body">
-                                <div class="alert alert-danger alert-dismissible">
-                                    <h5><i class="icon fas fa-ban"></i> KADALUARSA !</h5>
-                                    STR Anda Telah Kadaluarsa Pada Tanggal {{$isKadaluarsa->tgl_doc}}. Silahkan Upload Kembali Dokumen STR yang sudah diperbaharui.
-                                    </div>
-                                </div>
-
-                            @endif   
-                        @endif                
-                    </div>
-
-                    <div class="card card-widget overlay dark">
-                        <div class="card-header">
-                            <h5>Informasi</h5>
-
-                        </div>
-
-                        <div class="card-body">
-
-                            <div class="card-body table-responsive p-0" style="height: 300px;">
-                                <table class="table table-head-fixed text-nowrap">
-                                    <tbody>
-                                        <tr>
                                             <td>
-                                                <div class="timeline overflow-auto">
-                                                    @foreach($informasis as $inf)
-                                                    <div class="time-label">
-                                                        <span @if($inf->jenis_informasi == '2') class="bg-red" @else class="bg-green" @endif>{{$inf->created_at}}</span>
-                                                    </div>
+                                                @if($rowi->isApproved == 'OP')
+                                                    <span class="badge text-bg-info">Review Org Profesi</span>
+                                                @elseif ($rowi->isApproved == '0')
+                                                    <span class="badge text-bg-info">Review Dinkes</span>
+                                                @elseif ($rowi->isApproved == 'E')
+                                                    <span class="badge text-bg-warning">Belum Diperpanjang</span>
+                                                @elseif ($rowi->isApproved == '1K')
+                                                    <span class="badge text-bg-info">Review Kepala Dinkes</span>
+                                                @elseif ($rowi->isApproved == '2')
+                                                    <span class="badge text-bg-info">Review DPMPTSP</span>
+                                                @elseif ($rowi->isApproved == '3')
+                                                    <span class="badge text-bg-success">Disetujui DPMPTSP</span>
+                                                @elseif ($rowi->isApproved == '4')
+                                                    @if($rowi->alasan_ditolak != null || $rowi->alasan_ditolak != '')
+                                                        <span class="badge text-bg-danger">Pencabutan Ditolak</span>
+                                                    @else
+                                                        <span class="badge text-bg-success">Disetujui</span>
+                                                    @endif
+                                                @elseif ($rowi->isApproved == '9')
+                                                    <span class="badge text-bg-danger">Ditolak</span>
+                                                @elseif ($rowi->isApproved == 'C')
+                                                    <span class="badge text-bg-warning">Proses Pencabutan</span>
+                                                @elseif ($rowi->isApproved == 'P2')
+                                                    <span class="badge text-bg-info">Review DPMPTSP</span>
+                                                @else
+                                                    <span class="badge text-bg-secondary">Belum Diajukan</span>
+                                                @endif
+                                            </td>
 
-
-                                                    <div>
-                                                        @if($inf->jenis_informasi == '1')
-                                                        <i class="fas fa-envelope bg-green"></i>
-                                                        @elseif($inf->jenis_informasi == '2')
-                                                        <i class="fas fa-exclamation-triangle bg-red"></i>
-                                                        @else
-                                                        <i class="fas fa-envelope bg-green"></i>
-                                                        @endif
-                                                        <div class="timeline-item">
-                                                            <span class="time"><i class="fas fa-clock"></i></span>
-                                                            <h3 class="timeline-header"><a href="#">{{$inf->updater}}</a> Memberi Pesan</h3>
-                                                            <div class="timeline-body">
-                                                                {{$inf->informasi}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @endforeach
-                                                </div>
+                                            <td class="text-end">
+                                                @if($rowi->isDiajukan != 1)
+                                                    <span class="text-body-secondary">-</span>
+                                                @elseif($rowi->isApproved == 'OP')
+                                                    <button type="button" class="btn btn-sm btn-info uploadrekomop"
+                                                            data-id="{{ $rowi->id_pengajuan }}"
+                                                            data-bs-toggle="tooltip" data-bs-placement="left"
+                                                            title="SEGERA UPLOAD SURAT KETERANGAN ORGANISASI PROFESI"
+                                                            id="myTooltipButton{{ $rowi->salinan }}">Upload Suket OP</button>
+                                                @elseif($rowi->isApproved == '9')
+                                                    <a class="btn btn-sm btn-danger"
+                                                       href="{{ route('nakes.pengajuan.edit', Auth::user()->id.'_'.$rowi->salinan.'_'.$rowi->id_pengajuan) }}">Ubah</a>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger batalkanpengajuan"
+                                                            data-id="{{ $rowi->id_pengajuan }}"
+                                                            data-updater="{{ $user_id }}"
+                                                            data-doc="{{ $rowi->id_doc }}">Batal</button>
+                                                @elseif($rowi->isApproved == '4')
+                                                    @if($rowi->alasan_ditolak == null || $rowi->alasan_ditolak == '')
+                                                        <a class="btn btn-sm btn-success"
+                                                           href="{{ route('nakes.kedetail.pengajuan', Auth::user()->id.'_'.$rowi->salinan) }}">Detail</a>
+                                                    @else
+                                                        <a class="btn btn-sm btn-warning"
+                                                           href="{{ route('nakes.pencabutan', Auth::user()->id) }}">Detail</a>
+                                                    @endif
+                                                @elseif($rowi->isApproved == 'E')
+                                                    <a class="btn btn-sm btn-success"
+                                                       href="{{ route('nakes.perpanjangan', $user_id) }}">Perpanjang</a>
+                                                @else
+                                                    <a class="btn btn-sm btn-success"
+                                                       href="{{ route('nakes.kedetail.pengajuan', Auth::user()->id.'_'.$rowi->salinan) }}">Detail</a>
+                                                @endif
                                             </td>
                                         </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+                    <!--end::STR Diajukan-->
+
+                    <!--begin::Hasil scan QR STR-->
+                    <div class="card card-primary card-outline mb-4">
+                        <div class="card-header">
+                            <h3 class="card-title">Hasil Scan QRCODE STR</h3>
+                        </div>
+
+                        @if($detail_pengaju->origin_file != 'scanned')
+                            @if ($isKadaluarsa->kadaluarsa == '0')
+                                <div class="card-body">
+                                    @if((int)$isKadaluarsa->expiring_count <= 20)
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <h5 class="alert-heading">
+                                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                                STR Anda Kadaluarsa {{ $isKadaluarsa->expiring_count }} Hari Lagi.
+                                            </h5>
+                                            Silahkan Update STR Anda Pada Menu Perpanjangan, Atau Ajukan Perpanjangan Sementara
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup"></button>
+                                        </div>
+                                        <a href="{{ route('nakes.perpanjangan.sementara', $user_id) }}"
+                                           class="btn btn-primary w-100 mb-3" id="perpanjangansementara">Perpanjangan Sementara</a>
+                                    @endif
+
+                                    @if((int)$isKadaluarsa->expiring_count <= 60 && (int)$isKadaluarsa->expiring_count > 20)
+                                        <div class="alert alert-warning alert-dismissible fade show">
+                                            <h5 class="alert-heading">
+                                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                                STR Anda Kadaluarsa {{ $isKadaluarsa->expiring_count }} Hari Lagi.
+                                            </h5>
+                                            Silahkan Update STR Anda Pada Menu Perpanjangan.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup"></button>
+                                        </div>
+                                    @endif
+
+                                    <div class="ratio ratio-21x9">
+                                        <iframe id="provenID" src="{{ $qr_url }}" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="card-body">
+                                    <div class="alert alert-danger alert-dismissible fade show">
+                                        <h5 class="alert-heading">
+                                            <i class="fas fa-ban me-2"></i>KADALUARSA !
+                                        </h5>
+                                        STR Anda Telah Kadaluarsa Pada Tanggal {{ $isKadaluarsa->tgl_doc }}.
+                                        Silahkan Upload Kembali Dokumen STR yang sudah diperbaharui.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup"></button>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
+                    </div>
+                    <!--end::Hasil scan QR STR-->
+
+                    <!--begin::Informasi-->
+                    <div class="card card-primary card-outline mb-0">
+                        <div class="card-header">
+                            <h3 class="card-title">Informasi</h3>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="timeline timeline-inverse p-3 mb-0 overflow-auto" style="max-height: 300px;">
+                                @foreach($informasis as $inf)
+                                    <div class="time-label">
+                                        <span class="{{ $inf->jenis_informasi == '2' ? 'text-bg-danger' : 'text-bg-success' }}">{{ $inf->created_at }}</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="timeline-icon fas {{ $inf->jenis_informasi == '2' ? 'fa-exclamation-triangle text-bg-danger' : 'fa-envelope text-bg-success' }}"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fas fa-clock"></i></span>
+                                            <h3 class="timeline-header"><a href="#">{{ $inf->updater }}</a> Memberi Pesan</h3>
+                                            <div class="timeline-body">
+                                                {{ $inf->informasi }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Informasi-->
                 </div>
+                <!--end::Kolom kanan-->
 
             </div>
         </div>
-    </section>
-</div>
-
-
-
-
-
-
+    </div>
+    <!--end::App Content-->
 @endsection
-@section('js')
 
-@endsection
 @section('script')
 <script>
 
