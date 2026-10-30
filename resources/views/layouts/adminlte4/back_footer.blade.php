@@ -801,7 +801,10 @@
 
         $(document).ready(function () {
 
-            window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+            var stepperElement = document.querySelector('.bs-stepper');
+            if (stepperElement && typeof Stepper !== 'undefined') {
+                window.stepper = new Stepper(stepperElement)
+            }
         })
         
     });
@@ -5615,22 +5618,53 @@ function autocomplete(inp, arr) {
 
 
 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+<!-- Leaflet is loaded once in back_corejs (vendored copy + CDN fallback) -->
 <script>
 		(function() {
 
+			/*
+			 | Leaflet bootstrap shared by every map page (#pengajuanmap).
+			 | Pages without a map skip this block instead of throwing on the
+			 | missing container, which used to break every handler below it.
+			 */
+			if (typeof L === 'undefined') {
+				console.error('[map] Leaflet belum dimuat (public/vendor/leaflet/leaflet.js).');
+				return;
+			}
+
+			var mapContainer = document.getElementById('pengajuanmap');
+
+			if (!mapContainer || mapContainer._leaflet_id) {
+				return;
+			}
+
+			var mapboxToken = @json(config('services.mapbox.token'));
 			var mymap = L.map('pengajuanmap').setView([-7.708699, 109.013433], 13);
 
-			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-				maxZoom: 20,
-				id: 'mapbox/streets-v11',
-				tileSize: 512,
-				zoomOffset: -1,
-				accessToken: "{{ config('services.mapbox.token') }}"
-            }).addTo(mymap);
+			if (mapboxToken) {
+				L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+					attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+					maxZoom: 20,
+					id: 'mapbox/streets-v11',
+					tileSize: 512,
+					zoomOffset: -1,
+					accessToken: mapboxToken
+				}).addTo(mymap);
+			} else {
+				/* No MAPBOX_TOKEN in .env: fall back to OpenStreetMap so the map
+					   still renders instead of showing an empty grey canvas. */
+				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+					maxZoom: 19
+				}).addTo(mymap);
+			}
+
+			/* Exposed so the form wizard can refresh the map after a step
+			   change (the container is 0x0 while its panel is hidden). */
+			window.pengajuanMap = mymap;
+			window.pengajuanMapInvalidate = function () {
+				mymap.invalidateSize();
+			};
 
             var theMarker = {};
 
@@ -5640,7 +5674,7 @@ function autocomplete(inp, arr) {
             }
 
             mymap.on('click', function(e){
-                var isEditor = '{{$role}}';
+                var isEditor = @json($role ?? '');
                 if (theMarker != undefined && isEditor != 'admindinkes' && isEditor != 'adminptsp' ) {
                     mymap.removeLayer(theMarker);
                 };
@@ -5650,17 +5684,22 @@ function autocomplete(inp, arr) {
                 $('#tLong').val(e.latlng.lng);
             });
 
-            const stepperElement = document.querySelector('.bs-stepper');
+			/* bs-stepper pages (detail pengajuan): Leaflet has to recalculate
+			   the map size every time the Lokasi step becomes visible again.
+			   Guarded because most pages do not render a stepper at all. */
+			var stepperElement = document.querySelector('.bs-stepper');
 
-            stepperElement.addEventListener('shown.bs-stepper', function (event) {
-                // Check whether the Lokasi step is active
-                if (event.detail && event.detail.indexStep === 0) {
-                    // Allow the step content to become visible first
-                    setTimeout(function () {
-                        mymap.invalidateSize();
-                    }, 100);
-                }
-            });
+			if (stepperElement) {
+				stepperElement.addEventListener('shown.bs-stepper', function (event) {
+					// Check whether the Lokasi step is active
+					if (event.detail && event.detail.indexStep === 0) {
+						// Allow the step content to become visible first
+						setTimeout(function () {
+							mymap.invalidateSize();
+						}, 100);
+					}
+				});
+			}
 
            function bukakanpeta(){
                 var id = $('#mapidPengajuan').val();

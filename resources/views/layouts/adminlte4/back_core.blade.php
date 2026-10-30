@@ -24,6 +24,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{--
+        Apply the stored light / dark choice before any stylesheet paints, so a
+        user who picked dark mode never sees a white flash. The button that
+        flips the value lives in layouts/adminlte4/back_header and the click
+        handling lives in js/theme-toggle.js. Keep the storage key in sync with
+        that file ("sipbaru-theme").
+    --}}
+    <script>
+        (function () {
+            try {
+                var stored = window.localStorage.getItem('sipbaru-theme');
+                var theme = stored === 'dark' || stored === 'light'
+                    ? stored
+                    : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+                document.documentElement.setAttribute('data-bs-theme', theme);
+            } catch (error) {
+                /* localStorage blocked (private mode): keep the light default. */
+            }
+        })();
+    </script>
+
     @if ($local('images/nakesico.png'))
         <link rel="icon" href="{{ $local('images/nakesico.png') }}" type="image/png">
     @endif
@@ -59,13 +81,20 @@
     <!-- Stepper -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
 
-    <!-- Leaflet (map pages) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin="">
+    <!-- Leaflet (map pages): vendored copy first, CDN fallback -->
+    @if ($local('vendor/leaflet/leaflet.css'))
+        <link rel="stylesheet" href="{{ $local('vendor/leaflet/leaflet.css') }}">
+    @else
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+              integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
+              crossorigin="">
+    @endif
 
     <!-- AdminLTE 4 compatibility layer (legacy helpers + Bootstrap 4 class names) -->
     <link rel="stylesheet" href="{{ asset('css/adminlte4-compat.css') }}">
+
+    <!-- Light / dark switch (button lives in the navbar) -->
+    <script src="{{ asset('js/theme-toggle.js') }}" defer></script>
 
     @yield('css')
 </head>

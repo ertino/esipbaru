@@ -60,7 +60,11 @@
     <!-- Stepper -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
 
-    <!-- Leaflet (map pages) -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
-            crossorigin=""></script>
+    <!-- Leaflet (map pages): vendored copy first, CDN fallback -->
+    @if ($local('vendor/leaflet/leaflet.js'))
+        <script src="{{ $local('vendor/leaflet/leaflet.js') }}"></script>
+    @else
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
+                crossorigin=""></script>
+    @endif

@@ -3,7 +3,7 @@
  | AdminLTE 4 compatibility layer
  |--------------------------------------------------------------------------
  |
- | Two groups of rules live here:
+ | Three groups of rules live here:
  |
  |  1. The custom helpers that used to sit inline in
  |     resources/views/layouts/minlte/back_core.blade.php and are still
@@ -12,6 +12,12 @@
  |  2. The handful of Bootstrap 4 class names that were not rewritten in the
  |     Blade markup because the change is purely presentational
  |     (.form-group, .btn-xs, .input-group-append).
+ |
+ |  3. The AdminLTE 3 helpers that AdminLTE 4 dropped but the views still use
+ |     (.profile-user-img, .list-group-unbordered, ...).
+ |
+ |  4. The navbar light / dark switch and the dark-mode fixes for the helpers
+ |     above that still hard-code light colours.
  |
  */
 
@@ -260,3 +266,147 @@
 .close:hover {
     opacity: .75;
 }
+
+/* ---------------------------------------------------------------------------
+   3. AdminLTE 3 leftovers
+   --------------------------------------------------------------------------- */
+
+/*
+ * Profile widget. AdminLTE 4 no longer ships the profile page helpers, but the
+ * views still use them for the applicant / nakes summary card. Without the
+ * fixed width the avatar renders at its natural size and the card jumps.
+ */
+.box-profile .profile-user-img {
+    width: 100px;
+    margin: 0 auto;
+    padding: 3px;
+    border: 3px solid var(--bs-border-color);
+}
+
+.box-profile .profile-username {
+    margin-top: 5px;
+    font-size: 1.3125rem;
+}
+
+/* AdminLTE 3 removed the side borders of the summary lists. */
+.list-group-unbordered > .list-group-item {
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+}
+
+.list-group-unbordered > .list-group-item:first-child {
+    border-top: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   4. Navbar light / dark switch
+   --------------------------------------------------------------------------- */
+
+/*
+ * The switch is a <button class="nav-link"> so it lines up with the other
+ * navbar items. Bootstrap already removes the button chrome through
+ * .nav-link; this only fixes the icon alignment and the focus ring.
+ */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+/*
+ * Swap the icon with CSS instead of JavaScript, so the correct one is painted
+ * on the first frame (before js/theme-toggle.js runs):
+ *   light theme -> moon  (action: switch to dark)
+ *   dark theme  -> sun   (action: switch to light)
+ */
+.theme-toggle-icon-sun {
+    display: none;
+}
+
+[data-bs-theme="dark"] .theme-toggle-icon-sun {
+    display: inline-block;
+}
+
+[data-bs-theme="dark"] .theme-toggle-icon-moon {
+    display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   5. Dark mode (data-bs-theme="dark")
+   --------------------------------------------------------------------------- */
+
+/*
+ * Bootstrap 5.3 re-maps its own variables per theme, so most of the UI follows
+ * the switch on its own. Only the legacy helpers below still hard-code light
+ * colours and need to be pointed at the theme variables.
+ */
+
+[data-bs-theme="dark"] .autocomplete-items div {
+    background-color: var(--bs-body-bg);
+    border-bottom-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .autocomplete-items div:hover {
+    background-color: var(--bs-secondary-bg);
+}
+
+/* Bootstrap 4 painted the modal dismiss button black on white. */
+[data-bs-theme="dark"] .close {
+    color: var(--bs-body-color);
+    text-shadow: none;
+}
+
+/* Select2 still runs the Bootstrap 4 theme, which paints a white field. */
+[data-bs-theme="dark"] .select2-container--bootstrap4 .select2-selection,
+[data-bs-theme="dark"] .select2-container--bootstrap4 .select2-dropdown {
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+    background-color: var(--bs-secondary-bg);
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+/* DataTables 1.x search / length controls and the export buttons. */
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_filter input,
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_length select {
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .dt-buttons .dt-button {
+    background-color: var(--bs-secondary-bg);
+    background-image: none;
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_info,
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_length,
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_filter,
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_paginate {
+    color: var(--bs-body-color);
+}
+
+/* The yellow "visitasi" markers keep their black text on both themes. */
+[data-bs-theme="dark"] .highlight-date,
+[data-bs-theme="dark"] .visitasi {
+    color: #000000;
+}
+

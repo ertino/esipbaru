@@ -17,6 +17,25 @@
                         <span class="nav-link">{{ __('Bantuan') }}</span>
                     </li>
 
+                    {{--
+                        Light / dark switch. The icons are swapped with CSS
+                        (.theme-toggle-icon-* in css/adminlte4-compat.css) so the
+                        right one shows even before js/theme-toggle.js runs.
+                    --}}
+                    <li class="nav-item">
+                        <button type="button"
+                                class="nav-link theme-toggle"
+                                data-theme-toggle
+                                data-label-dark="{{ __('Aktifkan mode gelap') }}"
+                                data-label-light="{{ __('Aktifkan mode terang') }}"
+                                aria-pressed="false"
+                                aria-label="{{ __('Aktifkan mode gelap') }}"
+                                title="{{ __('Aktifkan mode gelap') }}">
+                            <i class="bi bi-moon-stars-fill theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></i>
+                            <i class="bi bi-brightness-high-fill theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></i>
+                        </button>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarUserDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">

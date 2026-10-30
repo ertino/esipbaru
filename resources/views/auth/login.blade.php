@@ -20,6 +20,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{--
+        Same pre-paint theme resolution as layouts/adminlte4/back_core, so the
+        choice made from the navbar switch also applies to this standalone
+        login page (and to a session that just logged out).
+    --}}
+    <script>
+        (function () {
+            try {
+                var stored = window.localStorage.getItem('sipbaru-theme');
+                var theme = stored === 'dark' || stored === 'light'
+                    ? stored
+                    : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+                document.documentElement.setAttribute('data-bs-theme', theme);
+            } catch (error) {
+                /* localStorage blocked (private mode): keep the light default. */
+            }
+        })();
+    </script>
+
     <link rel="icon" href="{{ asset('images/nakesico.png') }}" type="image/png">
 
     <title>{{ __('Login') }} | APLIKASI SURAT IZIN PRAKTIK TENAGA MEDIS &amp; KESEHATAN DIGITAL</title>
